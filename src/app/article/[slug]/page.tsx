@@ -7,6 +7,7 @@ interface Params {
 
 const Article = async ({ params }: { params: Params }) => {
   const article = await fetchArticleBySlug(params.slug);
+  if (article.data.length === 0) return null;
   const { Title, Author, Date, Content, FeaturedImage } = article.data[0].attributes;
 
   return (

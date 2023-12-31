@@ -1,9 +1,28 @@
-import React from "react";
-import VideoCard from "./Card";
-import Link from "next/link";
-import Button from "../Button/Button";
+import React from 'react';
+import VideoCard from './Card';
+import Button from '../Button/Button';
+import { fetchVideos } from '@/lib/utils';
 
-const LatestVideos = () => {
+interface Video {
+  attributes: {
+    id: number;
+    Title: string;
+    Link: string;
+    Description: string;
+    Slug: string;
+    Thumbnail: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+}
+
+const LatestVideos = async () => {
+  const videos = await fetchVideos();
+  console.log(videos.data);
   return (
     <section className="h-fit  bg-[#1B3764] pb-12">
       <div className=" flex flex-col items-center justify-center">
@@ -12,19 +31,16 @@ const LatestVideos = () => {
           <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
         </h1>
         <div className="mt-12 flex w-fit flex-col  justify-between gap-8 md:w-3/5 lg:w-auto lg:flex-row">
-          <VideoCard
-            image="https://picsum.photos/410/326"
-            title="Focus better and get rid of all the distractions"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quod rem libero corporis sunt dolore, similique quibusdam optio ab officiis impedit dolorem fugit modi delectus ipsam non. Ipsum, reprehenderit suscipit."
-            articleLink="hello"
-          />
-
-          <VideoCard
-            image="https://picsum.photos/410/326"
-            title="How to journal and get the best out of your time"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas"
-            articleLink="hello"
-          />
+          {videos.data.map((video: Video) => (
+            <VideoCard
+              key={video.attributes.id}
+              image={video.attributes.Thumbnail.data.attributes.url}
+              title={video.attributes.Title}
+              videoLink={video.attributes.Link}
+              description={video.attributes.Description}
+              slug={video.attributes.Slug}
+            />
+          ))}
         </div>
         <Button link="/videos">View all videos</Button>
       </div>
