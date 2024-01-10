@@ -21,13 +21,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   date
 }) => {
   return (
-    <div className="aspect-video w-11/12  bg-slate-100 shadow-md hover:shadow-lg">
+    <div className="mx-auto aspect-video w-7/12 bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
       <Image
         src={`${config.api}${image}`}
         width={432}
         height={648}
         alt="Article Image"
-        className="h-[326px] w-[410px] object-cover object-center"
+        className="h-[226px] w-[310px] object-cover object-center"
         // h-full w-full - see screenshot
       />
       <div className="mt-4 p-4 lg:pl-5">
@@ -40,7 +40,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
             {title}
           </div>
 
-          <div className="h-[95px] w-full font-['Inter']  text-lg font-normal text-neutral-400 lg:w-[360px]">
+          <div className="mx-auto h-[95px] w-full font-['Inter'] text-lg font-normal text-neutral-400">
             {summary && summary.length > 150 ? (
               <>
                 {summary.slice(0, 150)}...{' '}

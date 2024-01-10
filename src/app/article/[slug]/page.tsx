@@ -8,16 +8,16 @@ interface Params {
 const Article = async ({ params }: { params: Params }) => {
   const article = await fetchArticleBySlug(params.slug);
   if (article.data.length === 0) return null;
-  const { Title, Author, Date, Content, FeaturedImage } = article.data[0].attributes;
+  const { title, author, date, content, featuredImage } = article.data[0].attributes;
 
   return (
     <>
       <SingleArticle
-        title={Title}
-        author={Author}
-        date={Date}
-        content={Content}
-        featuredImage={FeaturedImage.data.attributes.url}
+        title={title}
+        author={author}
+        date={date}
+        content={content}
+        featuredImage={featuredImage.data.attributes.url}
       />
     </>
   );

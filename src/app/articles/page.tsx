@@ -26,9 +26,10 @@ const Articles = async () => {
   return (
     <>
       <main className="h-fit bg-[#e0ebfe] pb-24">
-        <h1 className="relative mb-10  p-5 pb-2 text-center font-['Cardo'] text-6xl font-light leading-[55px] text-[#1B3764]">
-          Articles
-          <span className="absolute bottom-0 left-1/2 h-1 w-1/3 -translate-x-1/2  bg-yellow-500"></span>
+        <h1 className="relative mb-10  p-5 pb-2 text-center font-['Cardo'] text-4xl font-light leading-[55px] text-[#014444]">
+          ARTICLES
+          <span className="absolute bottom-0 left-1/2 h-1 w-[4%] -translate-x-1/2  bg-yellow-500"></span>
+          {/* <hr className="" /> */}
         </h1>
         <div className=" mx-auto mt-20 flex  w-11/12 flex-wrap justify-center gap-6">
           {/* <div className=" mx-auto  w-full border-2 border-red-500"><Sort /></div> */}

@@ -50,7 +50,11 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, title, description, videoL
         <div className="mt-8 flex justify-between pt-3">
           <Link
             href={videoLink}
+<<<<<<< HEAD
             className=" inline-block pb-3 font-light text-blue-500 underline underline-offset-8 antialiased"
+=======
+            className=" inline-block pb-3 font-light text-[#014444] underline underline-offset-8 antialiased"
+>>>>>>> master
           >
             Watch Video <FiExternalLink className="ml-1 inline-block" />
           </Link>

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+=======
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+>>>>>>> master
 
 interface BookProps {
   image: any;
@@ -10,6 +16,7 @@ interface BookProps {
   bookLink: string;
 }
 
+<<<<<<< HEAD
 const Book: React.FC<BookProps> = ({
   image,
   title,
@@ -17,6 +24,9 @@ const Book: React.FC<BookProps> = ({
   bookLink,
   price,
 }) => {
+=======
+const Book: React.FC<BookProps> = ({ image, title, description, bookLink, price }) => {
+>>>>>>> master
   return (
     <div className="overflow-hidden bg-white  shadow-md hover:shadow-lg lg:w-4/12 ">
       <Image
@@ -40,11 +50,16 @@ const Book: React.FC<BookProps> = ({
           <div className="h-[95px] w-full font-['Inter']  text-base font-normal text-neutral-400 ">
             {description.length > 50 ? (
               <>
+<<<<<<< HEAD
                 {description.slice(0, 50)}...{" "}
                 <Link
                   href={`/book/${title}`}
                   className="text-blue-500 hover:underline"
                 >
+=======
+                {description.slice(0, 50)}...{' '}
+                <Link href={`/book/${title}`} className="text-blue-500 hover:underline">
+>>>>>>> master
                   read more
                 </Link>
               </>
@@ -58,16 +73,27 @@ const Book: React.FC<BookProps> = ({
           <Link
             href={`/book/${title
               .toLowerCase()
+<<<<<<< HEAD
               .replace(/&/g, "and")
               .replace(/ /g, "-")
               .replace(/'/g, "")
               .replace(/,/g, "")}`}
+=======
+              .replace(/&/g, 'and')
+              .replace(/ /g, '-')
+              .replace(/'/g, '')
+              .replace(/,/g, '')}`}
+>>>>>>> master
             className=" inline-block  font-light text-blue-500 underline underline-offset-8 antialiased"
           >
             Read more
           </Link>
           <Link
+<<<<<<< HEAD
             href={bookLink}
+=======
+            href="https://buy.stripe.com/test_3csaGk4aM14t3K03cc"
+>>>>>>> master
             className="rounded-sm border border-yellow-500 bg-yellow-700 p-2  font-['Inter'] text-base text-white antialiased hover:border-[#1B3764] hover:bg-white hover:text-[#1B3764]"
           >
             Buy Now
