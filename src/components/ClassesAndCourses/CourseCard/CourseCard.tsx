@@ -16,7 +16,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ image, title, description, cour
   return (
     <div className="border shadow-md hover:shadow-lg md:flex md:w-7/12">
       <Image
-        src={`${config.api}${image}`}
+        src={`${image}`}
         width={432}
         height={648}
         alt="Video Thumbnail"

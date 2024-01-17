@@ -23,29 +23,29 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   //  overflow-hidden overflow-ellipsis -- title
   // overflow-hidden  -- above summary div
   return (
-    <div className="aspect-video bg-slate-100 shadow-md hover:shadow-lg">
+    <div className="aspect-video bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
       <Image
         src={`${config.api}${image}`}
         width={432}
         height={648}
         alt="Article Image"
-        className="h-[326px] w-[410px] object-cover object-center"
+        className="h-[226px] w-[310px] object-cover object-center"
         // h-full w-full - see screenshot
       />
       <div className="mt-4 p-4 lg:pl-5">
         <div className="flex flex-col gap-4">
           <div
-            className={`line-clamp-2 h-[60px] w-[370px] break-words font-['Cardo'] text-2xl font-normal leading-[28.80px] text-cyan-900 ${
+            className={`line-clamp-2 h-[60px] w-[280px] break-words font-['Cardo'] text-2xl font-normal leading-[28.80px] text-cyan-900 ${
               title.length < 30 ? 'pt-4' : ''
             }`}
           >
             {title}
           </div>
 
-          <div className="h-[95px] w-full font-['Inter']  text-lg font-normal text-neutral-400 lg:w-[360px]">
-            {summary && summary.length > 100 ? (
+          <div className="mx-auto h-[95px] w-full font-['Inter'] text-lg font-normal text-neutral-400">
+            {summary && summary.length > 150 ? (
               <>
-                {summary.slice(0, 100)}...{' '}
+                {summary.slice(0, 150)}...{' '}
                 <Link href={articleLink} className="text-blue-500 hover:underline">
                   read more
                 </Link>
@@ -56,7 +56,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
           </div>
         </div>
 
-        <div className="flex justify-between pt-3">
+        <div className="mt-12 flex justify-between pt-3">
           <h3 className=" inline-block pb-3 font-light text-cyan-800 antialiased">
             {author} - {date.toString()}
           </h3>

@@ -16,7 +16,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, title, description, videoL
   //  overflow-hidden overflow-ellipsis -- title
   // overflow-hidden  -- above description div
   return (
-    <div className="w-fit bg-slate-100 shadow-md hover:shadow-lg">
+    <div className="mx-auto aspect-video w-10/12 bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
       <Image
         src={`${config.api}${image}`}
         width={432}
@@ -26,6 +26,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, title, description, videoL
       />
       <div className="mt-4 p-4 pl-5">
         <div className="flex flex-col gap-4">
+          {/* <div className="flex flex-col gap-4">
           <div
             className={`line-clamp-2 h-[60px] w-[370px] break-words font-['Cardo'] text-2xl font-normal leading-[28.80px] text-cyan-900 ${
               title.length < 30 ? 'pt-1' : ''
@@ -33,28 +34,32 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, title, description, videoL
           >
             {title}
           </div>
-        </div>
-        <div className="h-[95px] w-full font-['Inter']  text-lg font-normal text-neutral-400 lg:w-[360px]">
-          {description && description.length > 150 ? (
-            <>
-              {description.slice(0, 150)}...{' '}
-              <Link href={videoLink} className="text-blue-500 hover:underline">
-                read more
-              </Link>
-            </>
-          ) : (
-            description
-          )}
+        </div> */}
+          <p
+            className={`line-clamp-2 h-[60px] w-[300px] overflow-ellipsis break-words font-['Cardo'] text-2xl font-normal leading-[28.80px] text-cyan-900 ${
+              title.length < 30 ? 'pt-1' : ''
+            }`}
+          >
+            {title}
+          </p>
+          <div className="mx-auto h-[95px] w-full font-['Inter'] text-lg font-normal text-neutral-400 ">
+            {description && description.length > 150 ? (
+              <>
+                {description.slice(0, 150)}...{' '}
+                <Link href={videoLink} className="text-blue-500 hover:underline">
+                  read more
+                </Link>
+              </>
+            ) : (
+              description
+            )}
+          </div>
         </div>
 
-        <div className="mt-8 flex justify-between pt-3">
+        <div className="mt-12 flex justify-between pt-3">
           <Link
             href={videoLink}
-<<<<<<< HEAD
-            className=" inline-block pb-3 font-light text-blue-500 underline underline-offset-8 antialiased"
-=======
-            className=" inline-block pb-3 font-light text-[#014444] underline underline-offset-8 antialiased"
->>>>>>> master
+            className="inline-block pb-3 font-light text-[#014444] underline underline-offset-8 antialiased"
           >
             Watch Video <FiExternalLink className="ml-1 inline-block" />
           </Link>

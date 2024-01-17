@@ -1,6 +1,7 @@
 import ArticleCard from './Card';
-import Button from '../Button/Button';
+import Button from '@/components/Button/Button';
 import { fetchArticles } from '@/lib/utils';
+import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
 
 interface Article {
   attributes: {
@@ -22,14 +23,17 @@ interface Article {
 
 const LatestArticles = async () => {
   const articles = await fetchArticles();
+
+  const articleTitles = articles.data.map((article: Article) => article.attributes.title);
+
   const sortedArticles = articles.data.sort((a: Article, b: Article) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
   });
   const latestArticles = sortedArticles.slice(0, 3);
 
   return (
-    <section className="h-fit border-x-2  bg-white pb-8 ">
-      <div className=" mx-auto flex w-fit flex-col items-center justify-center">
+    <section className="mx-auto h-fit border-2 border-x-2  bg-white pb-8">
+      <div className=" mx-auto flex flex-col items-center justify-center lg:w-fit">
         <h1 className="relative mt-7 w-[474px] p-5 pb-2 text-center font-['Cardo']  text-4xl font-normal leading-[54px] text-[#014444] antialiased">
           Latest Articles
           <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
@@ -51,8 +55,11 @@ const LatestArticles = async () => {
           })}
         </div>
         <Button link="/articles">View all articles</Button>
-        or <br />
-        drop down of all articles here
+        <div className=" flex w-11/12 flex-col items-center justify-center">
+          <div className="m-3">OR</div>
+
+          <DropDown articles={articleTitles} />
+        </div>
       </div>
     </section>
   );

@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import FooterItems from "./FooterItems";
-import Image from "next/image";
-
-const Footer = () => {
-  return (
-    <div>
-      <div className="w-full overflow-hidden bg-[#1B3764] p-8 text-white">
-=======
 import FooterItems from './FooterItems';
 import Image from 'next/image';
 
@@ -15,7 +6,6 @@ const Footer = () => {
   return (
     <div>
       <div className="w-full overflow-hidden bg-[#014444] p-8 text-white">
->>>>>>> master
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full text-center md:w-1/2 md:text-right"></div>
         </div>
@@ -37,7 +27,7 @@ const Footer = () => {
                 </div>
 
                 <div className="relative h-[55px] w-[55px]">
-                  <div className="absolute left-0 top-0 h-[55px] w-[55px] border border-amber-300 " />
+                  <div className="absolute left-0 top-0 h-[55px] w-[55px] border border-amber-300" />
                   <div className="font-['Font Awesome 5 Brands'] absolute left-[25%] top-[25%] text-center text-lg font-normal uppercase leading-snug tracking-wide text-white">
                     <Image
                       src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.png"
@@ -64,21 +54,6 @@ const Footer = () => {
             <div className="flex w-8/12 flex-col justify-evenly lg:flex-row">
               <FooterItems
                 FooterItemName="Expolre"
-<<<<<<< HEAD
-                FooterItems={["Home", "About", "Articles", "Art", "Contact"]}
-              />
-              <FooterItems
-                FooterItemName="Connect"
-                FooterItems={["Home", "About", "Articles", "Art", "Contact"]}
-              />
-              <FooterItems
-                FooterItemName="Free Resources"
-                FooterItems={["Home", "About", "Articles", "Art", "Contact"]}
-              />
-              <FooterItems
-                FooterItemName="Newsletter"
-                FooterItems={["Home", "About", "Articles", "Art", "Contact"]}
-=======
                 FooterItems={['Home', 'About', 'Articles', 'Art', 'Contact']}
               />
               <FooterItems
@@ -92,18 +67,11 @@ const Footer = () => {
               <FooterItems
                 FooterItemName="Newsletter"
                 FooterItems={['Home', 'About', 'Articles', 'Art', 'Contact']}
->>>>>>> master
               />
             </div>
           </div>
           <div className="border-t border-white pt-8 text-center">
-<<<<<<< HEAD
-            <p className="text-sm">
-              © 2024 Company Name. All rights reserved.
-            </p>
-=======
             <p className="text-sm">© {currentYear} Parisa Yazdi. All rights reserved.</p>
->>>>>>> master
           </div>
         </div>
       </div>

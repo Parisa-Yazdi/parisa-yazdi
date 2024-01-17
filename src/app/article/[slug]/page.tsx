@@ -1,4 +1,4 @@
-import SingleArticle from '@/components/SingleArticle/SingleArticle';
+import SingleArticle from '@/components/Articles/SingleArticle/SingleArticle';
 import { fetchArticleBySlug } from '@/lib/utils';
 
 interface Params {

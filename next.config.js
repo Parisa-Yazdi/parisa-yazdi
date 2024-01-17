@@ -46,8 +46,28 @@ module.exports = {
         protocol: 'http',
         hostname: '127.0.0.1',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'mysecondchancenj.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'icons.veryicon.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'influencermarketinghub.com',
+        pathname: '/**'
       }
-      // 127.0.0.1
+      // 127.0.0.1 mysecondchancenj images.unsplash.com icons.veryicon.com influencermarketinghub.com
     ]
   }
 };

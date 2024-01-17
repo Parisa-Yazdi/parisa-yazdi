@@ -32,6 +32,7 @@ const SingleArticle = ({ title, date, author, content, featuredImage }: ArticleP
             alt="Featured image"
             width="1250"
             height="340"
+            priority
             className="mb-8 aspect-video overflow-hidden rounded-lg object-cover"
           />
           <div dangerouslySetInnerHTML={{ __html: content }} />

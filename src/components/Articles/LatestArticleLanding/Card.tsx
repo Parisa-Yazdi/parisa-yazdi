@@ -21,7 +21,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   date
 }) => {
   return (
-    <div className="mx-auto aspect-video w-7/12 bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
+    <div className="mx-auto aspect-video w-10/12 bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
       <Image
         src={`${config.api}${image}`}
         width={432}
@@ -32,15 +32,15 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       />
       <div className="mt-4 p-4 lg:pl-5">
         <div className="flex flex-col gap-4">
-          <div
-            className={`line-clamp-2 h-[60px] w-[370px] break-words font-['Cardo'] text-2xl font-normal leading-[28.80px] text-cyan-900 ${
+          <p
+            className={`line-clamp-2 h-[60px] w-[300px] overflow-ellipsis break-words font-['Cardo'] text-2xl font-normal leading-[28.80px] text-cyan-900 ${
               title.length < 30 ? 'pt-1' : ''
             }`}
           >
             {title}
-          </div>
+          </p>
 
-          <div className="mx-auto h-[95px] w-full font-['Inter'] text-lg font-normal text-neutral-400">
+          <div className="mx-auto h-[95px] w-full font-['Inter'] text-lg font-normal text-neutral-400 ">
             {summary && summary.length > 150 ? (
               <>
                 {summary.slice(0, 150)}...{' '}
@@ -54,8 +54,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
           </div>
         </div>
 
-        <div className="mt-8 flex justify-between pt-3">
-          <h3 className=" inline-block pb-3 font-light text-cyan-800 antialiased">
+        <div className="mt-12 flex justify-between pt-3">
+          <h3 className="inline-block pb-3 font-light text-cyan-800 antialiased">
             {author} - {date.toString()}
           </h3>
           <Link

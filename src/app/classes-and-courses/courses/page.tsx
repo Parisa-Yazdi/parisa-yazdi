@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-const page = () => {
-  return (
-    <>
-      <div></div>
-=======
-import CourseCard from '@/components/CourseCard/CourseCard';
+import CourseCard from '@/components/ClassesAndCourses/CourseCard/CourseCard';
 import { fetchVideos } from '@/lib/utils';
-import { Video } from '@/components/LatestVideoLanding/LatestVideo'; // Import the Video interface
+import { Video } from '@/components/Video/LatestVideoLanding/LatestVideo'; // Import the Video interface
+import config from '../../../config';
 
-const Videos = async () => {
+const Courses = async () => {
   const videos = await fetchVideos();
 
   return (
@@ -21,27 +16,22 @@ const Videos = async () => {
         </h1>
         <div className="mx-auto mt-10 flex w-10/12   flex-col flex-wrap items-center justify-center gap-6">
           {videos.data.map((video: Video) => {
-            const { id, Thumbnail, Title, Description, Slug, Link } = video.attributes;
+            const { id, thumbnail, title, summary, slug, link } = video.attributes;
             return (
               <CourseCard
                 key={id}
-                image={Thumbnail.data.attributes.url}
-                title={Title}
-                description={Description}
-                courseLink={Link}
-                slug={Slug}
+                image={`${config.api}${thumbnail.data.attributes.url}`}
+                title={title}
+                description={summary}
+                courseLink={link}
+                slug={slug}
               />
             );
           })}
         </div>
       </main>
->>>>>>> master
     </>
   );
 };
 
-<<<<<<< HEAD
-export default page;
-=======
-export default Videos;
->>>>>>> master
+export default Courses;

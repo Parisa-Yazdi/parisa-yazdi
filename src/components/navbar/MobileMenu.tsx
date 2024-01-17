@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Dialog, Transition } from "@headlessui/react";
-import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
-import { Fragment, useEffect, useState } from "react";
-import Image from "next/image";
-import MenuItem from "./MenuItem";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Dialog, Transition } from '@headlessui/react';
+import Link from 'next/link';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { Fragment, useEffect, useState } from 'react';
+import Image from 'next/image';
+import MenuItem from './MenuItem';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function MobileMenu() {
   const pathname = usePathname();
@@ -17,38 +17,38 @@ export default function MobileMenu() {
 
   const menuItems = [
     {
-      name: "HOME",
+      name: 'HOME',
       subPages: [],
-      href: "/",
+      href: '/'
     },
     {
-      name: "ARTICLES",
+      name: 'ARTICLES',
       subPages: [
-        "View Archive",
-        "Existential & Metaphysics",
-        "Astrology & Archetypes",
-        "Self-Knowledge",
-        "Personal Journals",
-      ],
+        'View Archive',
+        'Existential & Metaphysics',
+        'Astrology & Archetypes',
+        'Self-Knowledge',
+        'Personal Journals'
+      ]
     },
     {
-      name: "CLASSES & COURSES",
+      name: 'CLASSES & COURSES'
     },
     {
-      name: "VIDEOS",
+      name: 'VIDEOS'
     },
     {
-      name: "BOOKS",
+      name: 'BOOKS'
     },
     {
-      name: "GALLERY",
+      name: 'GALLERY'
     },
     {
-      name: "ABOUT",
+      name: 'ABOUT'
     },
     {
-      name: "CONTACT",
-    },
+      name: 'CONTACT'
+    }
   ];
 
   useEffect(() => {
@@ -57,8 +57,8 @@ export default function MobileMenu() {
         setIsOpen(false);
       }
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
 
   useEffect(() => {
@@ -72,11 +72,7 @@ export default function MobileMenu() {
         aria-label="Open mobile menu"
         className="flex h-12 w-12 items-center justify-center rounded-md  text-black transition-colors  lg:hidden"
       >
-<<<<<<< HEAD
-        <Bars3Icon className="h-6 border-none" />
-=======
         <Bars3Icon className="h-6 border-none text-white" />
->>>>>>> master
       </button>
       <Transition show={isOpen}>
         <Dialog onClose={closeMobileMenu} className="relative z-50">
@@ -100,17 +96,10 @@ export default function MobileMenu() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-<<<<<<< HEAD
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6 ">
-              <div className="p-4">
-                <button
-                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-md  text-black transition-colors "
-=======
             <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-black pb-6 ">
               <div className="p-4">
                 <button
                   className="mb-4 flex h-11 w-11 items-center justify-center rounded-md  text-white transition-colors "
->>>>>>> master
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
                 >
@@ -118,33 +107,22 @@ export default function MobileMenu() {
                 </button>
 
                 <div className=" w-full">
-<<<<<<< HEAD
-                  {/* <Image
-                    className="mx-auto"
-                    src={"https://i.imgur.com/tEUIuYd.png"}
-=======
                   <Image
                     className="mx-auto"
-                    src={"https://i.imgur.com/gTkbIgW.png"}
->>>>>>> master
+                    src={'https://i.imgur.com/gTkbIgW.png'}
                     alt="capenci logo"
                     height={182}
                     width={182}
                     priority
-<<<<<<< HEAD
-                  /> */}
-=======
                   />
->>>>>>> master
                 </div>
 
                 <ul className="flex w-full flex-col">
                   {menuItems.map((menuItem, i) => (
-<<<<<<< HEAD
-                    <li key={i} className="py-2 text-xl text-black transition-colors hover:text-neutral-500 ">
-=======
-                    <li key={i} className="py-2 text-xl text-white transition-colors hover:text-neutral-500 ">
->>>>>>> master
+                    <li
+                      key={i}
+                      className="py-2 text-xl text-white transition-colors hover:text-neutral-500 "
+                    >
                       {/* <Link href={`/${menuItem}`} onClick={closeMobileMenu}>
                         {menuItem.name}
                       </Link> */}
