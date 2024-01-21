@@ -36,11 +36,11 @@ const LatestVideos = async () => {
           <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
         </h1>
         <div className="mx-auto mt-12 flex w-fit flex-col  justify-between gap-8 md:w-3/5 lg:w-auto lg:flex-row">
-          {latestVideos.map((video: Video) => {
+          {latestVideos.map((video: Video, i: number) => {
             const { id, thumbnail, title, summary, slug, link } = video.attributes;
             return (
               <VideoCard
-                key={id}
+                key={i}
                 image={thumbnail.data.attributes.url}
                 title={title}
                 description={summary}

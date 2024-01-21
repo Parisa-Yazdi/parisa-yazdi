@@ -58,8 +58,6 @@ export async function fetchVideos() {
   const request = await fetch(`${config.api}/api/videos?populate=*`, reqOptions);
   const response = await request.json();
 
-  console.log('VIDEO RESPONSE: ', response.data);
-
   return response;
 }
 
@@ -107,8 +105,6 @@ export async function fetchSubCategory() {
 
   const request = await fetch(`${config.api}/api/sub-categories?populate=deep`, reqOptions);
   const response = await request.json();
-
-  console.log('RESPONSE: ', response.data);
 
   return response;
 }

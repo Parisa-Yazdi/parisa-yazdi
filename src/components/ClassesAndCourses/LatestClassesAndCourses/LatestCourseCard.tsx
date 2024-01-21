@@ -16,11 +16,23 @@ const LatestClassAndCourseCard = ({ className }: LatestClassAndCourseCardProps) 
           width={80}
           height={80}
           alt="small icon"
-          className="w-2/12 border-r border-black p-4 pb-1 pt-1"
+          className="w-2/12 border-r border-black p-6 pb-1 pt-1"
         />
 
-        <div className="ml-3 flex w-fit flex-col justify-around border-2 border-green-500">
-          <h2 className=" text-3xl font-semibold antialiased">Class Name</h2>
+        <div className="flex w-full justify-between overflow-hidden">
+          <div className="ml-3 flex h-[70px] w-8/12 flex-col justify-around overflow-ellipsis ">
+            <h2 className="overflow-hidden overflow-ellipsis whitespace-nowrap text-3xl font-light antialiased">
+              Name of the first class class class clkass
+            </h2>
+          </div>
+          <div className="mr-5 flex items-center ">
+            <Link
+              href={''}
+              className={`border-2 border-white bg-yellow-500 p-2   font-['Inter'] text-lg text-white  antialiased  hover:border-[#1B3764] hover:bg-white hover:text-[#1B3764]`}
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
       </div>
     </>

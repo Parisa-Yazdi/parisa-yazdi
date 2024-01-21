@@ -39,11 +39,11 @@ const LatestArticles = async () => {
           <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
         </h1>
         <div className="mx-auto mt-12 flex w-fit flex-col items-center justify-center gap-8 md:w-3/5 lg:w-auto lg:flex-row">
-          {latestArticles.map((article: Article) => {
+          {latestArticles.map((article: Article, i: number) => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
             return (
               <ArticleCard
-                key={id}
+                key={i}
                 image={thumbnail.data.attributes.url}
                 title={title}
                 summary={summary}

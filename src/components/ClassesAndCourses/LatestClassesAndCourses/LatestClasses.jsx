@@ -26,7 +26,11 @@ const LatestClasses = () => {
             ></path>
           </svg>
         </div>
-        <div className="scroll-snap-type-y-mandatory scrollbar-thick scrollbar-thumb-red-500 scrollbar-track-red-200 mt-2 flex h-[200px] snap-x snap-mandatory flex-col gap-6 overflow-hidden border-2 border-red-400 p-5">
+        <p className="p-8 pb-3 pt-3  text-sm font-normal leading-[24px] text-[#014444] antialiased">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada eget est, a
+          hendrerit mauris. Ut quis odio sed.
+        </p>
+        <div className="scroll-snap-type-y-mandatory scrollbar-thick scrollbar-thumb-red-500 scrollbar-track-red-200 flex h-[200px] snap-x snap-mandatory flex-col gap-2 overflow-y-scroll  p-5 pt-3">
           <LatestClassAndCourseCard className="snap-start" />
           <LatestClassAndCourseCard className="snap-start" />
           <LatestClassAndCourseCard className="snap-start" />
@@ -34,7 +38,7 @@ const LatestClasses = () => {
         </div>
         <div className="flex w-full justify-center">
           <Link
-            className={` border-2 border-white bg-yellow-500 p-2  font-['Inter'] text-xl text-white  antialiased  hover:border-[#1B3764] hover:bg-white hover:text-[#1B3764]`}
+            className={`mt-3 border-2 border-white bg-yellow-500 p-2  font-['Inter'] text-xl text-white  antialiased  hover:border-[#1B3764] hover:bg-white hover:text-[#1B3764]`}
             href={''}
           >
             View All Classes
