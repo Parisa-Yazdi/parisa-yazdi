@@ -17,6 +17,7 @@ const Navbar = () => {
       name: 'ARTICLES',
       subPages: [
         'View Archive',
+        'View All Categories',
         'Existential & Metaphysics',
         'Astrology & Archetypes',
         'Self-Knowledge',
@@ -28,7 +29,15 @@ const Navbar = () => {
       subPages: ['Classes', 'Courses']
     },
     {
-      name: 'VIDEOS'
+      name: 'VIDEOS',
+      subPages: [
+        'View Archive',
+        'View All Categories',
+        'Existential & Metaphysics',
+        'Astrology & Archetypes',
+        'Self-Knowledge',
+        'Personal Journals'
+      ]
     },
     {
       name: 'BOOKS'

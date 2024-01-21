@@ -11,8 +11,8 @@ type ArticleProps = {
 };
 
 const SingleArticle = ({ title, date, author, content, featuredImage }: ArticleProps) => {
-  console.log('CONTENT: ', content);
-  console.log('FEATURED IMAGE: ', featuredImage);
+  // console.log('CONTENT: ', content);
+  // console.log('FEATURED IMAGE: ', featuredImage);
   return (
     <>
       <main className="px-4 py-6 md:px-6 md:py-12 lg:py-16">

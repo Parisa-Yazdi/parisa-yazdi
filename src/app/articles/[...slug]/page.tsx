@@ -4,7 +4,6 @@ import { fetchArticles, fetchSubCategory, fetchArticlesBySubcategory } from '@/l
 
 export async function SubCategory({ params }: any) {
   const subCategories = await fetchSubCategory();
-  console.log('SUBCATEGORIES: ', subCategories.data);
 
   // Function to convert 'sub-category-name' to 'Sub Category Name'
   const slugToCategoryName = (slug: string): string => {
@@ -33,7 +32,7 @@ export async function SubCategory({ params }: any) {
     return categoryName.includes(slugName);
   });
 
-  console.log('SUBCATEGORY: ', subCategory);
+  // console.log('SUBCATEGORY: ', subCategory);
 
   return (
     <>
@@ -45,7 +44,6 @@ export async function SubCategory({ params }: any) {
       </div>
       <div className="mx-auto mt-7 flex w-8/12 flex-wrap justify-evenly gap-2">
         {subCategory.attributes.articles.data.map((article: any, index: number) => {
-          console.log('HERERERE: ', article);
           const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
           return (
             <div key={index} className="mb-5">

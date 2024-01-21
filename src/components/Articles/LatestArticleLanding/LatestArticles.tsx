@@ -1,6 +1,6 @@
 import ArticleCard from './Card';
 import Button from '@/components/Button/Button';
-import { fetchArticles } from '@/lib/utils';
+import { fetchArticles, fetchCategories } from '@/lib/utils';
 import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
 
 interface Article {
@@ -23,6 +23,8 @@ interface Article {
 
 const LatestArticles = async () => {
   const articles = await fetchArticles();
+  const categories = await fetchCategories();
+  // console.log(categories.data);
 
   const articleTitles = articles.data.map((article: Article) => article.attributes.title);
 
@@ -59,8 +61,8 @@ const LatestArticles = async () => {
         </Button>
         <div className=" flex w-11/12 flex-col items-center justify-center">
           <div className="m-3">OR</div>
-
-          <DropDown articles={articleTitles} />
+          <div className="m-3 font-medium antialiased">Browse by Category</div>
+          <DropDown categories={categories.data} />
         </div>
       </div>
     </section>

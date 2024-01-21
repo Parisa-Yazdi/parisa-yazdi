@@ -15,11 +15,11 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { redirect } from 'next/dist/server/api-utils';
 
-interface Article {
-  title: string;
+interface category {
+  attributes: any;
 }
 
-export default function DropDown({ articles }: { articles: Article[] }) {
+export default function DropDown({ categories }: { categories: category[] }) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
 
@@ -32,30 +32,30 @@ export default function DropDown({ articles }: { articles: Article[] }) {
           aria-expanded={open}
           className=" w-3/4 justify-between"
         >
-          {value || 'Select article...'}
+          {value || 'Select category...'}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[600px] p-0">
+      <PopoverContent className="w-[340px] p-0">
         <Command>
-          <CommandInput placeholder="Search article..." className="h-9" />
-          <CommandEmpty>No article found.</CommandEmpty>
+          <CommandInput placeholder="Search category..." className="h-9" />
+          <CommandEmpty>No category found.</CommandEmpty>
           <CommandGroup>
-            {articles.map((article, i) => (
+            {categories.map((category, i) => (
               <CommandItem
                 key={i}
-                value={article.title}
+                value={category.attributes.name}
                 onSelect={(currentValue) => {
                   setValue(currentValue === value ? '' : currentValue);
                   setOpen(false);
                 }}
               >
-                <>{article}</>
+                <>{category.attributes.name}</>
 
                 <CheckIcon
                   className={cn(
                     'ml-auto h-4 w-4',
-                    value === article.title ? 'opacity-100' : 'opacity-0'
+                    value === category.attributes.name ? 'opacity-100' : 'opacity-0'
                   )}
                 />
               </CommandItem>
@@ -96,7 +96,7 @@ export default function DropDown({ articles }: { articles: Article[] }) {
 // import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 // import { toast } from '@/components/ui/use-toast';
 
-// // const articles = [
+// // const categories = [
 // //   { label: 'Hello', value: 'en' },
 // //   { label: 'French', value: 'fr' },
 // //   { label: 'German', value: 'de' },
@@ -108,17 +108,17 @@ export default function DropDown({ articles }: { articles: Article[] }) {
 // //   { label: 'Chinese', value: 'zh' }
 // // ] as const;
 
-// interface Article {
-//   article: any;
+// interface category {
+//   category: any;
 // }
 
 // const FormSchema = z.object({
-//   article: z.string({
-//     required_error: 'Please select a article.'
+//   category: z.string({
+//     required_error: 'Please select a category.'
 //   })
 // });
 
-// export default function ComboboxForm({ articles }: { articles: any }) {
+// export default function ComboboxForm({ categories }: { categories: any }) {
 //   const form = useForm<z.infer<typeof FormSchema>>({
 //     resolver: zodResolver(FormSchema)
 //   });
@@ -142,10 +142,10 @@ export default function DropDown({ articles }: { articles: Article[] }) {
 //       >
 //         <FormField
 //           control={form.control}
-//           name="article"
+//           name="category"
 //           render={({ field }) => (
 //             <FormItem className="flex flex-col items-center justify-center">
-//               {/* <FormLabel>Article</FormLabel> */}
+//               {/* <FormLabel>category</FormLabel> */}
 //               <Popover>
 //                 <PopoverTrigger asChild>
 //                   <FormControl>
@@ -158,30 +158,30 @@ export default function DropDown({ articles }: { articles: Article[] }) {
 //                       )}
 //                     >
 //                       {field.value
-//                         ? articles.find((article: any) => article.value === field.value)?.label
-//                         : 'Select article'}
+//                         ? categories.find((category: any) => category.value === field.value)?.label
+//                         : 'Select category'}
 //                       <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 //                     </Button>
 //                   </FormControl>
 //                 </PopoverTrigger>
 //                 <PopoverContent side="bottom" className="w-[200px] p-0">
 //                   <Command>
-//                     <CommandInput placeholder="Search article..." className="h-9" />
-//                     <CommandEmpty>No article found.</CommandEmpty>
+//                     <CommandInput placeholder="Search category..." className="h-9" />
+//                     <CommandEmpty>No category found.</CommandEmpty>
 //                     <CommandGroup>
-//                       {articles.map((article: any, i: any) => (
+//                       {categories.map((category: any, i: any) => (
 //                         <CommandItem
-//                           value={article}
+//                           value={category}
 //                           key={i}
 //                           onSelect={() => {
-//                             // form.setValue('article', article.value);
+//                             // form.setValue('category', category.value);
 //                           }}
 //                         >
-//                           {/* {article.label} */}
+//                           {/* {category.label} */}
 //                           <CheckIcon
 //                             className={cn(
 //                               'ml-auto h-4 w-4'
-//                               // article.value === field.value ? 'opacity-100' : 'opacity-0'
+//                               // category.value === field.value ? 'opacity-100' : 'opacity-0'
 //                             )}
 //                           />
 //                         </CommandItem>

@@ -5,7 +5,7 @@ interface LatestClassAndCourseCardProps {
   className?: string;
 }
 
-const LatestClassAndCourseCard = ({ className }: LatestClassAndCourseCardProps) => {
+const LatestClassesCard = ({ className }: LatestClassAndCourseCardProps) => {
   return (
     <>
       <div
@@ -16,21 +16,21 @@ const LatestClassAndCourseCard = ({ className }: LatestClassAndCourseCardProps) 
           width={80}
           height={80}
           alt="small icon"
-          className="w-2/12 border-r border-black p-6 pb-1 pt-1"
+          className="border-r border-black p-3 pb-1 pt-1 md:w-2/12 md:p-6"
         />
 
         <div className="flex w-full justify-between overflow-hidden">
-          <div className="ml-3 flex h-[70px] w-8/12 flex-col justify-around overflow-ellipsis ">
-            <h2 className="overflow-hidden overflow-ellipsis whitespace-nowrap text-3xl font-light antialiased">
+          <div className="ml-3 flex h-[70px] w-7/12 flex-col justify-around overflow-ellipsis md:w-8/12 ">
+            <h2 className="overflow-hidden overflow-ellipsis whitespace-nowrap text-xl font-light antialiased md:text-2xl">
               Name of the first class class class clkass
             </h2>
           </div>
           <div className="mr-5 flex items-center ">
             <Link
-              href={''}
-              className={`border-2 border-white bg-yellow-500 p-2   font-['Inter'] text-lg text-white  antialiased  hover:border-[#1B3764] hover:bg-white hover:text-[#1B3764]`}
+              href={`/classes-and-courses/class/${className}`}
+              className={` min-w-fit border-2 border-white bg-yellow-500 p-2  font-['Inter'] text-base text-white antialiased  hover:border-[#1B3764]  hover:bg-white hover:text-[#1B3764] md:text-lg`}
             >
-              Learn More
+              Details
             </Link>
           </div>
         </div>
@@ -39,4 +39,4 @@ const LatestClassAndCourseCard = ({ className }: LatestClassAndCourseCardProps) 
   );
 };
 
-export default LatestClassAndCourseCard;
+export default LatestClassesCard;

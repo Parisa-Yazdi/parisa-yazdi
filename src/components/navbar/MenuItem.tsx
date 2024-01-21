@@ -55,6 +55,8 @@ const MenuItem = ({ MenuItemName, subPages }: MenuItemProps) => {
                   href={
                     subPage.toLowerCase() === 'view archive'
                       ? '/articles'
+                      : subPage.toLowerCase() === 'view all categories'
+                      ? '/categories'
                       : `/${parseUrl(MenuItemName)}/${parseUrl(subPage)}`
                   }
                   className="block flex-nowrap  px-4 py-2 text-yellow-500 antialiased hover:bg-white hover:text-[#014444]"
