@@ -10,9 +10,9 @@ export default function Home() {
     <main className="h-fit w-screen overflow-hidden">
       <Hero />
       <LatestClassesAndCourses />
+      <LatestBooks />
       <LatestArticles />
       <LatestVideos />
-      <LatestBooks />
       <AboutAuthor />
     </main>
   );

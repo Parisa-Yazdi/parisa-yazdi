@@ -50,7 +50,9 @@ const LatestVideos = async () => {
             );
           })}
         </div>
-        <Button link="/videos">View all videos</Button>
+        <Button className="" link="/videos">
+          View all videos
+        </Button>
       </div>
     </section>
   );

@@ -66,8 +66,13 @@ module.exports = {
         protocol: 'https',
         hostname: 'influencermarketinghub.com',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn-icons-png.flaticon.com',
+        pathname: '/**'
       }
-      // 127.0.0.1 mysecondchancenj images.unsplash.com icons.veryicon.com influencermarketinghub.com
+      // 127.0.0.1 mysecondchancenj images.unsplash.com icons.veryicon.com influencermarketinghub.com cdn-icons-png.flaticon.com
     ]
   }
 };

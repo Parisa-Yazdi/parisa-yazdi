@@ -50,7 +50,6 @@ export async function SubCategory({ params }: any) {
           return (
             <div key={index} className="mb-5">
               <ArticleCard
-                key={id}
                 image={thumbnail.data.attributes.url}
                 title={title}
                 summary={summary}

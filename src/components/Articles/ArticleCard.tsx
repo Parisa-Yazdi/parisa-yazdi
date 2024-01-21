@@ -58,7 +58,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
         <div className="mt-12 flex justify-between pt-3">
           <h3 className=" inline-block pb-3 font-light text-cyan-800 antialiased">
-            {author} - {date.toString()}
+            {/* {author} - */}
+            {date.toString()}
           </h3>
           <Link
             href={articleLink}

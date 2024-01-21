@@ -23,7 +23,7 @@ export async function fetchArticles() {
     }
   };
 
-  const request = await fetch(`${config.api}/api/aritcles?populate=*`, reqOptions);
+  const request = await fetch(`${config.api}/api/articles?populate=*`, reqOptions);
   const response = await request.json();
   // console.log('RESPONSE: ', response.data);
 
@@ -39,7 +39,7 @@ export async function fetchArticleBySlug(slug: string) {
   };
 
   const request = await fetch(
-    `${config.api}/api/aritcles?populate=*&filters[slug][$eq]=${slug}`,
+    `${config.api}/api/articles?populate=*&filters[slug][$eq]=${slug}`,
     reqOptions
   );
   const response = await request.json();
@@ -57,6 +57,8 @@ export async function fetchVideos() {
 
   const request = await fetch(`${config.api}/api/videos?populate=*`, reqOptions);
   const response = await request.json();
+
+  console.log('VIDEO RESPONSE: ', response.data);
 
   return response;
 }
@@ -123,7 +125,7 @@ export async function fetchArticlesBySubcategory(subcategory: string) {
   //   `${config.api}/api/articles?populate=deep&filters[sub_category][$eq]=${subcategory}`,
   //   reqOptions
   // );
-  const request = await fetch(`${config.api}/api/aritcles?populate=deep&depth=1`, reqOptions);
+  const request = await fetch(`${config.api}/api/articles?populate=deep&depth=1`, reqOptions);
   const response = await request.json();
   // console.log('RESPONSE: ', response.data);
   // response.data.map((item: any) => {

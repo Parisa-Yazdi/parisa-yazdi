@@ -21,7 +21,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   date
 }) => {
   return (
-    <div className="mx-auto aspect-video w-10/12 bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
+    <div className=" mx-auto aspect-video  w-10/12 bg-slate-100 shadow-md hover:shadow-lg md:w-[310px]">
       <Image
         src={`${config.api}${image}`}
         width={432}
@@ -56,7 +56,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
         <div className="mt-12 flex justify-between pt-3">
           <h3 className="inline-block pb-3 font-light text-cyan-800 antialiased">
-            {author} - {date.toString()}
+            {/* {author} -  */}
+            {date.toString()}
           </h3>
           <Link
             href={articleLink}

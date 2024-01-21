@@ -32,7 +32,7 @@ const LatestArticles = async () => {
   const latestArticles = sortedArticles.slice(0, 3);
 
   return (
-    <section className="mx-auto h-fit border-2 border-x-2  bg-white pb-8">
+    <section className="mx-auto h-fit bg-white pb-8">
       <div className=" mx-auto flex flex-col items-center justify-center lg:w-fit">
         <h1 className="relative mt-7 w-[474px] p-5 pb-2 text-center font-['Cardo']  text-4xl font-normal leading-[54px] text-[#014444] antialiased">
           Latest Articles
@@ -54,7 +54,9 @@ const LatestArticles = async () => {
             );
           })}
         </div>
-        <Button link="/articles">View all articles</Button>
+        <Button className="" link="/articles">
+          View all articles
+        </Button>
         <div className=" flex w-11/12 flex-col items-center justify-center">
           <div className="m-3">OR</div>
 

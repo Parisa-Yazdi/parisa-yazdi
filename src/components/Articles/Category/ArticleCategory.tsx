@@ -10,16 +10,15 @@ interface ArticleCategoryProps {
 async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryProps) {
   return (
     <>
-      <div className="flex w-full flex-col">
-        <h1 className="relative mb-3 flex justify-start p-5 pb-2 pl-1 text-center font-['Cardo'] text-4xl font-light leading-[55px] text-[#014444]">
+      <div className="flex w-full flex-col md:w-8/12">
+        <h1 className="relative mb-3 flex justify-start p-5 pb-2  pl-1 pt-0 text-center font-['Cardo'] text-2xl font-light leading-[55px] text-[#014444] md:text-4xl">
           {categoryName}
         </h1>
         <div className="flex flex-wrap">
           {subCategories.map((subCategory: any, index: number) => {
             const { name } = subCategory.attributes;
-            const { id } = subCategory;
             return (
-              <div key={index} className="mb-5 w-1/4 p-1">
+              <div key={index} className="mb-5 w-4/12 p-1 md:w-1/4">
                 <Link href={`/articles/${parseUrl(categoryName)}/${parseUrl(name)}`}>
                   <SubCategories subCategoryName={name} />
                 </Link>

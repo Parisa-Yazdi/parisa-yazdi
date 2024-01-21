@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="relative left-0 right-0 top-0 z-50 mx-auto flex h-52 w-full min-w-full items-center justify-around bg-gradient-to-r from-[#014444] via-black to-[#014444]">
+      <div className="relative left-0 right-0 top-0 z-50 mx-auto flex h-24 w-full min-w-full items-center justify-around overflow-hidden bg-gradient-to-r from-[#014444] via-black to-[#014444]">
         <div className="mx-auto flex w-full items-center justify-between">
           <div className="block flex-none pl-6">
             <MobileMenu />
@@ -54,13 +54,13 @@ const Navbar = () => {
           {/* <div className="flex w-full flex-col justify-between gap-5 md:absolute md:bottom-0 "> */}
           <div className="mx-auto">
             <Link href="/">
-              <Image
+              {/* <Image
                 src="https://i.imgur.com/gTkbIgW.png"
                 alt="Parisa Yazdi Logo"
                 priority
                 width={150}
                 height={150}
-              />
+              /> */}
             </Link>
           </div>
           <div className="block flex-none pr-6 lg:hidden">
@@ -83,7 +83,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <nav className="sticky top-0 z-50 hidden w-full border-b-2 border-[#d3a83c] bg-[#014444] md:justify-evenly md:gap-10 lg:inline-flex lg:justify-center lg:gap-16">
+      <nav className="sticky top-0 z-50 hidden w-full  border-b-2 border-[#d3a83c] bg-[#014444] md:justify-evenly lg:inline-flex lg:justify-center lg:gap-6 xl:gap-16">
         {menuItems.map((item, i) => (
           <MenuItem key={i} MenuItemName={item.name} subPages={item.subPages} />
         ))}

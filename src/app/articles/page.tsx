@@ -54,12 +54,12 @@ const Articles = async () => {
 
   return (
     <>
-      <main className="h-fit bg-[#e0ebfe] pb-24 ">
+      <main className="h-fit  overflow-hidden bg-[#e0ebfe] pb-24">
         <h1 className="relative   p-5 pb-2 text-center font-['Cardo'] text-4xl font-light leading-[55px] text-[#014444]">
           ARTICLES
           <span className="absolute bottom-0 left-1/2 h-1 w-[4%] -translate-x-1/2  bg-yellow-500"></span>
         </h1>
-        <div className="mx-auto flex  w-8/12 flex-wrap justify-center gap-6">
+        <div className="mx-auto mt-8 flex w-11/12 flex-wrap justify-center gap-6">
           {categories.data.map((category: any) => {
             const { id, name } = category.attributes;
             const subCategories = category.attributes.sub_categories.data;
