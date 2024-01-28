@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import { Heebo } from 'next/font/google';
 import './globals.css';
 import { Suspense } from 'react';
-import NavBar from '@/components/NavBar/Navbar';
+import NavBar from '@/components/NavBar/NavBar';
 import Footer from '@/components/Footer/Footer';
 import { HydrationOverlay } from '@builder.io/react-hydration-overlay';
 
