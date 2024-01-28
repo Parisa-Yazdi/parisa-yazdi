@@ -2,7 +2,7 @@ import SubCategories from '@/components/Articles/SubCategory/SubCategories';
 import React from 'react';
 import { fetchCategories } from '@/lib/utils';
 
-export async function SubCategory({ params }: any) {
+export default async function SubCategory({ params }: any) {
   const categories = await fetchCategories();
   console.log(categories.data);
 
@@ -61,5 +61,3 @@ export async function SubCategory({ params }: any) {
     </>
   );
 }
-
-export default SubCategory;

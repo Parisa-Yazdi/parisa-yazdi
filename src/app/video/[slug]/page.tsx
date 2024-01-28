@@ -5,10 +5,10 @@ interface VideoPageProps {
   videoUrl: string;
 }
 
-const VideoPage: React.FC<VideoPageProps> = ({ description, videoUrl }) => {
+export default function VideoPage() {
   return (
     <main className="mx-auto flex w-8/12 flex-col items-center justify-center">
-      <div>
+      {/* <div>
         <h1 className="relative mb-10  p-5 pb-2 text-center font-['Cardo'] text-4xl font-light leading-[55px] text-[#014444]">
           VIDEO TITLE
           <span className="absolute bottom-0 left-1/2 h-1 w-[4%] -translate-x-1/2  bg-yellow-500"></span>
@@ -27,9 +27,7 @@ const VideoPage: React.FC<VideoPageProps> = ({ description, videoUrl }) => {
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         className="m-10 rounded-md border-4 border-gray-800"
-      ></iframe>
+      ></iframe> */}
     </main>
   );
-};
-
-export default VideoPage;
+}

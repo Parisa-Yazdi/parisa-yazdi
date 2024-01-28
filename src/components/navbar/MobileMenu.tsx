@@ -3,7 +3,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, Suspense, useEffect, useState } from 'react';
 import Image from 'next/image';
 import MenuItem from './MenuItem';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';

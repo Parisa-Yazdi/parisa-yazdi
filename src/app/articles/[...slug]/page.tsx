@@ -1,8 +1,8 @@
 import ArticleCard from '@/components/Articles/ArticleCard';
 import React from 'react';
-import { fetchArticles, fetchSubCategory, fetchArticlesBySubcategory } from '@/lib/utils';
+import { fetchSubCategory } from '@/lib/utils';
 
-export async function SubCategory({ params }: any) {
+export default async function SubCategory({ params }: any) {
   const subCategories = await fetchSubCategory();
 
   // Function to convert 'sub-category-name' to 'Sub Category Name'
@@ -65,5 +65,3 @@ export async function SubCategory({ params }: any) {
     </>
   );
 }
-
-export default SubCategory;

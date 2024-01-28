@@ -36,7 +36,7 @@ export function BlackSocialMediaIcons() {
   );
 }
 
-function TwitterIcon(props) {
+function TwitterIcon(props: any) {
   return (
     <svg
       {...props}
@@ -55,7 +55,7 @@ function TwitterIcon(props) {
   );
 }
 
-function InstagramIcon(props) {
+function InstagramIcon(props: any) {
   return (
     <svg
       {...props}
@@ -76,7 +76,7 @@ function InstagramIcon(props) {
   );
 }
 
-function LinkedinIcon(props) {
+function LinkedinIcon(props: any) {
   return (
     <svg
       {...props}
@@ -97,7 +97,7 @@ function LinkedinIcon(props) {
   );
 }
 
-function FacebookIcon(props) {
+function FacebookIcon(props: any) {
   return (
     <svg
       {...props}
@@ -116,7 +116,7 @@ function FacebookIcon(props) {
   );
 }
 
-function CloudIcon(props) {
+function CloudIcon(props: any) {
   return (
     <svg
       {...props}
@@ -135,7 +135,7 @@ function CloudIcon(props) {
   );
 }
 
-function YoutubeIcon(props) {
+function YoutubeIcon(props: any) {
   return (
     <svg
       {...props}

@@ -32,7 +32,11 @@ const Articles = async () => {
         </div>
         <div className="mx-auto mt-8 flex w-11/12 flex-wrap justify-center gap-6">
           {/* {articles.data && */}
-          {articles.data &&
+          {articles &&
+            articles.attributes &&
+            articles.attributes.articles &&
+            articles.attributes.articles.data &&
+            articles.data &&
             articles.data.map((article: Article, i: number) => {
               const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
               return (
