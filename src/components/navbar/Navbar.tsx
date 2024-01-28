@@ -1,10 +1,5 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import MobileMenu from './MobileMenu';
 import MenuItem from './MenuItem';
-import FacebookLogo from '../../../public/facebook.png';
-import TwitterLogo from '../../../public/twitter.png';
-import LinkedInLogo from '../../../public/linkedIn.png';
 
 export default function NavBar() {
   const menuItems = [
