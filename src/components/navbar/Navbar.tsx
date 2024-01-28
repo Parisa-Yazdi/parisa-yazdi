@@ -6,7 +6,7 @@ import FacebookLogo from '../../../public/facebook.png';
 import TwitterLogo from '../../../public/twitter.png';
 import LinkedInLogo from '../../../public/linkedIn.png';
 
-const Navbar = () => {
+export default function Navbar() {
   const menuItems = [
     {
       name: 'HOME',
@@ -91,6 +91,4 @@ const Navbar = () => {
       </nav>
     </>
   );
-};
-
-export default Navbar;
+}
