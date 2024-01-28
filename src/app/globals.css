@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Avenir Next';
+  src:
+    local('Avenir Next'),
+    url(../../public/fonts/Avenir\ Next.ttf) format('ttf');
+}
 
 @layer base {
   :root {

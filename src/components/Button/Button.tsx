@@ -7,7 +7,7 @@ const Button = ({
 }: {
   link: string;
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) => {
   return (
     <>

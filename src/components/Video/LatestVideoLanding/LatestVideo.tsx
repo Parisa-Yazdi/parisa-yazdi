@@ -1,16 +1,18 @@
-import React from 'react';
-import VideoCard from './Card';
-import Button from '../../Button/Button';
-import { fetchVideos } from '@/lib/utils';
+// import ArticleCard from './Card';
+// import Button from '@/components/Button/Button';
+import { fetchArticles, fetchCategories } from '@/lib/utils';
+import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
+import { Button } from '@/components/ui/button';
+import VideoCard from '../VideoCard';
 
-export interface Video {
+interface Article {
   attributes: {
     id: number;
     title: string;
-    link: string;
+    author: string;
     summary: string;
+    date: Date;
     slug: string;
-    createdAt: Date;
     thumbnail: {
       data: {
         attributes: {
@@ -21,41 +23,45 @@ export interface Video {
   };
 }
 
-const LatestVideos = async () => {
-  const videos = await fetchVideos();
-  const sortedVideos = videos.data.sort((a: Video, b: Video) => {
-    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+export default async function LatestVideos() {
+  const videos = await fetchArticles();
+
+  const articleTitles = videos.data.map((article: Article) => article.attributes.title);
+
+  const sortedVideos = videos.data.sort((a: Article, b: Article) => {
+    return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
   });
-  const latestVideos = sortedVideos.slice(0, 3);
-  // 1B3764
+  const latestVideos = sortedVideos.slice(0, 4);
   return (
-    <section className="mx-auto h-fit   bg-[#014444] pb-12">
-      <div className="mx-auto flex flex-col items-center justify-center">
-        <h1 className="relative mt-7 w-[474px] p-5 pb-2 text-center font-['Cardo'] text-4xl  font-normal  leading-[54px] text-white antialiased">
-          Latest Videos
-          <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
-        </h1>
-        <div className="mx-auto mt-12 flex w-fit flex-col  justify-between gap-8 md:w-3/5 lg:w-auto lg:flex-row">
-          {latestVideos.map((video: Video, i: number) => {
-            const { id, thumbnail, title, summary, slug, link } = video.attributes;
-            return (
-              <VideoCard
-                key={i}
-                image={thumbnail.data.attributes.url}
-                title={title}
-                description={summary}
-                videoLink={link}
-                slug={slug}
-              />
-            );
-          })}
+    <section className="mx-auto h-fit   pb-8">
+      <div className=" mx-auto flex flex-col items-center justify-center  sm:w-11/12  lg:w-8/12">
+        <div className=" w-full justify-start">
+          <h2 className="font-['Avenir Next'] ml-4 mt-10 text-3xl font-semibold tracking-tighter sm:text-5xl md:ml-0">
+            Latest Videos
+          </h2>
         </div>
-        <Button className="" link="/videos">
-          View all videos
-        </Button>
+        <div className="mx-4 mt-6 grid grid-cols-1 gap-8 md:mx-auto md:w-full">
+          <VideoCard img="https://janefriedman.com/wp-content/uploads/2014/12/What-Editors-Do-Ginna.jpg" />
+          <VideoCard img="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png" />
+        </div>
+        <div className=" flex w-full justify-center">
+          <Button className=" mt-10  bg-black text-base  text-white md:w-2/12">
+            View all Videos
+          </Button>
+        </div>
       </div>
     </section>
   );
-};
+}
 
-export default LatestVideos;
+{
+  /* {latestArticles.map((article: Article, i: number) => {
+            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
+            return (
+              <> */
+}
+{
+  /* </>
+            );
+          })} */
+}

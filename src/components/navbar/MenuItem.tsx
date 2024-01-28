@@ -26,7 +26,7 @@ const MenuItem = ({ MenuItemName, subPages }: MenuItemProps) => {
                 .replace(/,/g, '')}`
         }
         //     href={`/${MenuItemName.toLowerCase()}`}
-        className={` hidden min-w-fit text-yellow-500 antialiased md:block ${
+        className={` hidden min-w-fit text-white antialiased md:block ${
           subPages && subPages.length > 0 ? 'flex items-center' : ''
         }`}
       >
@@ -48,7 +48,7 @@ const MenuItem = ({ MenuItemName, subPages }: MenuItemProps) => {
           </div>
 
           {isDropdownOpen && (subPages?.length ?? 0) > 0 && (
-            <div className="absolute -ml-3 mt-3 w-fit  whitespace-nowrap rounded-sm border-2 border-yellow-500 bg-[#014444] p-1 text-white">
+            <div className="absolute -ml-3 mt-3 w-fit  whitespace-nowrap  border-2  bg-white p-1 text-white">
               {subPages?.map((subPage, i) => (
                 <Link
                   key={i}
@@ -56,10 +56,29 @@ const MenuItem = ({ MenuItemName, subPages }: MenuItemProps) => {
                     subPage.toLowerCase() === 'view archive'
                       ? '/articles'
                       : subPage.toLowerCase() === 'view all categories'
-                      ? '/categories'
+                      ? '/article-categories'
                       : `/${parseUrl(MenuItemName)}/${parseUrl(subPage)}`
                   }
-                  className="block flex-nowrap  px-4 py-2 text-yellow-500 antialiased hover:bg-white hover:text-[#014444]"
+                  // href={
+                  //   MenuItemName.toLowerCase() === 'home' &&
+                  //   subPage.toLowerCase() === 'view archive'
+                  //     ? '/articles'
+
+                  //     : MenuItemName.toLowerCase() === 'home' &&
+                  //       subPage.toLowerCase() === 'view all categories'
+                  //     ? '/article-categories'
+
+                  //     : MenuItemName.toLowerCase() === 'videos' &&
+                  //       subPage.toLowerCase() === 'view archive'
+                  //     ? '/videos'
+
+                  //     : MenuItemName.toLowerCase() === 'videos' &&
+                  //       subPage.toLowerCase() === 'view all categories'
+                  //     ? '/categories'
+
+                  //     : `/${parseUrl(MenuItemName)}/${parseUrl(subPage)}`
+                  // }
+                  className="block flex-nowrap  px-4 py-2 text-black antialiased hover:bg-black hover:text-white"
                 >
                   {subPage}
                 </Link>

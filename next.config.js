@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 module.exports = {
   eslint: {
     // Disabling on production builds because we're running checks on PRs via GitHub Actions.
@@ -71,8 +72,24 @@ module.exports = {
         protocol: 'https',
         hostname: 'cdn-icons-png.flaticon.com',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'janefriedman.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.vectorlogo.zone',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'd1csarkz8obe9u.cloudfront.net',
+        pathname: '/**'
       }
-      // 127.0.0.1 mysecondchancenj images.unsplash.com icons.veryicon.com influencermarketinghub.com cdn-icons-png.flaticon.com
+
+      // 127.0.0.1 mysecondchancenj images.unsplash.com icons.veryicon.com influencermarketinghub.com cdn-icons-png.flaticon.com janefriedman.com www.vectorlogo.zone d1csarkz8obe9u.cloudfront.net
     ]
   }
 };

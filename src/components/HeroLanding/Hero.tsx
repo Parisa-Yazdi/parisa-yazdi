@@ -1,53 +1,71 @@
 import Image from 'next/image';
+import Link from 'next/link';
 const Hero = () => {
   return (
-    <section className="flex h-screen w-full flex-col justify-center bg-[#014444] lg:flex-row lg:justify-evenly lg:gap-2">
-      <div className="flex  h-5/6  flex-col items-center lg:my-auto lg:w-6/12 lg:justify-around">
-        {/* header  */}
-        {/* <div className="flex flex-col gap-2 p-3">
-          <h1 className=" text-3xl font-bold tracking-tighter text-white antialiased lg:text-3xl xl:text-6xl/none">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos quia cum, numquam
-            atque perspiciatis.
+    <section className="relative mx-auto flex h-screen w-full  flex-col items-center justify-normal gap-1  bg-black  md:flex-row md:gap-5 ">
+      <div className="my-10 ml-3 flex flex-col md:relative md:ml-12 md:h-1/2 md:w-6/12 md:items-start md:gap-10">
+        <div className="flex flex-col  gap-5 ">
+          <h1 className="px-2 text-center text-4xl font-bold text-white antialiased md:px-0 md:text-start lg:text-7xl">
+            Existance in Symbols
           </h1>
-          <p className=" text-white antialiased md:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quod rem libero
-            corporis sunt dolore, similique quibusdam optio ab officiis impedit dolorem fugit modi
-            delectus ipsam non. Ipsum, reprehenderit suscipit.
-          </p>
-        </div> */}
-
-        {/* form */}
-        <div className="flex w-full flex-col lg:-mt-20  ">
-          <h1 className="items-start pl-4 pt-4 text-3xl text-white antialiased">
-            <span className="font-semibold text-[#d3a83c]">Subscribe</span> to the newsletter
-          </h1>
-
-          <form className="flex w-full items-start gap-4  p-4">
+          <div className="hidden w-full justify-start md:flex">
+            <h3 className=" text-xl text-white antialiased md:w-4/5">
+              Decoding life's essence through symbolic language reveals the profound artistry of
+              existence. the profound artistry of existence.
+            </h3>
+          </div>
+        </div>
+        <div className="h-1/12 mx-auto mt-5 w-7/12 rounded-md md:hidden">
+          <Image
+            src={'https://i.imgur.com/gTkbIgW.png'}
+            // src={
+            //   'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198'
+            // }
+            alt="Picture of the author"
+            width={400}
+            height={400}
+            className="  mr-10 w-full rounded-md"
+          />
+        </div>
+        <div className="mt-5 w-full gap-5 px-5 md:px-0">
+          <form action="" className="flex flex-col gap-4 md:flex-row md:gap-0">
             <input
-              type="email"
-              placeholder="Enter your email"
-              className="h-16 w-8/12 border border-gray-300 p-2 text-xl text-gray-500 antialiased focus:outline-none"
+              type="text"
+              placeholder="Enter you email..."
+              className="border border-white  bg-black p-4 md:w-7/12"
             />
-            <button
-              type="submit"
-              className=" mr-2 h-16 w-4/12 min-w-fit  bg-[#d3a83c] p-2 text-2xl text-white antialiased hover:border-[#1B3764] hover:bg-white hover:text-[#1B3764]"
+            <Link
+              className="border border-white bg-black p-4 text-center text-white md:ml-3"
+              href={''}
             >
-              Subscribe
-            </button>
+              Sign Up Now
+            </Link>
           </form>
         </div>
       </div>
-
       {/* image */}
-      {/* <div className="h-2/12 my-auto hidden w-3/12 rounded-md lg:flex">
+      <div className="h-2/12 mr-28 hidden w-8/12 rounded-md md:my-auto  md:flex md:w-4/12">
         <Image
-          src="https://i.huffpost.com/gen/1039678/original.jpg"
+          src={'https://i.imgur.com/gTkbIgW.png'}
+          // src={
+          //   'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198'
+          // }
           alt="Picture of the author"
-          width={500}
-          height={500}
-          className="h-auto w-full "
+          width={400}
+          height={400}
+          className=" mb-20 mr-10 w-full rounded-md"
         />
-      </div> */}
+      </div>
+      {/* <div className=" bottom-16 right-24 p-4  md:absolute"> */}
+      {/* bg-gradient-to-t from-white via-gray-300 via-gray-600 to-black */}
+      {/* </div> */}
+      <div
+        className="absolute bottom-0 h-[90px] w-full"
+        style={{
+          background:
+            'linear-gradient(to top, white, #eee 20%, #ccc 40%, #999 60%, #666 80%, black)'
+        }}
+      ></div>
     </section>
   );
 };

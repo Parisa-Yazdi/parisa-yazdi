@@ -1,42 +1,45 @@
-import React from 'react';
-import Button from '../../Button/Button';
-import BookCard from './BookCard';
+import { BookCard } from '@/components/book-card';
+import Link from 'next/link';
+import { fetchBooks } from '@/lib/utils';
 
-const LatestArticles = () => {
+export default async function LatestArticles() {
+  const books = await fetchBooks();
+  // console.log(books.data);
+
   return (
-    <section className="h-fit w-full  bg-[#dcece3] pb-8">
+    <section className="relative w-full  bg-black  pb-8">
       <div className=" flex flex-col items-center justify-center ">
-        <h1 className="relative mt-7 w-[474px] p-5 pb-2 text-center font-['Cardo']  text-4xl font-normal leading-[54px] text-[#014444] antialiased">
-          Latest Books
-          <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
-        </h1>
-        <div className="mt-12 flex w-fit flex-col items-center justify-between gap-8 md:w-3/5 lg:w-9/12 lg:flex-row">
-          <BookCard
-            image="https://picsum.photos/410/326"
-            title="Focus better and get rid of all the distractions"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quod rem libero corporis sunt dolore, similique quibusdam optio ab officiis impedit dolorem fugit modi delectus ipsam non. Ipsum, reprehenderit suscipit."
-            bookLink="hello"
-            price="$321"
-          />
-          <BookCard
-            image="https://picsum.photos/410/326"
-            title="Focus better and get rid of all the distractions"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quod rem libero corporis sunt dolore, similique quibusdam optio ab officiis impedit dolorem fugit modi delectus ipsam non. Ipsum, reprehenderit suscipit."
-            bookLink="hello"
-            price="$321"
-          />
-          <BookCard
-            image="https://picsum.photos/410/326"
-            title="Focus better and get rid of all the distractions"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quod rem libero corporis sunt dolore, similique quibusdam optio ab officiis impedit dolorem fugit modi delectus ipsam non. Ipsum, reprehenderit suscipit."
-            bookLink="hello"
-            price="$321"
-          />
+        <h2 className=" relative mt-7 p-5 pb-2 text-center text-4xl font-semibold tracking-tighter text-white  antialiased sm:text-5xl">
+          Recent Books
+        </h2>
+
+        <div className="mt-5 flex w-fit flex-col items-center justify-between gap-8 md:w-3/5 lg:w-8/12 lg:flex-row">
+          {books.data.map((book: any) => {
+            console.log('book', book);
+            const { id, bookCover, title, description, link } = book.attributes;
+            return (
+              <BookCard
+                key={id}
+                // {bookCover}
+                img={bookCover.data.attributes.url}
+                title={title}
+                description={description}
+                // key={book.id}
+                bookLink={link}
+                // price={book.price}
+              />
+            );
+          })}
         </div>
-        <Button link="/books">View all books</Button>
+        <div className="mt-10 flex justify-center">
+          <Link
+            className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-white px-8 text-base font-medium text-black shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+            href="#"
+          >
+            View all Books
+          </Link>
+        </div>
       </div>
     </section>
   );
-};
-
-export default LatestArticles;
+}

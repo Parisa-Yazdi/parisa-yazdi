@@ -35,7 +35,14 @@ export default function MobileMenu() {
       name: 'CLASSES & COURSES'
     },
     {
-      name: 'VIDEOS'
+      name: 'VIDEOS',
+      subPages: [
+        'View Archive',
+        'Existential & Metaphysics',
+        'Astrology & Archetypes',
+        'Self-Knowledge',
+        'Personal Journals'
+      ]
     },
     {
       name: 'BOOKS'

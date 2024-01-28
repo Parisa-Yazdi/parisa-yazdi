@@ -25,7 +25,6 @@ export async function fetchArticles() {
 
   const request = await fetch(`${config.api}/api/articles?populate=*`, reqOptions);
   const response = await request.json();
-  // console.log('RESPONSE: ', response.data);
 
   return response;
 }
@@ -127,6 +126,36 @@ export async function fetchArticlesBySubcategory(subcategory: string) {
   // response.data.map((item: any) => {
   //   console.log('ITEM: ', item.attributes.sub_category);
   // });
+
+  return response;
+}
+
+export async function fetchBooks() {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      'Cache-Control': 'no-store'
+    }
+  };
+
+  const request = await fetch(`${config.api}/api/books?populate=*`, reqOptions);
+  const response = await request.json();
+  // console.log('RESPONSE: ', response.data);
+
+  return response;
+}
+
+export async function fetchClasses() {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      'Cache-Control': 'no-store'
+    }
+  };
+
+  const request = await fetch(`${config.api}/api/classes`, reqOptions);
+  const response = await request.json();
+  // console.log('RESPONSE: ', response.data);
 
   return response;
 }

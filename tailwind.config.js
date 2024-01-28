@@ -17,6 +17,10 @@ module.exports = {
       }
     },
     extend: {
+      fontFamily: {
+        heebo: ['Heebo', 'sans-serif'],
+        avenir: ['Avenir Next', 'serif']
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

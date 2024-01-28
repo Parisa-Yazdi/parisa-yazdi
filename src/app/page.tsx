@@ -4,16 +4,26 @@ import LatestArticles from '@/components/Articles/LatestArticleLanding/LatestArt
 import AboutAuthor from '@/components/About/AboutAuthorLanding/AboutAuthor';
 import LatestVideos from '@/components/Video/LatestVideoLanding/LatestVideo';
 import LatestBooks from '@/components/Books/LatestBookLanding/LatestBooks';
+import { RecentClasses } from '@/components/recent-classes';
+import { RecentCourses } from '@/components/recent-courses';
 
 export default function Home() {
   return (
     <main className="h-fit w-screen overflow-hidden">
       <Hero />
-      <LatestClassesAndCourses />
+      {/* <section className="flex"> */}
+      <RecentCourses />
+      {/* </section> */}
       <LatestBooks />
+      <RecentClasses />
       <LatestArticles />
       <LatestVideos />
       <AboutAuthor />
     </main>
   );
+}
+
+{
+  /* <LatestClassesAndCourses />
+   */
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import { CardTitle, CardDescription, CardContent, Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import config from '@/config';
 
@@ -23,53 +25,47 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   //  overflow-hidden overflow-ellipsis -- title
   // overflow-hidden  -- above summary div
   return (
-    <div className="aspect-video bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
+    <Card className="mx-auto border-0 bg-[#e3e5e8] md:w-3/12 ">
+      {' '}
+      {/* Adjust width here */}
+      {/* <div className="flex h-1/2"> */}
       <Image
+        alt="Article Cover"
+        className=" aspect-[6/12] h-[300px] w-full rounded-t-lg  object-cover"
+        height={100} // Adjusted height to make the card smaller
         src={`${config.api}${image}`}
-        width={432}
-        height={648}
-        alt="Article Image"
-        className="h-[226px] w-[310px] object-cover object-center"
-        // h-full w-full - see screenshot
+        width={100} // Adjusted width to make the card smaller
       />
-      <div className="mt-4 p-4 lg:pl-5">
-        <div className="flex flex-col gap-4">
-          <div
-            className={`line-clamp-2 h-[60px] w-[280px] break-words font-['Cardo'] text-2xl font-normal leading-[28.80px] text-cyan-900 ${
-              title.length < 30 ? 'pt-4' : ''
-            }`}
-          >
-            {title}
-          </div>
-
-          <div className="mx-auto h-[95px] w-full font-['Inter'] text-lg font-normal text-neutral-400">
-            {summary && summary.length > 150 ? (
-              <>
-                {summary.slice(0, 150)}...{' '}
-                <Link href={articleLink} className="text-blue-500 hover:underline">
-                  read more
-                </Link>
-              </>
-            ) : (
-              summary
-            )}
-          </div>
+      <CardContent className=" w-full  space-y-1 p-3">
+        {' '}
+        {/* Adjust padding and space between elements here */}
+        <CardTitle className="line-clamp-2 text-lg font-semibold">{title}</CardTitle>{' '}
+        {/* Adjust font size here */}
+        <div className="mt-2 flex flex-col justify-start md:flex-row md:items-center md:justify-between">
+          <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{author}</p>{' '}
+          <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{date.toString()}</p>{' '}
         </div>
-
-        <div className="mt-12 flex justify-between pt-3">
-          <h3 className=" inline-block pb-3 font-light text-cyan-800 antialiased">
-            {/* {author} - */}
-            {date.toString()}
-          </h3>
-          <Link
-            href={articleLink}
-            className=" inline-block pb-3 font-light text-blue-500 underline underline-offset-8 antialiased"
+        {/* Adjust font size here */}
+        <CardDescription className="h-[120px] py-4 text-xs">
+          {' '}
+          {/* Adjust padding and font size here */}
+          {summary}
+        </CardDescription>
+        <br className="hidden md:block" />
+        <div className="flex justify-between space-x-1 ">
+          {' '}
+          {/* Adjust space between buttons here */}
+          <Button
+            size="sm"
+            className="w-full border border-black bg-white p-0 text-sm text-black hover:border-white  hover:text-white"
           >
-            Read more
-          </Link>
+            <Link href={articleLink}>Read More</Link>
+          </Button>{' '}
+          {/* Adjust font size here */}
         </div>
-      </div>
-    </div>
+      </CardContent>
+      {/* </div> */}
+    </Card>
   );
 };
 

@@ -27,7 +27,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         width={432}
         height={648}
         alt="Article Image"
-        className="h-[226px] w-[310px] object-cover object-center"
+        className=" w-full rounded-t-lg object-cover"
         // h-full w-full - see screenshot
       />
       <div className="mt-4 p-4 lg:pl-5">

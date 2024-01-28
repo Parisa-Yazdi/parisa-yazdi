@@ -61,16 +61,8 @@ const Navbar = () => {
             <MobileMenu />
           </div>
           {/* <div className="flex w-full flex-col justify-between gap-5 md:absolute md:bottom-0 "> */}
-          <div className="mx-auto">
-            <Link href="/">
-              {/* <Image
-                src="https://i.imgur.com/gTkbIgW.png"
-                alt="Parisa Yazdi Logo"
-                priority
-                width={150}
-                height={150}
-              /> */}
-            </Link>
+          <div className="mx-auto mr-14 flex w-full justify-end">
+            <h1 className="text-3xl text-white">PARISA YAZDI</h1>
           </div>
           <div className="block flex-none pr-6 lg:hidden">
             <svg
@@ -92,7 +84,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <nav className="sticky top-0 z-50 hidden w-full  border-b-2 border-[#d3a83c] bg-[#014444] md:justify-evenly lg:inline-flex lg:justify-center lg:gap-6 xl:gap-16">
+      <nav className="sticky top-0 z-50 hidden w-full  border-b-2 border-white bg-black md:justify-evenly lg:inline-flex lg:justify-center lg:gap-6 xl:gap-16">
         {menuItems.map((item, i) => (
           <MenuItem key={i} MenuItemName={item.name} subPages={item.subPages} />
         ))}

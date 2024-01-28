@@ -11,9 +11,11 @@ async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryP
   return (
     <>
       <div className="flex w-full flex-col md:w-8/12">
-        <h1 className="relative mb-3 flex justify-start p-5 pb-2  pl-1 pt-0 text-center font-['Cardo'] text-2xl font-light leading-[55px] text-[#014444] md:text-4xl">
-          {categoryName}
-        </h1>
+        <div className="mt-10">
+          <h2 className="mb-3 flex justify-start p-5  pb-2 pl-1 pt-0 text-center   text-4xl  font-semibold  leading-[55px] tracking-tighter sm:text-5xl md:text-4xl ">
+            {categoryName}
+          </h2>
+        </div>
         <div className="flex flex-wrap">
           {subCategories.map((subCategory: any, index: number) => {
             const { name } = subCategory.attributes;

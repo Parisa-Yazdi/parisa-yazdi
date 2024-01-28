@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '@/components/Button/Button';
+import { Button } from '@/components/ui/button';
 
 const AboutAuthor = () => {
   return (
-    <section className="h-fit bg-white pb-8">
+    <section className="h-fit bg-black pb-8">
       {/* author section */}
       <div className="flex  flex-col items-center justify-center ">
         <div className="flex w-11/12 flex-col items-center justify-evenly  md:flex-row md:gap-36">
@@ -18,11 +18,13 @@ const AboutAuthor = () => {
             />
           </div>
 
-          <div className="mt-3 h-fit w-full max-w-[567px] items-end justify-start   font-['Inter'] text-lg font-normal leading-[34.20px] text-neutral-400 antialiased">
-            <h1 className="relative mb-5 mt-7 w-[474px] p-5 pb-2 pl-0 text-start font-['Cardo'] text-4xl font-normal leading-[54px] text-[#014444] antialiased md:text-5xl">
-              About Parisa
-              <span className="absolute bottom-0 left-[6%] h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
-            </h1>
+          <div className="mt-3 h-fit w-full max-w-[567px] items-end justify-start text-lg font-normal leading-[34.20px] text-neutral-400 antialiased">
+            {/* <h1 className="relative mb-5 mt-7 w-[474px] p-5 pb-2 pl-0 text-start font-['Cardo'] text-4xl font-normal leading-[54px] text-[#014444] antialiased md:text-5xl"> */}
+            <div className="mb-5  w-full justify-start">
+              <h2 className="font-['Avenir Next'] mt-10 text-3xl  font-semibold tracking-tighter text-white sm:text-5xl">
+                About Parisa
+              </h2>
+            </div>
             All the Lorem Ipsum generators on the Internet tend to repeated predefined chunks as
             necessary, making this the first true value generator on the Internet. It uses a
             dictionary of over 200 Latin words, combined with a handful. All the Lorem Ipsum
@@ -42,7 +44,7 @@ const AboutAuthor = () => {
               >
                 Read more
               </Link> */}
-              <Button link={'/about'}>Read more</Button>
+              <Button className="mt-10 bg-white text-lg text-black md:w-1/4">Read more</Button>
             </div>
           </div>
         </div>

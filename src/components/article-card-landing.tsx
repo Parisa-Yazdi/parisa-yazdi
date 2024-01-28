@@ -5,9 +5,8 @@
 import { CardTitle, CardDescription, CardContent, Card } from '@/components/ui/card';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import config from '@/config';
 
-export default function VideoCard({ img }: { img: string }) {
+export function ArticleCardLanding({ img }: { img: string }) {
   return (
     <Card className="mx-auto  overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA] md:w-full">
       {' '}
@@ -15,10 +14,10 @@ export default function VideoCard({ img }: { img: string }) {
       <div className="flex h-1/2  flex-col md:flex-row">
         <Image
           alt="Video Cover"
-          className=" aspect-square h-[200px] w-full rounded-l-lg object-cover md:h-[300px] md:w-5/12  lg:w-8/12"
+          className=" aspect-square h-[200px] w-full object-cover md:h-[300px] md:w-5/12 md:rounded-l-lg  lg:w-8/12"
           height={100} // Adjusted height to make the card smaller
-          src="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png"
-          // src={`${config.api}${img}`}
+          // src="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png"
+          src={`${img}`}
           width={100}
         />
 

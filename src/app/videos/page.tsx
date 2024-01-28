@@ -1,6 +1,6 @@
 import VideoCard from '@/components/Video/VideoCard';
 import { fetchVideos } from '@/lib/utils';
-import { Video } from '@/components/Video/LatestVideoLanding/LatestVideo'; // Import the Video interface
+// import { Video } from '@/components/Video/LatestVideoLanding/LatestVideo'; // Import the Video interface
 
 const Videos = async () => {
   const videos = await fetchVideos();
@@ -9,22 +9,20 @@ const Videos = async () => {
     <>
       {/* bg-[#e0ebfe] */}
       <main className="h-fit  overflow-hidden  pb-24">
-        <h1 className="relative mb-10  p-5 pb-2 text-center font-['Cardo'] text-4xl font-light leading-[55px] text-[#014444]">
-          VIDEOS
-          <span className="absolute bottom-0 left-1/2 h-1 w-[4%] -translate-x-1/2  bg-yellow-500"></span>
-          {/* <hr className="" /> */}
-        </h1>
-        <div className="mx-auto mt-10 flex w-10/12   flex-col flex-wrap items-center justify-center gap-6">
-          {videos.data.map((video: Video) => {
+        <div className="mx-auto mt-10 flex w-8/12 justify-start ">
+          <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">LATEST VIDEOS</h2>
+        </div>
+        <div className="mx-auto mt-10 flex w-8/12   flex-col flex-wrap items-center justify-center gap-6">
+          {videos.data.map((video: any) => {
             const { id, thumbnail, title, summary, slug, link } = video.attributes;
             return (
               <VideoCard
-                key={id}
-                image={thumbnail.data.attributes.url}
-                title={title}
-                description={summary}
-                videoLink={link}
-                slug={slug}
+                // key={id}
+                img={thumbnail.data.attributes.url}
+                // title={title}
+                // description={summary}
+                // videoLink={link}
+                // slug={slug}
               />
             );
           })}

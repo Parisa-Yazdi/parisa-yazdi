@@ -1,7 +1,9 @@
-import ArticleCard from './Card';
-import Button from '@/components/Button/Button';
+// import ArticleCard from './Card';
+// import Button from '@/components/Button/Button';
 import { fetchArticles, fetchCategories } from '@/lib/utils';
 import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
+import { Button } from '@/components/ui/button';
+import { ArticleCardLanding } from '@/components/article-card-landing';
 
 interface Article {
   attributes: {
@@ -31,38 +33,49 @@ const LatestArticles = async () => {
   const sortedArticles = articles.data.sort((a: Article, b: Article) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
   });
-  const latestArticles = sortedArticles.slice(0, 3);
-
+  const latestArticles = sortedArticles.slice(0, 4);
   return (
-    <section className="mx-auto h-fit bg-white pb-8">
-      <div className=" mx-auto flex flex-col items-center justify-center lg:w-fit">
-        <h1 className="relative mt-7 w-[474px] p-5 pb-2 text-center font-['Cardo']  text-4xl font-normal leading-[54px] text-[#014444] antialiased">
-          Latest Articles
-          <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
-        </h1>
-        <div className="mx-auto mt-12 flex w-fit flex-col items-center justify-center gap-8 md:w-3/5 lg:w-auto lg:flex-row">
-          {latestArticles.map((article: Article, i: number) => {
-            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
-            return (
-              <ArticleCard
-                key={i}
-                image={thumbnail.data.attributes.url}
-                title={title}
-                summary={summary}
-                articleLink={`article/${slug}`}
-                date={date}
-                author={author}
-              />
-            );
-          })}
+    <section className="relative mx-auto h-fit bg-black pb-8 ">
+      <div
+        className="absolute top-0 h-[10px] w-full"
+        style={{
+          background:
+            'linear-gradient(to top, black, #666 20%,#999  40%,  #ccc 60%, #eee 80%, white)'
+        }}
+      ></div>
+      <div className=" mx-auto flex flex-col items-center justify-center  sm:w-11/12  lg:w-8/12">
+        <div className="  w-full justify-start">
+          <h2 className="font-['Avenir Next'] ml-4 mt-10 text-3xl font-semibold  tracking-tighter text-white sm:text-5xl md:ml-0">
+            Latest Articles
+          </h2>
         </div>
-        <Button className="" link="/articles">
-          View all articles
-        </Button>
-        <div className=" flex w-11/12 flex-col items-center justify-center">
-          <div className="m-3">OR</div>
-          <div className="m-3 font-medium antialiased">Browse by Category</div>
-          <DropDown categories={categories.data} />
+        <div className="mx-4 mt-10 grid grid-cols-1 gap-6 md:mx-auto md:w-full md:grid-cols-1">
+          <ArticleCardLanding
+            img={
+              'https://janefriedman.com/wp-content/uploads/2024/01/chandler_avoid_random_content-blogpost.png'
+            }
+          />
+          <ArticleCardLanding
+            img={
+              'https://janefriedman.com/wp-content/uploads/2024/01/goldmacher_writing_retreat-blogpost.png'
+            }
+          />
+          <ArticleCardLanding
+            img={
+              'https://janefriedman.com/wp-content/uploads/2024/01/seideman_grim_reader-blogpost.png'
+            }
+          />
+          {/* <ArticleCardLanding
+            img={
+              'https://janefriedman.com/wp-content/uploads/2023/12/glogovac_podcasts_media_kit-blogpost.png'
+            }
+          /> */}
+
+          {/* <ArticleCardLanding />
+          <ArticleCardLanding /> */}
+        </div>
+        <div className=" flex w-full  justify-center ">
+          <Button className=" mt-10  bg-white text-base text-black">View all Articles</Button>
         </div>
       </div>
     </section>
@@ -70,3 +83,15 @@ const LatestArticles = async () => {
 };
 
 export default LatestArticles;
+
+{
+  /* {latestArticles.map((article: Article, i: number) => {
+            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
+            return (
+              <> */
+}
+{
+  /* </>
+            );
+          })} */
+}

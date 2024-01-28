@@ -26,38 +26,41 @@ export async function SubCategory({ params }: any) {
   };
 
   // Get the subcategory that matches the slug
-  const subCategory = subCategories.data.find((subCategory: any) => {
+  const subCategory = subCategories.data?.find((subCategory: any) => {
     const categoryName = subCategory.attributes.name;
     const slugName = slugToCategoryName(params.slug[1].toLowerCase());
     return categoryName.includes(slugName);
   });
 
-  // console.log('SUBCATEGORY: ', subCategory);
-
   return (
     <>
-      <div className="justify-center' mx-auto w-8/12 items-center">
-        <h1 className="relative mt-7 w-full p-5 pb-2 text-center font-['Cardo']  text-4xl font-normal leading-[54px] text-[#014444] antialiased">
-          {slugToCategoryName(params.slug[1])}
-          <span className="absolute bottom-0 left-1/2 h-1 w-14 -translate-x-1/2  bg-yellow-500"></span>
-        </h1>
+      <div className="justify-center' mx-auto w-full items-center">
+        <div className="mt-10 flex w-full justify-center">
+          <h2 className="mb-3 flex justify-start p-5  pb-2 pl-1 pt-0 text-center   text-4xl  font-semibold  leading-[55px] tracking-tighter sm:text-5xl md:text-4xl ">
+            {slugToCategoryName(params.slug[1])}
+          </h2>
+        </div>
       </div>
-      <div className="mx-auto mt-7 flex w-8/12 flex-wrap justify-evenly gap-2">
-        {subCategory.attributes.articles.data.map((article: any, index: number) => {
-          const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
-          return (
-            <div key={index} className="mb-5">
-              <ArticleCard
-                image={thumbnail.data.attributes.url}
-                title={title}
-                summary={summary}
-                articleLink={`article/${slug}`}
-                date={date}
-                author={author}
-              />
-            </div>
-          );
-        })}
+      <div className="mx-auto mb-10 mt-7 flex w-10/12 flex-wrap justify-evenly gap-2">
+        {subCategory &&
+          subCategory.attributes &&
+          subCategory.attributes.articles &&
+          subCategory.attributes.articles.data &&
+          subCategory.attributes.articles.data.map((article: any, index: number) => {
+            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
+            return (
+              <div key={index} className="mb-5 w-full">
+                <ArticleCard
+                  image={thumbnail.data.attributes.url}
+                  title={title}
+                  summary={summary}
+                  articleLink={`article/${slug}`}
+                  date={date}
+                  author={author}
+                />
+              </div>
+            );
+          })}
       </div>
     </>
   );
