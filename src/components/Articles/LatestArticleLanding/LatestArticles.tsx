@@ -1,4 +1,4 @@
-// import ArticleCard from './Card';
+import ArticleCard from './Card';
 // import Button from '@/components/Button/Button';
 import { fetchArticles, fetchCategories } from '@/lib/utils';
 import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
@@ -9,10 +9,11 @@ interface Article {
   attributes: {
     id: number;
     title: string;
+    date: Date;
     author: string;
     summary: string;
-    date: Date;
     slug: string;
+    content: string;
     thumbnail: {
       data: {
         attributes: {
@@ -26,14 +27,14 @@ interface Article {
 const LatestArticles = async () => {
   const articles = await fetchArticles();
   const categories = await fetchCategories();
-  // console.log(categories.data);
+  console.log(articles.data);
 
   const articleTitles = articles.data.map((article: Article) => article.attributes.title);
 
   const sortedArticles = articles.data.sort((a: Article, b: Article) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
   });
-  const latestArticles = sortedArticles.slice(0, 4);
+  const latestArticles = sortedArticles.slice(0, 3);
   return (
     <section className="relative mx-auto h-fit bg-black pb-8 ">
       <div
@@ -50,32 +51,27 @@ const LatestArticles = async () => {
           </h2>
         </div>
         <div className="mx-4 mt-10 grid grid-cols-1 gap-6 md:mx-auto md:w-full md:grid-cols-1">
-          <ArticleCardLanding
-            img={
-              'https://janefriedman.com/wp-content/uploads/2024/01/chandler_avoid_random_content-blogpost.png'
-            }
-          />
-          <ArticleCardLanding
-            img={
-              'https://janefriedman.com/wp-content/uploads/2024/01/goldmacher_writing_retreat-blogpost.png'
-            }
-          />
-          <ArticleCardLanding
-            img={
-              'https://janefriedman.com/wp-content/uploads/2024/01/seideman_grim_reader-blogpost.png'
-            }
-          />
-          {/* <ArticleCardLanding
-            img={
-              'https://janefriedman.com/wp-content/uploads/2023/12/glogovac_podcasts_media_kit-blogpost.png'
-            }
-          /> */}
-
-          {/* <ArticleCardLanding />
-          <ArticleCardLanding /> */}
+          {latestArticles.map((article: Article, i: number) => {
+            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
+            return (
+              <>
+                <ArticleCardLanding
+                  key={i}
+                  title={title}
+                  image={thumbnail.data.attributes.url}
+                  summary={summary}
+                  slug={`article/${slug}`}
+                  author={author}
+                  date={date}
+                />
+              </>
+            );
+          })}
         </div>
         <div className=" flex w-full  justify-center ">
-          <Button className=" mt-10  bg-white text-base text-black">View all Articles</Button>
+          <Button className=" mt-10  bg-white text-base text-black hover:border hover:border-white hover:bg-black hover:text-white">
+            View all Articles
+          </Button>
         </div>
       </div>
     </section>

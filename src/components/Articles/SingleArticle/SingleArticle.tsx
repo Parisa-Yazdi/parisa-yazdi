@@ -19,16 +19,14 @@ const SingleArticle = ({ title, date, author, content, featuredImage }: ArticleP
         <article className="prose prose-gray dark:prose-invert mx-auto max-w-6xl">
           <div className="not-prose space-y-2">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">{title}</h1>
-            <div className="flex items-center space-x-2">
-              <span className="relative flex h-8 w-2 shrink-0 overflow-hidden rounded-full"></span>
-              <p className="text-gray-500 dark:text-gray-400">
-                Posted by {author} on {date}
-              </p>
+            <div className="flex flex-col items-start  justify-start ">
+              <p className="text-gray-500 dark:text-gray-400">Posted by {author}</p>
+              <p className="text-gray-500 dark:text-gray-400">{date}</p>
             </div>
           </div>
           <br />
           <Image
-            src={`${config.api}${featuredImage} `}
+            src={`${featuredImage} `}
             alt="Featured image"
             width="1250"
             height="340"

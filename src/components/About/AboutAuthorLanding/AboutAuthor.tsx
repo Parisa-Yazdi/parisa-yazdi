@@ -44,7 +44,9 @@ const AboutAuthor = () => {
               >
                 Read more
               </Link> */}
-              <Button className="mt-10 bg-white text-lg text-black md:w-1/4">Read more</Button>
+              <Button className="mt-10 bg-white text-lg text-black hover:border hover:border-white hover:bg-black hover:text-white md:w-1/4">
+                Read more
+              </Button>
             </div>
           </div>
         </div>

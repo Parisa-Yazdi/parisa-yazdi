@@ -18,7 +18,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ image, title, description, videoL
   return (
     <div className="mx-auto aspect-video w-10/12 bg-slate-100 shadow-md hover:shadow-lg lg:w-[310px]">
       <Image
-        src={`${config.api}${image}`}
+        src={`${image}`}
         width={432}
         height={648}
         alt="Article Image"

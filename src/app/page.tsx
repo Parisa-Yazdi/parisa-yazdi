@@ -11,9 +11,7 @@ export default function Home() {
   return (
     <main className="h-fit w-screen overflow-hidden">
       <Hero />
-      {/* <section className="flex"> */}
       <RecentCourses />
-      {/* </section> */}
       <LatestBooks />
       <RecentClasses />
       <LatestArticles />
@@ -21,9 +19,4 @@ export default function Home() {
       <AboutAuthor />
     </main>
   );
-}
-
-{
-  /* <LatestClassesAndCourses />
-   */
 }

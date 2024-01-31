@@ -4,9 +4,12 @@
  */
 import { CardTitle, CardDescription, CardHeader, Card } from '@/components/ui/card';
 import Link from 'next/link';
+import { fetchCourses } from '@/lib/utils';
+import ClassCourse from './class-course';
 
-export function RecentCourses() {
-  // bg-[#eaeaf0]
+export async function RecentCourses() {
+  const courses = await fetchCourses();
+
   return (
     <section className="w-full   border-l border-black py-12 md:py-24 lg:py-20">
       <div className="container px-4 md:px-6">
@@ -55,33 +58,18 @@ export function RecentCourses() {
           </p>
         </div>
         <div className="grid gap-6  py-6 lg:grid-cols-3 lg:gap-12">
-          {/* <div className="grid gap-6  py-6 lg:grid-cols-1 lg:gap-6"> */}
-          <Card className="border border-black">
-            <CardHeader>
-              <CardTitle className="line-clamp-1"> Introduction to Python</CardTitle>
-              {/* <CardDescription className="mt-2 line-clamp-2">
-                Learn the basics of Python programming with John Doe.
-              </CardDescription> */}
-            </CardHeader>
-          </Card>
-          <Card className="border border-black">
-            <CardHeader>
-              <CardTitle>Mastering JavaScript</CardTitle>
-              {/* <CardDescription>Dive deep into JavaScript with Jane Smith.</CardDescription> */}
-            </CardHeader>
-          </Card>
-          <Card className="border border-black">
-            <CardHeader>
-              <CardTitle>Understanding Data Science</CardTitle>
-              {/* <CardDescription>
-                Explore the world of data science with Michael Brown.
-              </CardDescription> */}
-            </CardHeader>
-          </Card>
+          {courses.data.map((course: any, i: number) => {
+            const { id, name, description, image } = course.attributes;
+            return (
+              <>
+                <ClassCourse title={name} description={description} key={i} />
+              </>
+            );
+          })}
         </div>
         <div className="mt-8 flex justify-center">
           <Link
-            className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+            className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow hover:border hover:border-black hover:bg-white hover:text-black"
             href="/classes-and-courses/courses"
           >
             View all Courses

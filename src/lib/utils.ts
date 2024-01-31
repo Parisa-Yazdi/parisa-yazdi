@@ -116,16 +116,8 @@ export async function fetchArticlesBySubcategory(subcategory: string) {
     }
   };
 
-  // const request = await fetch(
-  //   `${config.api}/api/articles?populate=deep&filters[sub_category][$eq]=${subcategory}`,
-  //   reqOptions
-  // );
   const request = await fetch(`${config.api}/api/articles?populate=deep&depth=1`, reqOptions);
   const response = await request.json();
-  // console.log('RESPONSE: ', response.data);
-  // response.data.map((item: any) => {
-  //   console.log('ITEM: ', item.attributes.sub_category);
-  // });
 
   return response;
 }
@@ -140,7 +132,6 @@ export async function fetchBooks() {
 
   const request = await fetch(`${config.api}/api/books?populate=*`, reqOptions);
   const response = await request.json();
-  // console.log('RESPONSE: ', response.data);
 
   return response;
 }
@@ -155,7 +146,20 @@ export async function fetchClasses() {
 
   const request = await fetch(`${config.api}/api/classes`, reqOptions);
   const response = await request.json();
-  // console.log('RESPONSE: ', response.data);
+
+  return response;
+}
+
+export async function fetchCourses() {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      'Cache-Control': 'no-store'
+    }
+  };
+
+  const request = await fetch(`${config.api}/api/courses`, reqOptions);
+  const response = await request.json();
 
   return response;
 }

@@ -17,12 +17,12 @@ const Videos = async () => {
             const { id, thumbnail, title, summary, slug, link } = video.attributes;
             return (
               <VideoCard
-                // key={id}
-                img={thumbnail.data.attributes.url}
-                // title={title}
-                // description={summary}
-                // videoLink={link}
-                // slug={slug}
+                key={id}
+                image={thumbnail.data.attributes.url}
+                title={title}
+                summary={summary}
+                videoLink={link}
+                slug={slug}
               />
             );
           })}

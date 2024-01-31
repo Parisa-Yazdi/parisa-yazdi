@@ -87,9 +87,14 @@ module.exports = {
         protocol: 'https',
         hostname: 'd1csarkz8obe9u.cloudfront.net',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**'
       }
 
-      // 127.0.0.1 mysecondchancenj images.unsplash.com icons.veryicon.com influencermarketinghub.com cdn-icons-png.flaticon.com janefriedman.com www.vectorlogo.zone d1csarkz8obe9u.cloudfront.net
+      // 127.0.0.1 mysecondchancenj images.unsplash.com icons.veryicon.com influencermarketinghub.com cdn-icons-png.flaticon.com janefriedman.com www.vectorlogo.zone d1csarkz8obe9u.cloudfront.net res.cloudinary.com
     ]
   }
 };

@@ -25,46 +25,34 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   //  overflow-hidden overflow-ellipsis -- title
   // overflow-hidden  -- above summary div
   return (
-    <Card className="mx-auto border-0 bg-[#e3e5e8] md:w-3/12 ">
-      {' '}
-      {/* Adjust width here */}
-      {/* <div className="flex h-1/2"> */}
+    <Card className=" mx-auto border-0 bg-[#e3e5e8] md:w-full ">
       <Image
         alt="Article Cover"
         className=" aspect-[6/12] h-[300px] w-full rounded-t-lg  object-cover"
-        height={100} // Adjusted height to make the card smaller
-        src={`${config.api}${image}`}
-        width={100} // Adjusted width to make the card smaller
+        height={100}
+        src={`${image}`}
+        width={100}
       />
       <CardContent className=" w-full  space-y-1 p-3">
         {' '}
-        {/* Adjust padding and space between elements here */}
         <CardTitle className="line-clamp-2 text-lg font-semibold">{title}</CardTitle>{' '}
-        {/* Adjust font size here */}
         <div className="mt-2 flex flex-col justify-start md:flex-row md:items-center md:justify-between">
           <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{author}</p>{' '}
           <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{date.toString()}</p>{' '}
         </div>
-        {/* Adjust font size here */}
-        <CardDescription className="h-[120px] py-4 text-xs">
+        <CardDescription className="overflow-hidden py-2  text-xs md:h-[137px]">
           {' '}
-          {/* Adjust padding and font size here */}
           {summary}
         </CardDescription>
-        <br className="hidden md:block" />
-        <div className="flex justify-between space-x-1 ">
-          {' '}
-          {/* Adjust space between buttons here */}
+        <div className=" flex justify-end space-x-1 ">
           <Button
             size="sm"
-            className="w-full border border-black bg-white p-0 text-sm text-black hover:border-white  hover:text-white"
+            className="w-1/3 border border-black bg-white p-0 text-sm text-black hover:border-white  hover:text-white"
           >
             <Link href={articleLink}>Read More</Link>
-          </Button>{' '}
-          {/* Adjust font size here */}
+          </Button>
         </div>
       </CardContent>
-      {/* </div> */}
     </Card>
   );
 };

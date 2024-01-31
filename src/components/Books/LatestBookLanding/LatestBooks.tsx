@@ -32,7 +32,7 @@ export default async function LatestArticles() {
         </div>
         <div className="mt-10 flex justify-center">
           <Link
-            className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-white px-8 text-base font-medium text-black shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+            className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-white px-8 text-base font-medium text-black shadow hover:border hover:border-white hover:bg-black hover:text-white"
             href="#"
           >
             View all Books

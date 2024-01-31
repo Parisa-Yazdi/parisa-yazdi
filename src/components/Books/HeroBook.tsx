@@ -13,7 +13,8 @@ interface HeroBookProps {
 
 export default function ({ image, title, description, bookLink, price }: HeroBookProps) {
   return (
-    <div className="flex w-full flex-col overflow-hidden bg-white shadow-md hover:shadow-xl md:flex-row">
+    <div className="flex w-full flex-col overflow-hidden bg-white shadow-md hover:shadow-xl md:flex-row ">
+      {/* className="mx-auto max-w-xs border-0 shadow-md  md:w-3/4"> */}
       <Image
         src={image}
         width={296}
@@ -23,7 +24,7 @@ export default function ({ image, title, description, bookLink, price }: HeroBoo
       />
       <div className=" flex  flex-col justify-between  border p-4">
         <div className="flex flex-col ">
-          <div className=" mt-5 flex w-full items-center justify-between ">
+          <div className=" mt-5 flex w-full flex-col justify-between md:flex-row md:items-center ">
             <h2 className="text-xl font-semibold tracking-tighter sm:text-xl">{title}</h2>
             <h3 className=" inline-block  pr-4 font-light  text-cyan-900 antialiased">
               Author - Date
@@ -42,7 +43,7 @@ export default function ({ image, title, description, bookLink, price }: HeroBoo
               description
             )}
           </div>
-          <div className="w-full font-['Inter']  text-base font-normal text-neutral-400 md:hidden">
+          <div className="mt-5 w-full font-['Inter'] text-base font-normal text-neutral-400 md:hidden">
             {description.length > 200 ? (
               <>
                 {description.slice(0, 200)}...{' '}
