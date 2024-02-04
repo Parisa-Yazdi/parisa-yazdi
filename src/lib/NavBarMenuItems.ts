@@ -22,7 +22,7 @@ export const menuItems: MenuItem[] = [
         href: '/articles'
       },
       'View All Categories': {
-        href: '/articles/article-categories'
+        href: '/article-categories'
       },
       'Existential & Metaphysics': {
         href: '/articles/existential-and-metaphysics'

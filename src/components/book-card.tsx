@@ -21,7 +21,7 @@ export function BookCard({ title, img, description, bookLink }: BookCardProps) {
       <Link href={bookLink}>
         <Image
           alt="Book Cover"
-          className="aspect-[8/12] w-full rounded-t-lg object-cover hover:cursor-pointer"
+          className="aspect-[8/12] h-full w-full rounded-t-lg object-cover hover:cursor-pointer"
           height={100}
           // src="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png"
           src={`${img}`}

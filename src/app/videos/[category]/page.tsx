@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default async function SubCategory({ params }: any) {
   const categories = await fetchCategories();
-  console.log(categories.data);
+  // console.log(categories.data);
 
   // Function to convert 'sub-category-name' to 'Sub Category Name'
   const slugToCategoryName = (slug: string): string => {

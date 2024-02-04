@@ -44,7 +44,14 @@ export async function RecentClasses() {
           {classes.data.map((oneClass: any) => {
             const { id, name, description, slug } = oneClass.attributes;
             // TODO: Add slug to Strapi
-            return <Class slug={slug} title={name} description={description} key={id} />;
+            return (
+              <Class
+                slug={slug || ''}
+                title={name || ''}
+                description={description || ''}
+                key={id}
+              />
+            );
           })}
         </div>
         <div className="mt-10 flex justify-center">

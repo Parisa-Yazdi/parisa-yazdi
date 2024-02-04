@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default async function SubCategory({ params }: any) {
   const categories = await fetchCategories();
-  console.log(categories.data);
+  // console.log(categories.data);
 
   // Function to convert 'sub-category-name' to 'Sub Category Name'
   const slugToCategoryName = (slug: string): string => {
@@ -47,7 +47,7 @@ export default async function SubCategory({ params }: any) {
         <div className="mx-auto mb-10 mt-7 grid w-10/12 grid-cols-3 gap-5  md:w-6/12">
           {singleCategory.attributes.sub_categories.data.map((category: any, index: number) => {
             const { id, name } = category.attributes;
-            // console.log('name: d', name);
+            console.log('singleCategory', singleCategory);
             return (
               <div key={index} className="mb-5">
                 <Link href={`/articles/${parseUrl(`${params.category}`)}/${`${parseUrl(name)}`}`}>

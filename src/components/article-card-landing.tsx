@@ -31,7 +31,6 @@ export async function ArticleCardLanding({
           alt="Video Cover"
           className=" aspect-square h-[200px] w-full object-cover md:h-[300px] md:w-5/12 md:rounded-l-lg  lg:w-8/12"
           height={100}
-          // src="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png"
           src={`${image}`}
           width={100}
         />
