@@ -6,6 +6,7 @@ import { Suspense } from 'react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer/Footer';
 import { HydrationOverlay } from '@builder.io/react-hydration-overlay';
+import { Newsletter } from '@/components/newsletter';
 
 const heebo = Heebo({ subsets: ['latin'] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Suspense>
           <NavBar />
           <main>{children}</main>
+          <Newsletter />
           <Footer />
         </Suspense>
       </body>

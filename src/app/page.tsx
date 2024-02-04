@@ -9,6 +9,7 @@ import { RecentCourses } from '@/components/recent-courses';
 
 export default function Home() {
   return (
+    // cmnd+shift+f : "TODO"
     <main className="h-fit w-screen overflow-hidden">
       <Hero />
       <RecentCourses />

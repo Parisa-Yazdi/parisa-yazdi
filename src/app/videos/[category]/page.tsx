@@ -44,7 +44,7 @@ export default async function SubCategory({ params }: any) {
             </h2>
           </div>
         </div>
-        <div className="mx-auto mb-10 mt-7 grid w-10/12 grid-cols-3 gap-5  md:w-6/12">
+        <div className="mx-auto mb-10 mt-7 grid w-6/12 grid-cols-3 gap-5 ">
           {singleCategory.attributes.sub_categories.data.map((category: any, index: number) => {
             const { id, name } = category.attributes;
             // console.log('name: d', name);

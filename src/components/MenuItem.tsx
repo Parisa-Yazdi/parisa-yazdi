@@ -1,88 +1,47 @@
-'use client';
-import { useState } from 'react';
 import Link from 'next/link';
 import { FiChevronDown } from 'react-icons/fi';
-import { parseUrl } from '@/lib/utils';
+import { CollapsibleTrigger, CollapsibleContent, Collapsible } from '@/components/ui/collapsible';
+import { ChevronRightIcon } from './mobile-menu';
+import { menuItems } from '@/lib/NavBarMenuItems';
+interface SubPage {
+  href: string;
+}
 
 interface MenuItemProps {
   MenuItemName: string;
-  subPages?: string[];
-  href?: string;
+  subPages?: Record<string, SubPage>;
+  href: string;
 }
 
-const MenuItem = ({ MenuItemName, subPages }: MenuItemProps) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+const MenuItem: React.FC<MenuItemProps> = ({ MenuItemName, subPages, href }) => {
   return (
     <>
-      <Link
-        href={
-          MenuItemName.toLowerCase() === 'home'
-            ? '/'
-            : `/${MenuItemName.toLowerCase()
-                .replace(/&/g, 'and')
-                .replace(/ /g, '-')
-                .replace(/'/g, '')
-                .replace(/,/g, '')}`
-        }
-        //     href={`/${MenuItemName.toLowerCase()}`}
-        className={` hidden min-w-fit text-white antialiased md:block ${
-          subPages && subPages.length > 0 ? 'flex items-center' : ''
-        }`}
-      >
-        <div
-          onMouseEnter={() => setIsDropdownOpen(true)}
-          onMouseLeave={() => setIsDropdownOpen(false)}
-          className={`relative p-3 antialiased hover:border-[#1B3764] hover:bg-white ${
-            isDropdownOpen ? 'text-[#1B3764]' : ''
-          }`}
-        >
+      <Link legacyBehavior href={href}>
+        <div className="group relative cursor-pointer p-3 antialiased hover:bg-white hover:text-black group-hover:border-[#1B3764]">
           <div className="flex items-center">
-            <span
-              className={isDropdownOpen ? 'flex items-center text-[#1B3764]' : 'flex items-center'}
-            >
+            <span className="flex  items-center text-white group-hover:bg-white group-hover:text-black">
               {MenuItemName}
-
-              {subPages && subPages.length > 0 && <FiChevronDown className="ml-1" />}
+              {subPages && Object.keys(subPages).length > 0 && (
+                <FiChevronDown className="ml-1 hidden md:block" />
+              )}
             </span>
           </div>
 
-          {isDropdownOpen && (subPages?.length ?? 0) > 0 && (
-            <div className="absolute -ml-3 mt-3 w-fit  whitespace-nowrap  border-2  bg-white p-1 text-white">
-              {subPages?.map((subPage, i) => (
-                <Link
-                  key={i}
-                  href={
-                    subPage.toLowerCase() === 'view archive'
-                      ? '/articles'
-                      : subPage.toLowerCase() === 'view all categories'
-                      ? '/article-categories'
-                      : `/${parseUrl(MenuItemName)}/${parseUrl(subPage)}`
-                  }
-                  // href={
-                  //   MenuItemName.toLowerCase() === 'home' &&
-                  //   subPage.toLowerCase() === 'view archive'
-                  //     ? '/articles'
-
-                  //     : MenuItemName.toLowerCase() === 'home' &&
-                  //       subPage.toLowerCase() === 'view all categories'
-                  //     ? '/article-categories'
-
-                  //     : MenuItemName.toLowerCase() === 'videos' &&
-                  //       subPage.toLowerCase() === 'view archive'
-                  //     ? '/videos'
-
-                  //     : MenuItemName.toLowerCase() === 'videos' &&
-                  //       subPage.toLowerCase() === 'view all categories'
-                  //     ? '/categories'
-
-                  //     : `/${parseUrl(MenuItemName)}/${parseUrl(subPage)}`
-                  // }
-                  className="block flex-nowrap  px-4 py-2 text-black antialiased hover:bg-black hover:text-white"
-                >
-                  {subPage}
-                </Link>
-              ))}
+          {subPages && Object.keys(subPages).length > 0 && (
+            <div className="hidden md:block">
+              <div
+                className={`dropdown-container absolute -ml-3 mt-3 hidden whitespace-nowrap border border-t-0 border-black bg-white p-1 text-black group-hover:block`}
+              >
+                {Object.entries(subPages).map(([subPageName, subPage], i) => (
+                  <Link
+                    key={i}
+                    href={subPage.href}
+                    className="block flex-nowrap px-4 py-2 text-black antialiased hover:bg-black hover:text-white"
+                  >
+                    {subPageName}
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -92,3 +51,18 @@ const MenuItem = ({ MenuItemName, subPages }: MenuItemProps) => {
 };
 
 export default MenuItem;
+
+// {/* {subPages && Object.keys(subPages).length > 0 && ( */}
+// <Collapsible className="grid gap-4">
+//   {/* <ChevronRightIcon className="ml-auto h-5 w-5 bg-white transition-all" /> */}
+//   <CollapsibleContent className="bg-white">
+//     <div className="-mx-6 grid gap-6  bg-white p-6 ">
+//       <Link className="group grid h-auto w-full justify-start gap-1" href="#">
+//         <div className="text-sm font-medium leading-none text-white group-hover:underline">
+//           Subpage 1
+//         </div>
+//       </Link>
+//     </div>
+//   </CollapsibleContent>
+// </Collapsible>
+// {/* )} */}

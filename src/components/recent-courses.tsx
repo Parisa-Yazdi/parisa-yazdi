@@ -5,7 +5,7 @@
 import { CardTitle, CardDescription, CardHeader, Card } from '@/components/ui/card';
 import Link from 'next/link';
 import { fetchCourses } from '@/lib/utils';
-import ClassCourse from './class-course';
+import Course from './Courses';
 
 export async function RecentCourses() {
   const courses = await fetchCourses();
@@ -59,10 +59,10 @@ export async function RecentCourses() {
         </div>
         <div className="grid gap-6  py-6 lg:grid-cols-3 lg:gap-12">
           {courses.data.map((course: any, i: number) => {
-            const { id, name, description, image } = course.attributes;
+            const { id, name, description, image, slug } = course.attributes;
             return (
               <>
-                <ClassCourse title={name} description={description} key={i} />
+                <Course title={name} description={description} key={i} slug={slug} />
               </>
             );
           })}

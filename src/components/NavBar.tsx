@@ -1,53 +1,8 @@
 import MobileMenu from './MobileMenu';
 import MenuItem from './MenuItem';
+import { menuItems } from '@/lib/NavBarMenuItems';
 
 export default function NavBar() {
-  const menuItems = [
-    {
-      name: 'HOME',
-      subPages: [],
-      href: '/'
-    },
-    {
-      name: 'ARTICLES',
-      subPages: [
-        'View Archive',
-        'View All Categories',
-        'Existential & Metaphysics',
-        'Astrology & Archetypes',
-        'Self-Knowledge',
-        'Personal Journals'
-      ]
-    },
-    {
-      name: 'CLASSES & COURSES',
-      subPages: ['Classes', 'Courses']
-    },
-    {
-      name: 'VIDEOS',
-      subPages: [
-        'View Archive',
-        'View All Categories',
-        'Existential & Metaphysics',
-        'Astrology & Archetypes',
-        'Self-Knowledge',
-        'Personal Journals'
-      ]
-    },
-    {
-      name: 'BOOKS'
-    },
-    {
-      name: 'GALLERY'
-    },
-    {
-      name: 'ABOUT'
-    },
-    {
-      name: 'CONTACT'
-    }
-  ];
-
   return (
     <>
       <div className="relative left-0 right-0 top-0 z-50 mx-auto flex h-24 w-full min-w-full items-center justify-around overflow-hidden bg-gradient-to-r from-[#014444] via-black to-[#014444]">
@@ -81,7 +36,7 @@ export default function NavBar() {
 
       <nav className="sticky top-0 z-50 hidden w-full  border-b-2 border-white bg-black md:justify-evenly lg:inline-flex lg:justify-center lg:gap-6 xl:gap-16">
         {menuItems.map((item, i) => (
-          <MenuItem key={i} MenuItemName={item.name} subPages={item.subPages} />
+          <MenuItem key={i} MenuItemName={item.name} subPages={item.subPages} href={item.href} />
         ))}
       </nav>
     </>

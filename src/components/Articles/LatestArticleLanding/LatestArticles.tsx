@@ -4,6 +4,7 @@ import { fetchArticles, fetchCategories } from '@/lib/utils';
 import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
 import { Button } from '@/components/ui/button';
 import { ArticleCardLanding } from '@/components/article-card-landing';
+import Link from 'next/link';
 
 interface Article {
   attributes: {
@@ -26,8 +27,7 @@ interface Article {
 
 const LatestArticles = async () => {
   const articles = await fetchArticles();
-  const categories = await fetchCategories();
-  console.log(articles.data);
+  // console.log('articles', articles);
 
   const articleTitles = articles.data.map((article: Article) => article.attributes.title);
 
@@ -60,7 +60,7 @@ const LatestArticles = async () => {
                   title={title}
                   image={thumbnail.data.attributes.url}
                   summary={summary}
-                  slug={`article/${slug}`}
+                  slug={`article/${slug + ''}`}
                   author={author}
                   date={date}
                 />
@@ -69,9 +69,11 @@ const LatestArticles = async () => {
           })}
         </div>
         <div className=" flex w-full  justify-center ">
-          <Button className=" mt-10  bg-white text-base text-black hover:border hover:border-white hover:bg-black hover:text-white">
-            View all Articles
-          </Button>
+          <Link href="/articles">
+            <Button className=" mt-10  bg-white text-base text-black hover:border hover:border-white hover:bg-black hover:text-white">
+              View all Articles
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

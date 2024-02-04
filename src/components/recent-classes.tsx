@@ -6,11 +6,10 @@ import { CardTitle, CardDescription, CardHeader, Card } from '@/components/ui/ca
 import Link from 'next/link';
 import Image from 'next/image';
 import { fetchClasses } from '@/lib/utils';
-import ClassCourse from './class-course';
+import Class from './Classes';
 
 export async function RecentClasses() {
   const classes = await fetchClasses();
-  console.log(classes.data);
 
   return (
     <section className="relative w-full   border-l border-black py-12 md:py-24 lg:py-24">
@@ -43,8 +42,9 @@ export async function RecentClasses() {
         <div className="mt-10 grid gap-6 py-6 lg:grid-cols-3 lg:gap-12">
           {/* <div className="grid gap-6  py-6 lg:grid-cols-1 lg:gap-6"> */}
           {classes.data.map((oneClass: any) => {
-            const { id, name, description, image } = oneClass.attributes;
-            return <ClassCourse title={name} description={description} key={id} />;
+            const { id, name, description, slug } = oneClass.attributes;
+            // TODO: Add slug to Strapi
+            return <Class slug={slug} title={name} description={description} key={id} />;
           })}
         </div>
         <div className="mt-10 flex justify-center">

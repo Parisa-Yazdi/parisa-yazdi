@@ -6,7 +6,21 @@ import { AvatarImage, AvatarFallback, Avatar } from '@/components/ui/avatar';
 import { CardTitle, CardHeader, CardContent, Card } from '@/components/ui/card';
 import { Button } from './ui/button';
 
-export function ClassInformation() {
+export function ClassInformation({
+  name,
+  instructor,
+  description,
+  duration,
+  image,
+  link
+}: {
+  name: string;
+  instructor: string;
+  description: string;
+  duration: string;
+  image: string;
+  link: string;
+}) {
   return (
     <section className="w-full py-12 md:py-14 lg:py-12">
       <div className="container px-4 md:px-6">

@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
         <div className="h-1/12 mx-auto mt-5 w-7/12 rounded-md md:hidden">
           <Image
-            src={'https://i.imgur.com/gTkbIgW.png'}
+            src={'https://i.imgur.com/rnGIDCO.jpg'}
             // src={
             //   'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198'
             // }
@@ -44,9 +44,9 @@ const Hero = () => {
         </div>
       </div>
       {/* image */}
-      <div className="h-2/12 mr-28 hidden w-8/12 rounded-md md:my-auto  md:flex md:w-4/12">
+      <div className="h-3/12 mr-28 hidden w-9/12 rounded-md md:my-auto  md:flex md:w-4/12">
         <Image
-          src={'https://i.imgur.com/gTkbIgW.png'}
+          src={'https://i.imgur.com/rnGIDCO.jpg'}
           // src={
           //   'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198'
           // }

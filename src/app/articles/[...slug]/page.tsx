@@ -1,6 +1,6 @@
 import ArticleCard from '@/components/Articles/ArticleCard';
 import React from 'react';
-import { fetchSubCategory } from '@/lib/utils';
+import { fetchSubCategory, fetchArticlesBySubcategory } from '@/lib/utils';
 
 export default async function SubCategory({ params }: any) {
   const subCategories = await fetchSubCategory();
@@ -32,21 +32,20 @@ export default async function SubCategory({ params }: any) {
     return categoryName.includes(slugName);
   });
 
+  const articles = await fetchArticlesBySubcategory(subCategory.attributes.name);
+
   return (
     <>
-      <div className="justify-center' mx-auto w-full items-center">
-        <div className="mt-10 flex w-full justify-center">
-          <h2 className="mb-3 flex justify-start p-5  pb-2 pl-1 pt-0 text-center   text-4xl  font-semibold  leading-[55px] tracking-tighter sm:text-5xl md:text-4xl ">
-            {slugToCategoryName(params.slug[1])}
-          </h2>
+      <main className="mx-auto h-fit  w-9/12 overflow-hidden pb-24">
+        <div className="mx-auto w-full items-center justify-center">
+          <div className="mt-10 flex w-full justify-center">
+            <h2 className="mb-3 flex justify-start p-5  pb-2 pl-1 pt-0 text-center   text-4xl  font-semibold  leading-[55px] tracking-tighter sm:text-5xl md:text-4xl ">
+              {slugToCategoryName(params.slug[1])}
+            </h2>
+          </div>
         </div>
-      </div>
-      <div className="mx-auto mb-10 mt-7 flex w-10/12 flex-wrap justify-evenly gap-2">
-        {subCategory &&
-          subCategory.attributes &&
-          subCategory.attributes.articles &&
-          subCategory.attributes.articles.data &&
-          subCategory.attributes.articles.data.map((article: any, index: number) => {
+        <div className="mx-auto mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
+          {articles.data.map((article: any, index: number) => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
             return (
               <div key={index} className="mb-5 w-full">
@@ -61,7 +60,8 @@ export default async function SubCategory({ params }: any) {
               </div>
             );
           })}
-      </div>
+        </div>
+      </main>
     </>
   );
 }

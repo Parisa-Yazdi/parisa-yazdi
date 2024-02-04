@@ -29,7 +29,7 @@ const Articles = async () => {
         <div className="mt-5 flex w-full justify-start">
           <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">ARTICLES</h2>
         </div>
-        <div className="mx-auto mt-8 grid w-full grid-cols-3 gap-6 ">
+        <div className="mx-auto mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
           {/* {articles.data && */}
           {articles.data.map((article: Article, i: number) => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;

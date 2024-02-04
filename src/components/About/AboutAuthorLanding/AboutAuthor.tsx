@@ -38,15 +38,11 @@ const AboutAuthor = () => {
             <br />
             <br />
             <div className="flex justify-center md:justify-end">
-              {/* <Link
-                href={'/about'}
-                className="border-2 bg-yellow-500 p-2  font-['Inter'] text-base text-white antialiased hover:border-[#1B3764] hover:bg-white hover:text-[#1B3764]"
-              >
-                Read more
-              </Link> */}
-              <Button className="mt-10 bg-white text-lg text-black hover:border hover:border-white hover:bg-black hover:text-white md:w-1/4">
-                Read more
-              </Button>
+              <Link href="/about">
+                <Button className=" mt-10  bg-white text-base text-black hover:border hover:border-white hover:bg-black hover:text-white">
+                  Read more
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

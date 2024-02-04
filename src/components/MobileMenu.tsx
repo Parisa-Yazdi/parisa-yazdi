@@ -7,6 +7,10 @@ import { Fragment, Suspense, useEffect, useState } from 'react';
 import Image from 'next/image';
 import MenuItem from './MenuItem';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { CollapsibleTrigger, CollapsibleContent, Collapsible } from '@/components/ui/collapsible';
+import { menuItems } from '@/lib/NavBarMenuItems';
+import { ChevronRightIcon } from './mobile-menu';
+import { parseUrl } from '@/lib/utils';
 
 export default function MobileMenu() {
   const pathname = usePathname();
@@ -14,49 +18,6 @@ export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
-
-  const menuItems = [
-    {
-      name: 'HOME',
-      subPages: [],
-      href: '/'
-    },
-    {
-      name: 'ARTICLES',
-      subPages: [
-        'View Archive',
-        'Existential & Metaphysics',
-        'Astrology & Archetypes',
-        'Self-Knowledge',
-        'Personal Journals'
-      ]
-    },
-    {
-      name: 'CLASSES & COURSES'
-    },
-    {
-      name: 'VIDEOS',
-      subPages: [
-        'View Archive',
-        'Existential & Metaphysics',
-        'Astrology & Archetypes',
-        'Self-Knowledge',
-        'Personal Journals'
-      ]
-    },
-    {
-      name: 'BOOKS'
-    },
-    {
-      name: 'GALLERY'
-    },
-    {
-      name: 'ABOUT'
-    },
-    {
-      name: 'CONTACT'
-    }
-  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -103,7 +64,7 @@ export default function MobileMenu() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-black pb-6 ">
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col overflow-y-auto bg-black pb-6">
               <div className="p-4">
                 <button
                   className="mb-4 flex h-11 w-11 items-center justify-center rounded-md  text-white transition-colors "
@@ -117,37 +78,59 @@ export default function MobileMenu() {
                   <Image
                     className="mx-auto"
                     src={'https://i.imgur.com/gTkbIgW.png'}
-                    alt="capenci logo"
-                    height={182}
-                    width={182}
+                    alt="parisa logo"
+                    height={142}
+                    width={142}
                     priority
                   />
                 </div>
 
-                <ul className="flex w-full flex-col">
-                  {menuItems.map((menuItem, i) => (
-                    <li
-                      key={i}
-                      className="py-2 text-xl text-white transition-colors hover:text-neutral-500 "
-                    >
-                      {/* <Link href={`/${menuItem}`} onClick={closeMobileMenu}>
+                {menuItems.map((menuItem, i) => {
+                  return (
+                    <Collapsible className="grid" key={i}>
+                      <CollapsibleTrigger className="flex w-full items-center  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
                         {menuItem.name}
-                      </Link> */}
-                      {/* <MenuItem
-                        MenuItemName={menuItem.name}
-                        subPages={menuItem.subPages}
-                        href={menuItem.href}
-                      /> */}
-                      {menuItem.name}
-                    </li>
-                  ))}
+                        {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
+                          <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                        )}
+                      </CollapsibleTrigger>
 
-                  {/* <li className="py-2 text-xl text-black transition-colors hover:text-neutral-500 ">
-                    <Link href="/" onClick={closeMobileMenu}>
-                      HOME
-                    </Link>
-                  </li> */}
-                </ul>
+                      {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
+                        <CollapsibleContent>
+                          <div className="-mx-6  ml-3 grid gap-6 bg-black p-6 py-2">
+                            <Link
+                              className="group flex h-auto w-full flex-col justify-start gap-1"
+                              href="#"
+                            >
+                              {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
+                                <CollapsibleContent>
+                                  <div className="-mx-6 grid gap-4 bg-black p-6 py-0 text-white">
+                                    {menuItem.subPages &&
+                                      Object.keys(menuItem.subPages).map((subPageKey, i) => (
+                                        <Link
+                                          key={subPageKey}
+                                          className="group grid h-auto w-full justify-start gap-1"
+                                          href={
+                                            menuItem.subPages
+                                              ? menuItem.subPages[subPageKey].href
+                                              : '#'
+                                          }
+                                        >
+                                          <div className="text-sm font-medium leading-none ">
+                                            {subPageKey}
+                                          </div>
+                                        </Link>
+                                      ))}
+                                  </div>
+                                </CollapsibleContent>
+                              )}
+                            </Link>
+                          </div>
+                        </CollapsibleContent>
+                      )}
+                    </Collapsible>
+                  );
+                })}
               </div>
             </Dialog.Panel>
           </Transition.Child>
@@ -155,4 +138,41 @@ export default function MobileMenu() {
       </Transition>
     </>
   );
+}
+
+{
+  /* <ul className="flex w-full flex-col">
+                  {menuItems.map(
+                    (menuItem, i) => (
+                      <li
+                        key={i}
+                        className="py-2 text-xl text-white transition-colors hover:text-neutral-500 "
+                      >
+                        {menuItem.name}
+                      </li>
+                    )
+                    // if menu item has subpages
+                    // !menuItem.subPages ? (
+                    //   <MenuItem key={i} MenuItemName={menuItem.name} />
+                    // ) : (
+                    //   <Collapsible key={i} className="grid gap-4">
+                    //     <CollapsibleTrigger className="flex w-full items-center text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
+                    //       {menuItem.name}
+                    //       <XMarkIcon className="ml-auto h-5 w-5 transition-all" />
+                    //     </CollapsibleTrigger>
+                    //     <CollapsibleContent>
+                    //       <div className="-mx-6 grid gap-6 bg-gray-100 p-6 ">
+                    //         {menuItem.subPages.map((subPage, i) => (
+                    //           <Link key={i} href="#">
+                    //             <div className="text-sm font-medium leading-none text-white group-hover:underline">
+                    //               {subPage}
+                    //             </div>
+                    //           </Link>
+                    //         ))}
+                    //       </div>
+                    //     </CollapsibleContent>
+                    //   </Collapsible>
+                    // )
+                  )}
+                </ul> */
 }

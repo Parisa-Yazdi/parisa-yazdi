@@ -26,7 +26,6 @@ interface Video {
 
 export default async function LatestVideos() {
   const videos = await fetchVideos();
-  console.log(videos.data);
 
   const sortedVideos = videos.data.sort((a: Video, b: Video) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
