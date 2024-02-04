@@ -75,14 +75,16 @@ export default function MobileMenu() {
                 </button>
 
                 <div className=" w-full">
-                  <Image
-                    className="mx-auto"
-                    src={'https://i.imgur.com/gTkbIgW.png'}
-                    alt="parisa logo"
-                    height={142}
-                    width={142}
-                    priority
-                  />
+                  <Link href="/">
+                    <Image
+                      className="mx-auto"
+                      src={'https://i.imgur.com/gTkbIgW.png'}
+                      alt="parisa logo"
+                      height={142}
+                      width={142}
+                      priority
+                    />
+                  </Link>
                 </div>
 
                 {menuItems.map((menuItem, i) => {
