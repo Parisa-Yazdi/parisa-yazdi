@@ -91,7 +91,7 @@ export default function MobileMenu() {
                   return (
                     <Collapsible className="grid" key={i}>
                       <CollapsibleTrigger className="flex w-full items-center  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
-                        {menuItem.name}
+                        <Link href={menuItem.href}>{menuItem.name}</Link>
                         {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
                           <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
                         )}
