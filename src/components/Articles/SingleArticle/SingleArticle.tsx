@@ -23,6 +23,7 @@ const SingleArticle = ({ title, date, author, content, featuredImage }: ArticleP
           </div>
           <br />
           <Image
+            unoptimized
             src={`${featuredImage} `}
             alt="Featured image"
             width="1250"
