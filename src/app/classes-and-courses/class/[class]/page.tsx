@@ -4,7 +4,6 @@ import { fetchClassBySlug } from '@/lib/utils';
 
 export default async function Class({ params }: any) {
   const classData = await fetchClassBySlug(params.class);
-  console.log('HERERE', classData.data[0]);
 
   // get initial of instructor
   const instructor = classData.data[0].attributes.instructor;

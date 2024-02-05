@@ -32,7 +32,7 @@ export default function DropDown({ subCategories }: { subCategories: category[] 
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className=" w-3/4 justify-between"
+          className=" w-3/4 justify-between text-base"
         >
           {value || 'Find article by category...'}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -54,7 +54,7 @@ export default function DropDown({ subCategories }: { subCategories: category[] 
               >
                 <>
                   <Link
-                    className="w-full"
+                    className="text-basae w-full"
                     href={`/articles/${parseUrl(
                       category.attributes.category.data.attributes.name
                     )}/${parseUrl(category.attributes.name)}`}

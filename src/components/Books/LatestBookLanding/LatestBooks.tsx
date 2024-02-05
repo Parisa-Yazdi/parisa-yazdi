@@ -4,7 +4,6 @@ import { fetchBooks } from '@/lib/utils';
 
 export default async function LatestArticles() {
   const books = await fetchBooks();
-  // console.log(books.data);
 
   return (
     <section className="relative w-full  bg-black  pb-8">

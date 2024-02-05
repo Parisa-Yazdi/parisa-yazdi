@@ -30,14 +30,9 @@ const ArticleCategories = async () => {
     if (categories && categories.data) {
       // Iterate through each category
       categories.data.forEach((category: any) => {
-        // Check if attributes exist within each category
         if (category.attributes) {
-          // Check if sub_categories exist within each category
           if (category.attributes.sub_categories) {
-            // console.log('Sub_categories found for category:', category.attributes.name);
-            // console.log('LOL', category.attributes.sub_categories.data);
           } else {
-            // console.log('No sub_categories found for category:', category.attributes.name);
           }
         } else {
           console.log('Attributes not found for category:', category);
@@ -51,15 +46,6 @@ const ArticleCategories = async () => {
   } catch (error) {
     console.error('Error fetching categories:', error);
   }
-
-  // categories.data.map((subCategory: any, i: number) => {
-  //   console.log(
-  //     'Sub_category:',
-  //     subCategory.attributes.sub_categories.data.forEach((subCatData: any) => {
-  //       console.log('Sub_category:', subCatData.attributes.thumbnail.data.attributes.url);
-  //     })
-  //   );
-  // });
 
   return (
     <>

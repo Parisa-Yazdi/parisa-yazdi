@@ -238,3 +238,17 @@ export async function fetchCourseBySlug(slug: string) {
 
   return response;
 }
+
+export async function fetchGallery() {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      'Cache-Control': 'no-store'
+    }
+  };
+
+  const request = await fetch(`${config.api}/api/galleries?populate=*`, reqOptions);
+  const response = await request.json();
+
+  return response;
+}

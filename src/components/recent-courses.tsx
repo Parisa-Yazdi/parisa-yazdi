@@ -9,7 +9,6 @@ import Course from './Courses';
 
 export async function RecentCourses() {
   const courses = await fetchCourses();
-  console.log(courses.data);
 
   return (
     <section className="w-full border-l  border-t-0 border-black py-12 md:py-24 lg:py-20">

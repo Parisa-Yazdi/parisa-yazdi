@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { fetchArticles } from '@/lib/utils';
-import config from '@/config';
+import ReactMarkdown from 'react-markdown';
 
 type ArticleProps = {
   title: string;
@@ -11,8 +10,6 @@ type ArticleProps = {
 };
 
 const SingleArticle = ({ title, date, author, content, featuredImage }: ArticleProps) => {
-  // console.log('CONTENT: ', content);
-  // console.log('FEATURED IMAGE: ', featuredImage);
   return (
     <>
       <main className="px-4 py-6 md:px-6 md:py-12 lg:py-16">
@@ -33,7 +30,8 @@ const SingleArticle = ({ title, date, author, content, featuredImage }: ArticleP
             priority
             className="mb-8 aspect-video overflow-hidden rounded-lg object-cover"
           />
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
+          <ReactMarkdown className={'markdown'}>{content}</ReactMarkdown>
         </article>
       </main>
     </>

@@ -39,7 +39,7 @@ const Articles = async () => {
                 image={thumbnail.data.attributes.url}
                 title={title}
                 summary={summary}
-                articleLink={`article/${slug}`}
+                articleLink={`/article/${slug}`}
                 date={date}
                 author={author}
               />

@@ -1,6 +1,7 @@
 import MobileMenu from './MobileMenu';
 import MenuItem from './MenuItem';
 import { menuItems } from '@/lib/NavBarMenuItems';
+import Link from 'next/link';
 
 export default function NavBar() {
   return (
@@ -12,7 +13,9 @@ export default function NavBar() {
           </div>
           {/* <div className="flex w-full flex-col justify-between gap-5 md:absolute md:bottom-0 "> */}
           <div className="mx-auto mr-14 flex w-full justify-end">
-            <h1 className="text-3xl text-white">PARISA YAZDI</h1>
+            <Link href="/">
+              <h1 className="text-3xl text-white">PARISA YAZDI</h1>
+            </Link>
           </div>
         </div>
       </div>

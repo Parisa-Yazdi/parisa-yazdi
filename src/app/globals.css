@@ -10,6 +10,10 @@
     url(../../public/fonts/Avenir\ Next.ttf) format('ttf');
 }
 
+.markdown > * {
+  all: revert;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

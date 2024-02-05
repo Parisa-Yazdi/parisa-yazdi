@@ -20,7 +20,7 @@ interface CourseProps {
 
 export default async function Courses() {
   const courses = await fetchCourses();
-  // console.log(courses.data);
+
   return (
     <>
       {/* bg-[#e0ebfe] */}

@@ -28,7 +28,8 @@ export default async function SubCategory({ params }: any) {
   // Get the subcategory that matches the slug
   const subCategory = subCategories.data?.find((subCategory: any) => {
     const categoryName = subCategory.attributes.name;
-    const slugName = slugToCategoryName(params.slug[1].toLowerCase());
+
+    const slugName = slugToCategoryName(params.subCategory.toLowerCase());
     return categoryName.includes(slugName);
   });
 
@@ -40,7 +41,7 @@ export default async function SubCategory({ params }: any) {
         <div className="mx-auto w-full items-center justify-center">
           <div className="mt-10 flex w-full justify-center">
             <h2 className="mb-3 flex justify-start p-5  pb-2 pl-1 pt-0 text-center   text-4xl  font-semibold  leading-[55px] tracking-tighter sm:text-5xl md:text-4xl ">
-              {slugToCategoryName(params.slug[1])}
+              {slugToCategoryName(params.subCategory)}
             </h2>
           </div>
         </div>
@@ -54,7 +55,7 @@ export default async function SubCategory({ params }: any) {
                   image={thumbnail.data.attributes.url}
                   title={title}
                   summary={summary}
-                  articleLink={`article/${slug}`}
+                  articleLink={`/article/${slug}`}
                   date={date}
                   author={author}
                 />

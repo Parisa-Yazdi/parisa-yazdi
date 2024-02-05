@@ -28,7 +28,6 @@ interface Article {
 const LatestArticles = async () => {
   const articles = await fetchArticles();
   const subCategories = await fetchSubCategory();
-  console.log('subCategories', subCategories.data);
 
   const sortedArticles = articles.data.sort((a: Article, b: Article) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();

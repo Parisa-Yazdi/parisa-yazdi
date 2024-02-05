@@ -4,15 +4,6 @@ import { fetchCourseBySlug } from '@/lib/utils';
 
 export default async function Class({ params }: any) {
   const courseData = await fetchCourseBySlug(params.course);
-  // console.log(params.course)
-  console.log('HERERE', courseData.data[0]);
-
-  // // get initial of instructor
-  // const instructor = courseData.data[0].attributes.instructor;
-  // const initials = instructor
-  //   .split(' ')
-  //   .map((n: string) => n[0])
-  //   .join('');
 
   return (
     <>

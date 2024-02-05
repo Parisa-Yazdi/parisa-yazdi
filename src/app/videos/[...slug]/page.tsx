@@ -34,7 +34,6 @@ export default async function SubCategory({ params }: any) {
   });
 
   const videos = await fetchVideosBySubcategory(subCategory.attributes.name);
-  console.log('videos', videos.data);
 
   return (
     <>
@@ -50,7 +49,7 @@ export default async function SubCategory({ params }: any) {
           {videos.data &&
             videos.data.map((video: any, i: number) => {
               const { id, thumbnail, title, summary, slug, link } = video.attributes;
-              console.log(video);
+
               return (
                 <div key={i} className="mb-5 w-full">
                   <VideoCard

@@ -23,6 +23,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   author
 }) => {
   //  overflow-hidden overflow-ellipsis -- title
+
   // overflow-hidden  -- above summary div
   return (
     <Card className=" mx-auto border-0 bg-[#e3e5e8] md:w-full ">

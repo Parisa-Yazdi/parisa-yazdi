@@ -1,14 +1,6 @@
 import { fetchVideoBySlug } from '@/lib/utils';
 
-// interface VideoPageProps {
-//   description: string;
-//   videoUrl: string;
-//   title: string;
-// }
-
 export default async function VideoPage({ params }: any) {
-  // console.log('params', params);
-
   const video = await fetchVideoBySlug(params.slug);
   if (video.data.length === 0) return null;
   const { title, summary, link, date, featuredImage } = video.data[0].attributes;

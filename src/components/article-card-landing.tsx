@@ -46,12 +46,11 @@ export async function ArticleCardLanding({
               {summary}
             </CardDescription>
             <div className=" flex justify-end space-x-1  md:justify-end">
-              <Button
-                size="sm"
-                className="mt-5 w-1/3 border border-black  bg-white  p-0 text-sm text-black hover:border-white hover:text-white md:mr-3 md:w-1/4   xl:mt-0"
-              >
-                <Link href={`${slug + ''}`}>Read More</Link>
-              </Button>
+              <Link href={`${slug + ''}`}>
+                <Button className=" bg-black text-base text-white hover:border hover:border-black hover:bg-white hover:text-black">
+                  Read More
+                </Button>
+              </Link>
             </div>
           </div>
         </CardContent>

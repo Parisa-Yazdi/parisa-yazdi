@@ -20,7 +20,7 @@ interface ClassProps {
 
 export default async function Courses() {
   const classes = await fetchClasses();
-  // console.log(classes.data);
+
   return (
     <>
       {/* bg-[#e0ebfe] */}
@@ -31,7 +31,7 @@ export default async function Courses() {
         <div className="mx-auto mt-10 flex w-full flex-col flex-wrap  items-center justify-center gap-8 ">
           {classes.data.map((singleClass: ClassProps, i: number) => {
             const { name, description, slug, link, featuredImage } = singleClass.attributes;
-            // console.log(singleClass.attributes);
+
             return (
               <ClassCard
                 key={i}

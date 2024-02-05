@@ -79,7 +79,7 @@ export default function HeroNewsLetter() {
         />
         <Button
           type="submit"
-          className="rounded-none  border border-white bg-black p-8 text-center text-white md:ml-3"
+          className="rounded-none border  border-white bg-black p-8 text-center text-base text-white md:ml-3"
         >
           Sign Up Now
         </Button>

@@ -5,16 +5,11 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const email = body.email;
 
-  // const email = 'murad@abc.com';
-
-  // console.log({ email });
-
   if (!email) {
     return NextResponse.json({ error: 'Email is required' });
   }
 
   try {
-    // console.log(email);
     const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
     const API_KEY = process.env.MAILCHIMP_API_KEY;
     const DATACENTER = process.env.MAILCHIMP_API_SERVER;
