@@ -1,7 +1,7 @@
 // import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse, NextRequest } from 'next/server';
 
-export async function handler(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   const body = await req.json();
   const email = body.email;
 
@@ -48,5 +48,3 @@ export async function handler(req: NextRequest, res: NextResponse) {
     return NextResponse.json({ error: error.message || error.toString() });
   }
 }
-
-export { handler as GET, handler as POST };

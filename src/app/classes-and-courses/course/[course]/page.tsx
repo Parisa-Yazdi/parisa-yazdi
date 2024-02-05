@@ -3,7 +3,8 @@ import { ClassInformation } from '@/components/class-information';
 import { fetchCourseBySlug } from '@/lib/utils';
 
 export default async function Class({ params }: any) {
-  const courseData = await fetchCourseBySlug(params.class);
+  const courseData = await fetchCourseBySlug(params.course);
+  // console.log(params.course)
   console.log('HERERE', courseData.data[0]);
 
   // // get initial of instructor
