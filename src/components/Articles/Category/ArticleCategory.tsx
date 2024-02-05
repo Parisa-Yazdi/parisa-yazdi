@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import SubCategories from '../SubCategory/SubCategories';
+import SubCategories from '../../SubCategory/SubCategories';
 import { parseUrl } from '@/lib/utils';
 
 interface ArticleCategoryProps {
@@ -21,7 +21,7 @@ async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryP
             const { name, thumbnail } = subCategory.attributes;
 
             return (
-              <div key={index} className="mb-5 w-4/12 gap-5 p-1 md:mx-2 md:w-auto">
+              <div key={index} className="mb-5 w-6/12 gap-5 p-1 md:mx-2 md:w-auto">
                 <Link href={`/articles/${parseUrl(categoryName)}/${parseUrl(name)}`}>
                   <SubCategories
                     subCategoryName={name}

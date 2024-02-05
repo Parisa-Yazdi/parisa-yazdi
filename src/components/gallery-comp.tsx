@@ -6,10 +6,10 @@ export function GalleryComp({ images }: any) {
     <div className="mx-auto w-full max-w-7xl p-4">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {images &&
-          images.map((image: any) => {
+          images.map((image: any, i: number) => {
             console.log('IMAGE: ', image.attributes.art.data[0].attributes.formats.large);
             return (
-              <div className="group relative">
+              <div key={i} className="group relative">
                 <Image
                   alt="Art Piece 1"
                   className="aspect-square w-full overflow-hidden rounded-lg border border-gray-200 object-cover dark:border-gray-800"

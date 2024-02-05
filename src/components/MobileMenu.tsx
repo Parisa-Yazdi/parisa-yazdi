@@ -89,44 +89,50 @@ export default function MobileMenu() {
 
                 {menuItems.map((menuItem, i) => {
                   return (
-                    <Collapsible className="grid" key={i}>
-                      <CollapsibleTrigger className="flex w-full items-center  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
-                        <Link href={menuItem.href}>{menuItem.name}</Link>
-                        {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
-                          <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
-                        )}
-                      </CollapsibleTrigger>
+                    <Collapsible className="mt-3 grid" key={i}>
+                      {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 ? (
+                        <CollapsibleTrigger className="boorder-white mb-1 flex w-full items-center border px-2 py-4  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
+                          {menuItem.name}
+                          {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
+                            <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                          )}
+                        </CollapsibleTrigger>
+                      ) : (
+                        <Link href={menuItem.href}>
+                          <CollapsibleTrigger className="boorder-white mb-1 flex w-full items-center border px-2 py-4  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
+                            {menuItem.name}
+                            {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
+                              <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                            )}
+                          </CollapsibleTrigger>
+                        </Link>
+                      )}
 
                       {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
                         <CollapsibleContent>
-                          <div className="-mx-6  ml-3 grid gap-6 bg-black p-6 py-2">
-                            <Link
-                              className="group flex h-auto w-full flex-col justify-start gap-1"
-                              href="#"
-                            >
-                              {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
-                                <CollapsibleContent>
-                                  <div className="-mx-6 grid gap-4 bg-black p-6 py-0 text-white">
-                                    {menuItem.subPages &&
-                                      Object.keys(menuItem.subPages).map((subPageKey, i) => (
-                                        <Link
-                                          key={subPageKey}
-                                          className="group grid h-auto w-full justify-start gap-1"
-                                          href={
-                                            menuItem.subPages
-                                              ? menuItem.subPages[subPageKey].href
-                                              : '#'
-                                          }
-                                        >
-                                          <div className="text-sm font-medium leading-none ">
-                                            {subPageKey}
-                                          </div>
-                                        </Link>
-                                      ))}
-                                  </div>
-                                </CollapsibleContent>
-                              )}
-                            </Link>
+                          <div className="-mx-6  ml-3 grid gap-2 bg-black p-6 py-2">
+                            {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
+                              <CollapsibleContent>
+                                <div className="-mx-6 grid gap-4 bg-black p-6 py-0 text-white">
+                                  {menuItem.subPages &&
+                                    Object.keys(menuItem.subPages).map((subPageKey, i) => (
+                                      <Link
+                                        key={subPageKey}
+                                        className="group grid h-auto w-full justify-start gap-1"
+                                        href={
+                                          menuItem.subPages
+                                            ? menuItem.subPages[subPageKey].href
+                                            : '#'
+                                        }
+                                      >
+                                        <div className="text-base font-medium leading-none ">
+                                          {subPageKey}
+                                        </div>
+                                      </Link>
+                                    ))}
+                                </div>
+                              </CollapsibleContent>
+                            )}
                           </div>
                         </CollapsibleContent>
                       )}

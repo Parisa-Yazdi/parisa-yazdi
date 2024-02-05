@@ -57,7 +57,9 @@ const ArticleCategories = async () => {
           {categories.data.map((category: any, i: number) => {
             const { id, name } = category.attributes;
             const subCategories = category.attributes.sub_categories.data;
-            return <ArticleCategory key={i} categoryName={name} subCategories={subCategories} />;
+            return (
+              <ArticleCategory key={id || i} categoryName={name} subCategories={subCategories} />
+            );
           })}
         </div>
       </main>

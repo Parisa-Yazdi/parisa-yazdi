@@ -65,6 +65,9 @@ export default function HeroNewsLetter() {
   };
   return (
     <div className="mt-5 w-full gap-5 px-5 md:px-0">
+      <h3 className="mb-3 text-base leading-tight text-gray-500 antialiased ">
+        Subscribe to the newsletter to never miss an update!
+      </h3>
       <form onSubmit={subscribeUser} className="flex flex-col gap-4 md:flex-row md:gap-0">
         <input
           type="email"
@@ -79,9 +82,9 @@ export default function HeroNewsLetter() {
         />
         <Button
           type="submit"
-          className="rounded-none border  border-white bg-black p-8 text-center text-base text-white md:ml-3"
+          className="w-1/3 min-w-fit self-end rounded-none border border-white bg-black p-5 text-center font-heebo text-lg text-white hover:border-black hover:bg-white hover:text-black md:ml-3 md:w-auto md:p-8"
         >
-          Sign Up Now
+          Subscribe
         </Button>
       </form>
       {isSent && <UserFeedback />}

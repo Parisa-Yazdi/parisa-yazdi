@@ -1,4 +1,4 @@
-import SubCategories from '@/components/Articles/SubCategory/SubCategories';
+import SubCategories from '@/components/SubCategory/SubCategories';
 import React from 'react';
 import { fetchCategories, parseUrl } from '@/lib/utils';
 import Link from 'next/link';

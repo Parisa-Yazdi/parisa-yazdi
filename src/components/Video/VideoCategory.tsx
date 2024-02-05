@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import SubCategories from '../Articles/SubCategory/SubCategories';
+import SubCategories from '../SubCategory/SubCategories';
 import { parseUrl } from '@/lib/utils';
 
 interface VideoCategoryProps {

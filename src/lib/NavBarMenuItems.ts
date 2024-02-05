@@ -40,7 +40,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     name: 'CLASSES & COURSES',
-    href: '/classes-and-courses/classes',
+    href: '',
     subPages: {
       Classes: {
         href: '/classes-and-courses/classes'

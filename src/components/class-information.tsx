@@ -33,7 +33,7 @@ export function ClassInformation({
             <div className="flex justify-between ">
               <div className="flex items-center space-x-2">
                 <Avatar>
-                  <AvatarImage alt="Instructor" src="/placeholder-user.jpg" />
+                  <AvatarImage alt="Instructor" src="" />
                   <AvatarFallback>{initials}</AvatarFallback>
                 </Avatar>
                 <div>

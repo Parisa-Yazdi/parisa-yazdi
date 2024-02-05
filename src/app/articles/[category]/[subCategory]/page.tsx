@@ -45,24 +45,31 @@ export default async function SubCategory({ params }: any) {
             </h2>
           </div>
         </div>
-        <div className="mx-auto mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
-          {articles.data.map((article: any, index: number) => {
-            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
+
+        {articles.data.length === 0 ? (
+          <div className="mx-auto flex h-[50vh] w-full items-center justify-center ">
+            <h2 className="text-xl font-semibold text-gray-500">No articles found</h2>
+          </div>
+        ) : (
+          articles.data.map((article: any, index: number) => {
+            const { thumbnail, title, summary, slug, author, date } = article.attributes;
 
             return (
-              <div key={index} className="mb-5 w-full">
-                <ArticleCard
-                  image={thumbnail.data.attributes.url}
-                  title={title}
-                  summary={summary}
-                  articleLink={`/article/${slug}`}
-                  date={date}
-                  author={author}
-                />
+              <div className="mx-auto mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
+                <div key={index} className="mb-5 w-full">
+                  <ArticleCard
+                    image={thumbnail.data.attributes.url}
+                    title={title}
+                    summary={summary}
+                    articleLink={`/article/${slug}`}
+                    date={date}
+                    author={author}
+                  />
+                </div>
               </div>
             );
-          })}
-        </div>
+          })
+        )}
       </main>
     </>
   );

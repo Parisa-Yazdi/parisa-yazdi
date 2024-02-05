@@ -21,16 +21,14 @@ export default async function Books() {
             {latestBook.map((book: any, i: number) => {
               const { id, bookCover, title, description, slug, author, date } = book.attributes;
               return (
-                <>
-                  <HeroBook
-                    key={i}
-                    image={bookCover.data.attributes.url}
-                    title={title}
-                    description={description}
-                    bookLink={`/book/${slug}`}
-                    price={'$99'}
-                  />
-                </>
+                <HeroBook
+                  key={id || i}
+                  image={bookCover.data.attributes.url}
+                  title={title}
+                  description={description}
+                  bookLink={`/book/${slug}`}
+                  price={'$99'}
+                />
               );
             })}
           </div>
@@ -43,16 +41,14 @@ export default async function Books() {
             {moreBooks.map((book: any, i: number) => {
               const { id, bookCover, title, description, slug, author, date } = book.attributes;
               return (
-                <>
-                  <HeroBook
-                    key={i}
-                    image={bookCover.data.attributes.url}
-                    title={title}
-                    description={description}
-                    bookLink={`/book/${slug}`}
-                    price={'$99'}
-                  />
-                </>
+                <HeroBook
+                  key={i}
+                  image={bookCover.data.attributes.url}
+                  title={title}
+                  description={description}
+                  bookLink={`/book/${slug}`}
+                  price={'$99'}
+                />
               );
             })}
           </div>

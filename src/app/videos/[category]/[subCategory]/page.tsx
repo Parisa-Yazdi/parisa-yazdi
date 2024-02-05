@@ -29,7 +29,7 @@ export default async function SubCategory({ params }: any) {
   // Get the subcategory that matches the slug
   const subCategory = subCategories.data?.find((subCategory: any) => {
     const categoryName = subCategory.attributes.name;
-    const slugName = slugToCategoryName(params.slug[1].toLowerCase());
+    const slugName = slugToCategoryName(params.subCategory.toLowerCase());
     return categoryName.includes(slugName);
   });
 
@@ -41,16 +41,21 @@ export default async function SubCategory({ params }: any) {
         <div className="mx-auto w-full items-center justify-center">
           <div className="mt-10 flex w-full justify-center">
             <h2 className="mb-3 flex justify-start p-5  pb-2 pl-1 pt-0 text-center   text-4xl  font-semibold  leading-[55px] tracking-tighter sm:text-5xl md:text-4xl ">
-              {slugToCategoryName(params.slug[1])}
+              {slugToCategoryName(params.subCategory)}
             </h2>
           </div>
         </div>
-        <div className="mx-auto mt-8 grid w-full  grid-cols-1 gap-6 ">
-          {videos.data &&
-            videos.data.map((video: any, i: number) => {
-              const { id, thumbnail, title, summary, slug, link } = video.attributes;
 
-              return (
+        {videos.data.length === 0 ? (
+          <div className="mx-auto flex h-[50vh] w-full items-center justify-center ">
+            <h2 className="text-xl font-semibold text-gray-500">No videos found</h2>
+          </div>
+        ) : (
+          videos.data.map((video: any, i: number) => {
+            const { id, thumbnail, title, summary, slug, link } = video.attributes;
+
+            return (
+              <div className="mx-auto mt-8 grid w-full  grid-cols-1 gap-6 ">
                 <div key={i} className="mb-5 w-full">
                   <VideoCard
                     image={thumbnail.data.attributes.url}
@@ -60,9 +65,10 @@ export default async function SubCategory({ params }: any) {
                     slug={slug}
                   />
                 </div>
-              );
-            })}
-        </div>
+              </div>
+            );
+          })
+        )}
       </main>
     </>
   );

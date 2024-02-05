@@ -35,7 +35,7 @@ const Articles = async () => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
             return (
               <ArticleCard
-                key={i}
+                key={id || i}
                 image={thumbnail.data.attributes.url}
                 title={title}
                 summary={summary}

@@ -41,7 +41,7 @@ export async function RecentClasses() {
         </div>
         <div className="mt-10 grid gap-6 py-6 lg:grid-cols-3 lg:gap-12">
           {/* <div className="grid gap-6  py-6 lg:grid-cols-1 lg:gap-6"> */}
-          {classes.data.map((oneClass: any) => {
+          {classes.data.map((oneClass: any, i: number) => {
             const { id, name, description, slug } = oneClass.attributes;
             // TODO: Add slug to Strapi
             return (
@@ -49,7 +49,7 @@ export async function RecentClasses() {
                 slug={slug || ''}
                 title={name || ''}
                 description={description || ''}
-                key={id}
+                key={id || i}
               />
             );
           })}

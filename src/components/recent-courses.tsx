@@ -15,7 +15,7 @@ export async function RecentCourses() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="relative flex w-full items-center justify-center ">
-            <h2 className="font-['Avenir Next'] text-4xl font-medium tracking-tighter sm:text-5xl">
+            <h2 className=" text-4xl font-medium tracking-tighter sm:text-5xl">
               Online Astro Courses
             </h2>
             <svg
@@ -60,11 +60,7 @@ export async function RecentCourses() {
         <div className="grid gap-6  py-6 lg:grid-cols-3 lg:gap-12">
           {courses.data.map((course: any, i: number) => {
             const { id, name, description, image, slug } = course.attributes;
-            return (
-              <>
-                <Course title={name} description={description} key={i} slug={slug} />
-              </>
-            );
+            return <Course title={name} description={description} key={i} slug={slug} />;
           })}
         </div>
         <div className="mt-8 flex justify-center">

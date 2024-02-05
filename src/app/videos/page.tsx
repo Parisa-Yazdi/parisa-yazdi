@@ -13,11 +13,11 @@ const Videos = async () => {
           <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">LATEST VIDEOS</h2>
         </div>
         <div className="mx-auto mt-10 flex w-8/12   flex-col flex-wrap items-center justify-center gap-6">
-          {videos.data.map((video: any) => {
+          {videos.data.map((video: any, i: number) => {
             const { id, thumbnail, title, summary, slug, link } = video.attributes;
             return (
               <VideoCard
-                key={id}
+                key={id || i}
                 image={thumbnail.data.attributes.url}
                 title={title}
                 summary={summary}
