@@ -13,9 +13,10 @@ interface BookCardProps {
   description: string;
   img: string;
   bookLink: string;
+  slug?: string;
 }
 
-export function BookCard({ title, img, description, bookLink }: BookCardProps) {
+export function BookCard({ title, img, description, bookLink, slug }: BookCardProps) {
   return (
     <Card className="mx-auto max-w-xs border-0 shadow-md  md:w-3/4">
       <Link href={bookLink}>
@@ -38,7 +39,7 @@ export function BookCard({ title, img, description, bookLink }: BookCardProps) {
           {description && description.length > 120 ? (
             <>
               {description.slice(0, 120)}...{' '}
-              <Link href={''} className="text-xs text-blue-500 hover:underline">
+              <Link href={`/book/${slug}`} className="text-xs text-blue-500 hover:underline">
                 read more
               </Link>
             </>
