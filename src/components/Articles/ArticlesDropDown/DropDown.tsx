@@ -54,11 +54,14 @@ export default function DropDown({ subCategories }: { subCategories: category[] 
               >
                 <>
                   <Link
+                    className="w-full"
                     href={`/articles/${parseUrl(
                       category.attributes.category.data.attributes.name
                     )}/${parseUrl(category.attributes.name)}`}
                   >
-                    {category.attributes.name + `  (${category.attributes.articles.data.length})`}
+                    <div>
+                      {category.attributes.name + `  (${category.attributes.articles.data.length})`}
+                    </div>
                   </Link>
                 </>
 

@@ -67,7 +67,7 @@ const LatestArticles = async () => {
             );
           })}
         </div>
-        <div className="mt-10 flex w-1/2 flex-col items-center justify-center">
+        <div className="mt-10 flex w-10/12 flex-col items-center justify-center md:w-1/2">
           <DropDown subCategories={subCategories.data} />
           <Link href="/articles">
             <Button className=" mt-10  bg-white text-base text-black hover:border hover:border-white hover:bg-black hover:text-white">
