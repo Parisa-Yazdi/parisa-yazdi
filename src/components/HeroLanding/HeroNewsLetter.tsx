@@ -67,9 +67,15 @@ export default function HeroNewsLetter() {
     <div className="mt-5 w-full gap-5 px-5 md:px-0">
       <form onSubmit={subscribeUser} className="flex flex-col gap-4 md:flex-row md:gap-0">
         <input
-          type="text"
+          type="email"
           placeholder="Enter you email..."
+          ref={inputRef}
           className="border border-white bg-black p-4 text-white focus:outline-none md:w-7/12"
+          id="email-input"
+          name="email"
+          required
+          autoCapitalize="off"
+          autoCorrect="off"
         />
         <Button
           type="submit"
