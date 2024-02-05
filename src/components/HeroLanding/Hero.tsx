@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import HeroNewsLetter from './HeroNewsLetter';
 const Hero = () => {
   return (
     <section className="relative mx-auto flex h-screen w-full  flex-col items-center justify-normal gap-1  bg-black  md:flex-row md:gap-5 ">
@@ -27,21 +28,7 @@ const Hero = () => {
             className="  mr-10 w-full rounded-md"
           />
         </div>
-        <div className="mt-5 w-full gap-5 px-5 md:px-0">
-          <form action="" className="flex flex-col gap-4 md:flex-row md:gap-0">
-            <input
-              type="text"
-              placeholder="Enter you email..."
-              className="border border-white  bg-black p-4 md:w-7/12"
-            />
-            <Link
-              className="border border-white bg-black p-4 text-center text-white md:ml-3"
-              href={''}
-            >
-              Sign Up Now
-            </Link>
-          </form>
-        </div>
+        <HeroNewsLetter />
       </div>
       {/* image */}
       <div className="h-3/12 mr-28 hidden w-9/12 rounded-md md:my-auto  md:flex md:w-4/12">
@@ -60,7 +47,7 @@ const Hero = () => {
       {/* bg-gradient-to-t from-white via-gray-300 via-gray-600 to-black */}
       {/* </div> */}
       <div
-        className="absolute bottom-0 h-[90px] w-full"
+        className="absolute bottom-0 h-[90px] w-full border-0"
         style={{
           background:
             'linear-gradient(to top, white, #eee 20%, #ccc 40%, #999 60%, #666 80%, black)'

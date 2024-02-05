@@ -1,22 +1,23 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
-const SubCategories = ({ subCategoryName, slug }: any) => {
+const SubCategories = ({ subCategoryName, slug, thumbnail }: any) => {
   return (
     <>
-      <div className="w-full  hover:drop-shadow-xl">
+      <div className="w-full hover:drop-shadow-xl ">
         {/* <Link href={'/slug'}> */}
-        <Image
-          src="https://picsum.photos/200/200"
-          alt="Picture of the author"
-          width={200}
-          height={200}
-          className="w-full rounded-t-md "
-        />
-        <h2 className="flex h-20 w-full min-w-fit items-center justify-center overflow-auto rounded-b-md bg-white p-3 text-center antialiased   md:text-lg">
-          {subCategoryName}
-        </h2>
-        {/* </Link> */}
+        <div className="md:w-[240px]">
+          <Image
+            src={thumbnail}
+            alt="Picture of the author"
+            width={240}
+            height={200}
+            className="h-[150px] w-[240px] rounded-t-md  object-cover md:h-[230px]"
+          />
+          <h2 className="box-border flex h-20 items-center  justify-center overflow-auto rounded-b-md bg-gray-600 p-3 text-center antialiased md:w-[240px] md:text-lg">
+            {subCategoryName}
+          </h2>
+          {/* </Link> */}
+        </div>
       </div>
     </>
   );

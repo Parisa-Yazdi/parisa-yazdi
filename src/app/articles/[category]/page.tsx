@@ -44,14 +44,21 @@ export default async function SubCategory({ params }: any) {
             </h2>
           </div>
         </div>
-        <div className="mx-auto mb-10 mt-7 grid w-10/12 grid-cols-3 gap-5  md:w-6/12">
+        <div className="mx-auto mb-10 mt-7 grid w-10/12 grid-cols-2 gap-5 md:w-6/12  md:grid-cols-3">
           {singleCategory.attributes.sub_categories.data.map((category: any, index: number) => {
             const { id, name } = category.attributes;
-            console.log('singleCategory', singleCategory);
+            const { thumbnail } = category.attributes;
+            // console.log('subCategoriessss', subCategories);
             return (
-              <div key={index} className="mb-5">
+              <div key={index}>
                 <Link href={`/articles/${parseUrl(`${params.category}`)}/${`${parseUrl(name)}`}`}>
-                  <SubCategories key={index} subCategoryName={name} />
+                  <SubCategories
+                    key={index}
+                    subCategoryName={name}
+                    thumbnail={
+                      (thumbnail.data && thumbnail.data.attributes.formats.large.url) || ''
+                    }
+                  />
                 </Link>
               </div>
             );

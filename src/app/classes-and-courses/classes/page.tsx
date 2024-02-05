@@ -24,7 +24,7 @@ export default async function Courses() {
   return (
     <>
       {/* bg-[#e0ebfe] */}
-      <main className="mx-auto h-fit w-7/12 overflow-hidden   pb-24">
+      <main className="mx-auto h-fit w-9/12 overflow-hidden pb-24   md:w-7/12">
         <div className="mt-5 flex w-full justify-center">
           <h2 className="mt-10 text-4xl font-semibold tracking-tighter sm:text-5xl">CLASSES</h2>
         </div>

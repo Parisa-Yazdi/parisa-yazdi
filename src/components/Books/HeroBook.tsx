@@ -20,7 +20,7 @@ export default function ({ image, title, description, bookLink, price }: HeroBoo
         width={296}
         height={396}
         alt="Article Image"
-        className="h-[396px] items-center lg:w-2/5"
+        className="h-[396px] w-full items-center object-cover lg:w-2/5"
       />
       <div className=" flex  flex-col justify-between  border p-4">
         <div className="flex flex-col ">

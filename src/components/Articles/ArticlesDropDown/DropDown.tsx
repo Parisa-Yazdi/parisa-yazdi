@@ -14,12 +14,14 @@ import {
 } from '@/components/ui/command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { redirect } from 'next/dist/server/api-utils';
+import { parseUrl } from '@/lib/utils';
+import Link from 'next/link';
 
 interface category {
   attributes: any;
 }
 
-export default function DropDown({ categories }: { categories: category[] }) {
+export default function DropDown({ subCategories }: { subCategories: category[] }) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
 
@@ -32,16 +34,16 @@ export default function DropDown({ categories }: { categories: category[] }) {
           aria-expanded={open}
           className=" w-3/4 justify-between"
         >
-          {value || 'Select category...'}
+          {value || 'Find article by category...'}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[340px] p-0">
+      <PopoverContent className="w-[240px] p-0">
         <Command>
           <CommandInput placeholder="Search category..." className="h-9" />
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandGroup>
-            {categories.map((category, i) => (
+            {subCategories.map((category, i) => (
               <CommandItem
                 key={i}
                 value={category.attributes.name}
@@ -50,7 +52,15 @@ export default function DropDown({ categories }: { categories: category[] }) {
                   setOpen(false);
                 }}
               >
-                <>{category.attributes.name}</>
+                <>
+                  <Link
+                    href={`/articles/${parseUrl(
+                      category.attributes.category.data.attributes.name
+                    )}/${parseUrl(category.attributes.name)}`}
+                  >
+                    {category.attributes.name + `  (${category.attributes.articles.data.length})`}
+                  </Link>
+                </>
 
                 <CheckIcon
                   className={cn(

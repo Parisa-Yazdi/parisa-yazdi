@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import SubCategories from '../SubCategory/SubCategories';
+import SubCategories from '../Articles/SubCategory/SubCategories';
 import { parseUrl } from '@/lib/utils';
 
-interface ArticleCategoryProps {
+interface VideoCategoryProps {
   categoryName: string;
   subCategories: any;
 }
 
-async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryProps) {
+export default async function VideoCategory({ categoryName, subCategories }: VideoCategoryProps) {
   return (
     <>
       <div className="flex w-full flex-col md:w-8/12">
@@ -22,7 +22,7 @@ async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryP
 
             return (
               <div key={index} className="mb-5 w-4/12 gap-5 p-1 md:mx-2 md:w-auto">
-                <Link href={`/articles/${parseUrl(categoryName)}/${parseUrl(name)}`}>
+                <Link href={`/videos/${parseUrl(categoryName)}/${parseUrl(name)}`}>
                   <SubCategories
                     subCategoryName={name}
                     thumbnail={
@@ -38,5 +38,3 @@ async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryP
     </>
   );
 }
-
-export default ArticleCategory;

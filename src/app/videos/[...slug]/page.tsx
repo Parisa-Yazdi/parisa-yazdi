@@ -1,6 +1,7 @@
 import ArticleCard from '@/components/Articles/ArticleCard';
 import React from 'react';
-import { fetchSubCategory, fetchArticlesBySubcategory } from '@/lib/utils';
+import { fetchSubCategory, fetchVideosBySubcategory } from '@/lib/utils';
+import VideoCard from '@/components/Video/VideoCard';
 
 export default async function SubCategory({ params }: any) {
   const subCategories = await fetchSubCategory();
@@ -32,7 +33,8 @@ export default async function SubCategory({ params }: any) {
     return categoryName.includes(slugName);
   });
 
-  const articles = await fetchArticlesBySubcategory(subCategory.attributes.name);
+  const videos = await fetchVideosBySubcategory(subCategory.attributes.name);
+  console.log('videos', videos.data);
 
   return (
     <>
@@ -44,23 +46,23 @@ export default async function SubCategory({ params }: any) {
             </h2>
           </div>
         </div>
-        <div className="mx-auto mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
-          {articles.data.map((article: any, index: number) => {
-            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
-
-            return (
-              <div key={index} className="mb-5 w-full">
-                <ArticleCard
-                  image={thumbnail.data.attributes.url}
-                  title={title}
-                  summary={summary}
-                  articleLink={`article/${slug}`}
-                  date={date}
-                  author={author}
-                />
-              </div>
-            );
-          })}
+        <div className="mx-auto mt-8 grid w-full  grid-cols-1 gap-6 ">
+          {videos.data &&
+            videos.data.map((video: any, i: number) => {
+              const { id, thumbnail, title, summary, slug, link } = video.attributes;
+              console.log(video);
+              return (
+                <div key={i} className="mb-5 w-full">
+                  <VideoCard
+                    image={thumbnail.data.attributes.url}
+                    title={title}
+                    summary={summary}
+                    videoLink={link}
+                    slug={slug}
+                  />
+                </div>
+              );
+            })}
         </div>
       </main>
     </>

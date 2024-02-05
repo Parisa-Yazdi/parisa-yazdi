@@ -1,6 +1,6 @@
 import ArticleCard from './Card';
 // import Button from '@/components/Button/Button';
-import { fetchArticles, fetchCategories } from '@/lib/utils';
+import { fetchArticles, fetchSubCategory } from '@/lib/utils';
 import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
 import { Button } from '@/components/ui/button';
 import { ArticleCardLanding } from '@/components/article-card-landing';
@@ -27,9 +27,8 @@ interface Article {
 
 const LatestArticles = async () => {
   const articles = await fetchArticles();
-  // console.log('articles', articles);
-
-  const articleTitles = articles.data.map((article: Article) => article.attributes.title);
+  const subCategories = await fetchSubCategory();
+  console.log('subCategories', subCategories.data);
 
   const sortedArticles = articles.data.sort((a: Article, b: Article) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
@@ -68,7 +67,8 @@ const LatestArticles = async () => {
             );
           })}
         </div>
-        <div className=" flex w-full  justify-center ">
+        <div className="mt-10 flex w-1/2 flex-col items-center justify-center">
+          <DropDown subCategories={subCategories.data} />
           <Link href="/articles">
             <Button className=" mt-10  bg-white text-base text-black hover:border hover:border-white hover:bg-black hover:text-white">
               View all Articles

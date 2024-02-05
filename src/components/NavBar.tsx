@@ -14,23 +14,6 @@ export default function NavBar() {
           <div className="mx-auto mr-14 flex w-full justify-end">
             <h1 className="text-3xl text-white">PARISA YAZDI</h1>
           </div>
-          <div className="block flex-none pr-6 lg:hidden">
-            <svg
-              className="h-6 w-6 text-white "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-              />
-            </svg>
-          </div>
         </div>
       </div>
 

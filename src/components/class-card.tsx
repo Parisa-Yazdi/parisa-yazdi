@@ -39,7 +39,7 @@ export function ClassCard({ name, description, link, slug, thumbnail }: ClassCar
           </CardDescription>
           {/* <p className="mt-2 text-sm">Instructor: {instructor}</p> */}
         </div>
-        <Link href={`${slug}`} className="mt-4 self-end md:self-end">
+        <Link href={`/classes-and-courses/class/${slug}`} className="mt-4 self-end md:self-end">
           <Button variant="link">Learn more</Button>
         </Link>
       </div>

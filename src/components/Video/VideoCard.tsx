@@ -9,7 +9,7 @@ import config from '@/config';
 import Link from 'next/link';
 
 interface VideoCardProps {
-  image: any;
+  image?: any;
   title: string;
   summary: string;
   slug: string;

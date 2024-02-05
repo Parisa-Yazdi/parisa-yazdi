@@ -6,6 +6,15 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
 import PersonalWriting from './personal-writing';
 
+import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
+
 export function AboutAuthor() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -42,18 +51,55 @@ export function AboutAuthor() {
           </p>
         </div>
       </section>
-      <h2 className="mb-6 mt-24 text-3xl font-bold">Personal Videos</h2>
+      <section>
+        <h2 className="mb-6 mt-24 text-3xl font-bold">Personal Writings</h2>
+        <Carousel
+          opts={{
+            align: 'start'
+          }}
+          className="w-full max-w-7xl"
+        >
+          <CarouselContent>
+            {Array.from({ length: 4 }).map((_, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <PersonalWriting />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+      <section>
+        <h2 className="mb-6 mt-24 text-3xl font-bold">Personal Videos</h2>
+        <Carousel
+          opts={{
+            align: 'start'
+          }}
+          className="w-full max-w-7xl"
+        >
+          <CarouselContent>
+            {Array.from({ length: 4 }).map((_, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <PersonalWriting />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+
+      {/* <h2 className="mb-6 mt-12 text-3xl font-bold">Personal Writings</h2>
       <section className=" flex gap-5 ">
         <PersonalWriting />
         <PersonalWriting />
         <PersonalWriting />
-      </section>
-      <h2 className="mb-6 mt-12 text-3xl font-bold">Personal Writings</h2>
-      <section className=" flex gap-5 ">
-        <PersonalWriting />
-        <PersonalWriting />
-        <PersonalWriting />
-      </section>
+      </section> */}
     </main>
   );
 }

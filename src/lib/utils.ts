@@ -83,7 +83,10 @@ export async function fetchCategories() {
     }
   };
 
-  const request = await fetch(`${config.api}/api/categories?populate=*`, reqOptions);
+  const request = await fetch(
+    `${config.api}/api/categories?populate[0]=sub_categories&populate[1]=sub_categories.thumbnail`,
+    reqOptions
+  );
   const response = await request.json();
 
   return response;
@@ -108,6 +111,23 @@ export async function fetchArticleBySubCategory(slug: string) {
   return response;
 }
 
+export async function fetchVideosBySubcategory(subCategory: string) {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      'Cache-Control': 'no-store'
+    }
+  };
+
+  const request = await fetch(
+    `${config.api}/api/videos?filters[sub_category][name][$eq]=${subCategory}&populate=*`,
+    reqOptions
+  );
+  const response = await request.json();
+
+  return response;
+}
+
 export async function fetchSubCategory() {
   const reqOptions = {
     headers: {
@@ -117,7 +137,10 @@ export async function fetchSubCategory() {
     }
   };
 
-  const request = await fetch(`${config.api}/api/sub-categories?populate=deep`, reqOptions);
+  const request = await fetch(
+    `${config.api}/api/sub-categories?populate[0]=articles&populate[1]=category`,
+    reqOptions
+  );
   const response = await request.json();
 
   return response;
@@ -177,7 +200,7 @@ export async function fetchClassBySlug(slug: string) {
   };
 
   const request = await fetch(
-    `${config.api}/api/classes?populate=*&filters[slug][$eq]=${slug}`,
+    `${config.api}/api/classes?filters[slug][$eq]=${slug}&populate=*`,
     reqOptions
   );
   const response = await request.json();
@@ -208,7 +231,7 @@ export async function fetchCourseBySlug(slug: string) {
   };
 
   const request = await fetch(
-    `${config.api}/api/courses?populate=*&filters[slug][$eq]=${slug}`,
+    `${config.api}/api/courses?filters[slug][$eq]=${slug}&populate=*`,
     reqOptions
   );
   const response = await request.json();
