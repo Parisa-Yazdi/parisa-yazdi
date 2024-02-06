@@ -29,6 +29,7 @@ const Hero = () => {
             className="w-full rounded-md   md:mr-10"
           />
         </div>
+
         <HeroNewsLetter />
       </div>
       {/* image */}

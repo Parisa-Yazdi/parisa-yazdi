@@ -14,29 +14,18 @@ export default function HeroNewsLetter() {
     // set it to false after 3 seconds
     setTimeout(() => {
       setIsSent(false);
-    }, 10000);
+    }, 5000);
   };
-
-  useEffect(() => {
-    if (isSent) {
-      // set it to false after 10 seconds
-      const timer = setTimeout(() => {
-        setIsSent(false);
-      }, 5000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isSent]);
 
   function UserFeedback() {
     // tell the user that they have subscribed
     return (
       <>
-        <div className="mt-3 w-1/2">
-          <p className="mx-auto items-center justify-center text-green-500 antialiased dark:text-green-400">
+        <span className="absolute bottom-24 w-1/2 md:static">
+          <p className="mx-auto items-center justify-center  text-green-500 antialiased dark:text-green-400">
             Thanks for subscribing!
           </p>
-        </div>
+        </span>
       </>
     );
   }
@@ -64,7 +53,7 @@ export default function HeroNewsLetter() {
     handleSuccess();
   };
   return (
-    <div className="mt-5 w-full gap-5 px-5 md:px-0">
+    <div className="mt-8 w-full gap-5 px-5 md:mt-5  md:px-0">
       <h3 className="mb-3 text-base leading-tight text-gray-500 antialiased ">
         Subscribe to the newsletter to never miss an update!
       </h3>
