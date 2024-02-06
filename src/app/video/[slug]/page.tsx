@@ -7,7 +7,7 @@ export default async function VideoPage({ params }: any) {
   const { title, summary, link, date, featuredImage } = video.data[0].attributes;
 
   return (
-    <main className="mx-auto flex w-8/12 flex-col items-center justify-center">
+    <main className="mx-auto flex w-9/12 flex-col items-center justify-center">
       <div>
         <div className="mt-10 flex w-full justify-center">
           <h2 className="font-heebo text-4xl font-semibold tracking-tighter sm:text-5xl">
@@ -25,7 +25,7 @@ export default async function VideoPage({ params }: any) {
         className="m-10 mb-0 rounded-md border-4 border-gray-800"
       ></iframe>
 
-      <div className=" mb-5 mt-5 flex w-7/12 flex-col justify-center gap-4  rounded border bg-stone-100 p-5">
+      <div className=" mb-5 mt-5 flex w-full flex-col justify-center gap-4 rounded  border bg-stone-100 p-5 md:w-6/12">
         <div className="flex  justify-between">
           <p className="text-lg font-medium tracking-tighter sm:text-xl">05-02-2024</p>
           <Link
