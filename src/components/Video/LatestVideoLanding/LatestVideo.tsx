@@ -45,6 +45,7 @@ export default async function LatestVideos() {
             return (
               <>
                 <VideoCard
+                  className="bg-[#e8eaed]"
                   key={i}
                   title={title}
                   image={thumbnail.data.attributes.url}

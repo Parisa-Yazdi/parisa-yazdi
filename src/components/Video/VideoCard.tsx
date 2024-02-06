@@ -1,12 +1,9 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/tTQTGBwBu5Q
- */
 import { CardTitle, CardDescription, CardContent, Card } from '@/components/ui/card';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import config from '@/config';
 import Link from 'next/link';
+import { FiExternalLink } from 'react-icons/fi';
 
 interface VideoCardProps {
   image?: any;
@@ -15,6 +12,7 @@ interface VideoCardProps {
   slug: string;
   videoLink: string;
   date?: Date;
+  className?: string;
 }
 
 export default function VideoCard({
@@ -23,38 +21,41 @@ export default function VideoCard({
   summary,
   slug,
   date,
-  videoLink
+  videoLink,
+  className
 }: VideoCardProps) {
+  const hasBgColor = className?.includes('bg-');
   return (
-    <Card className="mx-auto  overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA] md:w-full">
-      {' '}
-      {/* Adjust width here */}
+    <Card
+      className={`mx-auto  overflow-hidden overflow-ellipsis border-0  ${
+        hasBgColor ? '' : 'bg-white'
+      } ${className} md:w-full`}
+    >
       <div className="flex h-1/2  flex-col md:flex-row">
         <Image
           alt="Video Cover"
           className=" aspect-square h-[200px] w-full rounded-l-lg object-cover md:h-[300px] md:w-5/12  lg:w-8/12"
-          height={100} // Adjusted height to make the card smaller
-          // src="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png"
+          height={100}
           src={`${image}`}
           width={100}
         />
 
         <CardContent className="w-full space-y-1  p-3">
-          <CardTitle className="line-clamp-2 text-lg font-semibold">{title}</CardTitle>{' '}
-          {/* <div className="mt-2 flex  justify-between md:flex-row md:items-center"> */}
-          {/* <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{date.toString()}</p> */}
-          {/* </div> */}
+          <CardTitle className="line-clamp-2 text-lg font-semibold">{title}</CardTitle>
           <div className="flex flex-col justify-between">
             <CardDescription className=" h-[118px] overflow-hidden truncate text-ellipsis py-4 text-sm md:h-[130px] xl:h-[199px]">
               {summary}
             </CardDescription>
             <div className=" flex justify-end space-x-1 md:justify-end">
-              <Button
-                size="sm"
-                className="mt-5 w-1/3 border border-black  bg-white  p-0 text-sm text-black hover:border-white hover:text-white md:mr-3 md:w-1/4   xl:mt-0"
+              <Link
+                className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow hover:border hover:border-black hover:bg-white hover:text-black"
+                href={videoLink}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Link href={`/video/${slug}`}>Read More</Link>
-              </Button>
+                Watch Video
+                <FiExternalLink className="mb-1 ml-2 inline-block" />
+              </Link>
             </div>
           </div>
         </CardContent>

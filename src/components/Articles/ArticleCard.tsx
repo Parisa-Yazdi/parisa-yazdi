@@ -26,7 +26,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
   // overflow-hidden  -- above summary div
   return (
-    <Card className=" mx-auto border-0  md:w-full ">
+    <Card className=" mx-auto w-full border-0  bg-white ">
       <Image
         alt="Article Cover"
         className=" aspect-[6/12] h-[300px] w-full rounded-t-lg  object-cover"
@@ -46,12 +46,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
           {summary}
         </CardDescription>
         <div className=" flex justify-end space-x-1 ">
-          <Button
-            size="sm"
-            className="w-1/3 border border-black bg-white p-0 text-sm text-black hover:border-white  hover:text-white"
+          <Link
+            className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow hover:border hover:border-black hover:bg-white hover:text-black"
+            href={articleLink}
           >
-            <Link href={articleLink}>Read More</Link>
-          </Button>
+            Read More
+          </Link>
         </div>
       </CardContent>
     </Card>

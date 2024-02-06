@@ -8,9 +8,11 @@ const Videos = async () => {
   return (
     <>
       {/* bg-[#e0ebfe] */}
-      <main className="h-fit  overflow-hidden  pb-24">
+      <main className="h-full w-full overflow-hidden  bg-[#000000e5]  pb-24">
         <div className="mx-auto mt-10 flex w-8/12 justify-start ">
-          <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">LATEST VIDEOS</h2>
+          <h2 className="text-4xl font-semibold tracking-tighter text-white sm:text-5xl">
+            LATEST VIDEOS
+          </h2>
         </div>
         <div className="mx-auto mt-10 flex w-8/12   flex-col flex-wrap items-center justify-center gap-6">
           {videos.data.map((video: any, i: number) => {

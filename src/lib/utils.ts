@@ -280,3 +280,21 @@ export async function fetchGallery() {
 
   return response;
 }
+
+export async function fetchAuthorSubCategories(category = 'Personal Journals') {
+  const reqOptions = {
+    headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      'Cache-Control': 'no-store',
+      cache: 'no-store'
+    }
+  };
+
+  const request = await fetch(
+    `${config.api}/api/sub-categories?filters[category][name][$eq]=${category}&populate=*`,
+    reqOptions
+  );
+  const response = await request.json();
+
+  return response;
+}
