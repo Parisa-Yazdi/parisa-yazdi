@@ -14,7 +14,9 @@ export default function NavBar() {
           {/* <div className="flex w-full flex-col justify-between gap-5 md:absolute md:bottom-0 "> */}
           <div className="mx-auto mr-14 flex w-full justify-end">
             <Link href="/">
-              <h1 className="min-w-fit text-3xl text-white">PARISA YAZDI</h1>
+              <h1 className="min-w-fit font-heebo text-3xl font-extrabold text-white">
+                PARISA YAZDI
+              </h1>
             </Link>
           </div>
         </div>
