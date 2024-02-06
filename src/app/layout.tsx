@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${heebo.className} w-full`}>
+      <body className={`${heebo.className} w-full `}>
         <Suspense>
           <NavBar />
           <main>{children}</main>

@@ -26,7 +26,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 
   // overflow-hidden  -- above summary div
   return (
-    <Card className=" mx-auto border-0 bg-[#e3e5e8] md:w-full ">
+    <Card className=" mx-auto border-0  md:w-full ">
       <Image
         alt="Article Cover"
         className=" aspect-[6/12] h-[300px] w-full rounded-t-lg  object-cover"

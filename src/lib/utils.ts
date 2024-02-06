@@ -2,6 +2,7 @@ import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import config from '@/config';
 import { cache } from 'react';
+import { revalidatePath } from 'next/cache';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -18,9 +19,11 @@ export function parseUrl(url: string) {
 
 export async function fetchArticles() {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -32,12 +35,13 @@ export async function fetchArticles() {
 
 export async function fetchArticleBySlug(slug: string) {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
-
   const request = await fetch(
     `${config.api}/api/articles?populate=*&filters[slug][$eq]=${slug}`,
     reqOptions
@@ -49,9 +53,11 @@ export async function fetchArticleBySlug(slug: string) {
 
 export async function fetchVideos() {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -63,9 +69,11 @@ export async function fetchVideos() {
 
 export async function fetchVideoBySlug(slug: string) {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -77,9 +85,11 @@ export async function fetchVideoBySlug(slug: string) {
 
 export async function fetchCategories() {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -96,9 +106,11 @@ export async function fetchCategories() {
 
 export async function fetchArticleBySubCategory(slug: string) {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -113,9 +125,11 @@ export async function fetchArticleBySubCategory(slug: string) {
 
 export async function fetchVideosBySubcategory(subCategory: string) {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -148,9 +162,11 @@ export async function fetchSubCategory() {
 
 export async function fetchArticlesBySubcategory(subCategory: string) {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -165,9 +181,11 @@ export async function fetchArticlesBySubcategory(subCategory: string) {
 
 export async function fetchBooks() {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -179,9 +197,11 @@ export async function fetchBooks() {
 
 export async function fetchClasses() {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -193,9 +213,11 @@ export async function fetchClasses() {
 
 export async function fetchClassBySlug(slug: string) {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -210,9 +232,11 @@ export async function fetchClassBySlug(slug: string) {
 
 export async function fetchCourses() {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -224,9 +248,11 @@ export async function fetchCourses() {
 
 export async function fetchCourseBySlug(slug: string) {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 
@@ -241,9 +267,11 @@ export async function fetchCourseBySlug(slug: string) {
 
 export async function fetchGallery() {
   const reqOptions = {
+    next: { revalidate: 60 },
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-      'Cache-Control': 'no-store'
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
 

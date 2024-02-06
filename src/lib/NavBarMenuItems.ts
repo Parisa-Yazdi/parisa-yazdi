@@ -47,6 +47,9 @@ export const menuItems: MenuItem[] = [
       },
       Courses: {
         href: '/classes-and-courses/courses'
+      },
+      Readings: {
+        href: '/classes-and-courses/readings'
       }
     }
   },
