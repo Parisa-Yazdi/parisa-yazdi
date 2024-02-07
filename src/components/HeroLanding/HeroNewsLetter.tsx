@@ -35,6 +35,7 @@ export default function HeroNewsLetter() {
 
     // this is where your mailchimp request is made
     const email = inputRef.current ? inputRef.current.value : '';
+    handleSuccess();
     await fetch('/api/subscribeUser', {
       body: JSON.stringify({
         email
@@ -50,10 +51,9 @@ export default function HeroNewsLetter() {
     if (inputRef.current) {
       inputRef.current.value = '';
     }
-    handleSuccess();
   };
   return (
-    <div className="mt-8 w-full gap-5 px-5 md:mt-5  md:px-0">
+    <div className=" w-full gap-5 px-5   md:px-0">
       <h3 className="mb-3 text-base leading-tight text-gray-500 antialiased ">
         Subscribe to the newsletter to never miss an update!
       </h3>

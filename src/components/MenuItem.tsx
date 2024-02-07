@@ -30,13 +30,13 @@ const MenuItem: React.FC<MenuItemProps> = ({ MenuItemName, subPages, href }) => 
           {subPages && Object.keys(subPages).length > 0 && (
             <div className="hidden md:block">
               <div
-                className={`dropdown-container absolute -ml-3 mt-3 hidden whitespace-nowrap border border-t-0 border-black bg-white p-1 text-black group-hover:block`}
+                className={`dropdown-container absolute -ml-3 mt-3 hidden justify-start whitespace-nowrap border border-t-0 border-black bg-white p-1 text-black group-hover:block`}
               >
                 {Object.entries(subPages).map(([subPageName, subPage], i) => (
                   <Link
                     key={i}
                     href={subPage.href}
-                    className="block flex-nowrap px-4 py-2 text-black antialiased hover:bg-black hover:text-white"
+                    className="block px-4  py-2 pr-6 text-black antialiased hover:bg-black hover:text-white"
                   >
                     {subPageName}
                   </Link>

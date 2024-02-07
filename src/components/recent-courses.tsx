@@ -11,7 +11,7 @@ export async function RecentCourses() {
   const courses = await fetchCourses();
 
   return (
-    <section className="w-full border-l  border-t-0 border-black py-12 md:py-24 lg:py-20">
+    <section className="w-full py-12 md:py-24 lg:py-20">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="relative flex w-full items-center justify-center ">

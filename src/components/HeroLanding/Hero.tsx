@@ -4,7 +4,7 @@ import HeroNewsLetter from './HeroNewsLetter';
 const Hero = () => {
   return (
     <section className="relative mx-auto flex h-screen  w-full flex-col items-center justify-between gap-1 bg-black  md:flex-row md:justify-normal ">
-      <div className="flex flex-col md:relative md:ml-24 md:h-1/2 md:w-8/12 md:items-start md:gap-10">
+      <div className="flex flex-col gap-2 md:ml-20  md:h-3/4 md:w-8/12 md:items-start md:gap-16 lg:gap-24">
         <div className="mt-8 flex  flex-col gap-5">
           <h1 className="min-w-fit  px-2 text-center font-heebo text-4xl font-extrabold text-white antialiased sm:text-5xl md:px-0 md:text-start lg:text-7xl">
             Existance in Symbols
@@ -16,7 +16,8 @@ const Hero = () => {
             </h3>
           </div>
         </div>
-        <div className="h-1/12 mx-auto mt-5 w-7/12 rounded-md md:hidden">
+
+        <div className="h-1/12 mx-auto  w-7/12 rounded-md md:hidden">
           <Image
             src={'https://i.imgur.com/J0JJK6r.jpeg'}
             // src={
@@ -29,7 +30,6 @@ const Hero = () => {
             className="w-full rounded-md   md:mr-10"
           />
         </div>
-
         <HeroNewsLetter />
       </div>
       {/* image */}
