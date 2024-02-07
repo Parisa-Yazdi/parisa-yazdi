@@ -39,7 +39,7 @@ export async function RecentClasses() {
             Explore our carefully designed courses to level up your knowledge.
           </p>
         </div>
-        <div className="mt-10 grid gap-6 py-6 lg:grid-cols-3 lg:gap-12">
+        <div className="mt-5 grid gap-6 py-6 lg:grid-cols-3 lg:gap-12">
           {/* <div className="grid gap-6  py-6 lg:grid-cols-1 lg:gap-6"> */}
           {classes.data.map((oneClass: any, i: number) => {
             const { id, name, description, slug } = oneClass.attributes;
