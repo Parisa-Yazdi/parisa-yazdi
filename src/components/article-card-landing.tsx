@@ -42,10 +42,7 @@ export async function ArticleCardLanding({
           {/* </div> */}
           <div className="flex h-5/6 flex-col justify-between ">
             <CardDescription className=" h-[118px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[199px]">
-              {/* {summary} */}
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo dolorum nostrum amet
-              dolores voluptatibus beatae quis, possimus architecto odit tempora officia quo quam
-              ducimus sunt itaque iure consectetur qui aperiam.
+              {summary}
             </CardDescription>
             <div className=" flex justify-end   md:justify-end">
               <Link href={slug}>

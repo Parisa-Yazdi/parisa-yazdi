@@ -52,7 +52,7 @@ export default function VideoCard({
           {/* <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{date.toString()}</p> */}
           {/* </div> */}
           <div className="flex h-5/6 flex-col justify-between ">
-            <CardDescription className=" h-[118px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[199px]">
+            <CardDescription className=" h-[111px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[199px]">
               {summary}
             </CardDescription>
             <div className=" flex justify-end   md:justify-end">
