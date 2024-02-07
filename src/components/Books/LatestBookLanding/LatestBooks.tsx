@@ -33,7 +33,7 @@ export default async function LatestArticles() {
         <div className="mt-10 flex justify-center">
           <Link
             className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-white px-8 text-base font-medium text-black shadow hover:border hover:border-white hover:bg-black hover:text-white"
-            href="#"
+            href="/books"
           >
             View all Books
           </Link>
