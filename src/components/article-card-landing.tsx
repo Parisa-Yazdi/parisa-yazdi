@@ -25,7 +25,7 @@ export async function ArticleCardLanding({
   date
 }: ArticleCardProps) {
   return (
-    <Card className="mx-auto  overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA] md:w-full">
+    <Card className="mx-auto  w-full overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA]">
       <div className="flex h-1/2  flex-col md:flex-row">
         <Image
           alt="Video Cover"
