@@ -4,15 +4,16 @@ import Link from 'next/link';
 import { fetchAuthor } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Image from 'next/image';
 
 export async function AboutAuthor() {
   const subCategories = await fetchAuthorSubCategories();
   const author = await fetchAuthor();
-  console.log('author', author.data[0].attributes.photo.data.attributes.url);
+
   return (
     <main className="mx-auto sm:px-6 md:max-w-7xl md:px-4 md:py-6 lg:px-8">
       <section className="flex flex-col items-start gap-6 md:flex-row md:gap-12">
-        <img
+        <Image
           alt="Author's Image"
           className="aspect-[4/5] w-full overflow-hidden rounded-lg border border-gray-200 object-cover dark:border-gray-800"
           height={500}

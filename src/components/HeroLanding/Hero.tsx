@@ -27,7 +27,7 @@ const Hero = () => {
             width={400}
             height={400}
             priority
-            className="mb-5 w-full rounded-md  md:mr-10"
+            className="mb-10 w-full rounded-md  md:mr-10"
           />
         </div>
         <HeroNewsLetter />

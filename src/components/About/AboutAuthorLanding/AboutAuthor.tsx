@@ -10,7 +10,6 @@ interface AboutAuthorProps {
 
 export default async function AboutAuthor() {
   const author = await fetchAuthor();
-  console.log('author', author.data[0].attributes.photo.data.attributes.url);
 
   return (
     <section className="h-fit bg-black pb-8">

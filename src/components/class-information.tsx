@@ -104,7 +104,7 @@ export function ClassInformation({
 
             <p className="text-lg text-gray-500 dark:text-gray-400">{description}</p>
           </div>
-          <div className="space-y-6  xl:mt-32">
+          <div className="hidden space-y-6 md:block  xl:mt-32">
             <Card>
               <CardHeader>
                 <CardTitle>Course Details</CardTitle>
@@ -112,24 +112,24 @@ export function ClassInformation({
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-2">
-                    <BookIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                    <div className="font-medium">Course Name</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{name}</div>
+                    <div className="w-4/12 font-medium">Course</div>
+                    <div className="w-full text-sm text-gray-500 dark:text-gray-400">{name}</div>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <ClockIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                    <div className="font-medium">Duration</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{duration}</div>
+                    <div className="w-4/12 font-medium">Duration</div>
+                    <div className="w-full text-sm text-gray-500 dark:text-gray-400">
+                      {duration}
+                    </div>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <UserIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                    <div className="font-medium">Instructor</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{instructor}</div>
+                    <div className="w-4/12 font-medium">Instructor</div>
+                    <div className="w-full text-sm text-gray-500 dark:text-gray-400">
+                      {instructor}
+                    </div>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <ClipboardIcon className="mt-1 h-5 w-5 text-gray-500 dark:text-gray-400" />
-                    <div className="font-medium">Description</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="w-4/12 font-medium">Description</div>
+                    <div className="w-full text-sm text-gray-500 dark:text-gray-400">
                       {description.slice(0, 200) + '...'}
                     </div>
                   </div>
