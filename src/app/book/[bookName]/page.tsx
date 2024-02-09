@@ -1,7 +1,7 @@
 import { SingleBook } from '@/components/single-book';
 import { fetchBookBySlug } from '@/lib/utils';
 
-export async function Book({ params }: any) {
+export default async function Book({ params }: any) {
   const book = await fetchBookBySlug(params.bookName);
   console.log('book', book.data[0]);
 
