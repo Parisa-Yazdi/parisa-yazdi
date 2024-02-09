@@ -4,7 +4,7 @@ import HeroNewsLetter from './HeroNewsLetter';
 const Hero = () => {
   return (
     <section className="relative mx-auto flex h-screen  w-full flex-col items-center justify-between gap-1 bg-black  md:flex-row md:justify-normal ">
-      <div className="flex flex-col gap-2 md:ml-20  md:h-3/4 md:w-8/12 md:items-start md:gap-16 lg:gap-24">
+      <div className="flex flex-col gap-6 md:ml-20  md:h-3/4 md:w-8/12 md:items-start md:gap-16 lg:gap-24">
         <div className="mt-8 flex  flex-col gap-5">
           <h1 className="min-w-fit  px-2 text-center font-heebo text-4xl font-extrabold text-white antialiased sm:text-5xl md:px-0 md:text-start lg:text-7xl">
             Existance in Symbols
@@ -27,10 +27,12 @@ const Hero = () => {
             width={400}
             height={400}
             priority
-            className="mb-10 w-full rounded-md  md:mr-10"
+            className=" w-full rounded-md  md:mr-10"
           />
         </div>
-        <HeroNewsLetter />
+        <div className="w-full">
+          <HeroNewsLetter />
+        </div>
       </div>
       {/* image */}
       <div className="h-3/12 mr-28 hidden w-9/12 rounded-md md:my-auto  md:flex md:w-6/12">
