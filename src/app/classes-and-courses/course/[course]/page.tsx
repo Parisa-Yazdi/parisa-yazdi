@@ -4,16 +4,21 @@ import { fetchCourseBySlug } from '@/lib/utils';
 
 export default async function Class({ params }: any) {
   const courseData = await fetchCourseBySlug(params.course);
+  const instructor = courseData.data[0].attributes.instructor;
+  const initials = instructor
+    .split(' ')
+    .map((n: string) => n[0])
+    .join('');
 
   return (
     <>
       <main className="mx-auto  flex h-fit w-11/12 flex-col   flex-wrap items-center justify-center gap-3 overflow-hidden pb-24">
         <ClassInformation
-          // initials={initials}
+          initials={initials}
           name={courseData.data[0].attributes.name}
-          // instructor={courseData.data[0].attributes.instructor}
+          instructor={courseData.data[0].attributes.instructor}
           description={courseData.data[0].attributes.description}
-          duration=""
+          duration={courseData.data[0].attributes.duration}
           image={courseData.data[0].attributes.featuredImage.data.attributes.url}
           link={courseData.data[0].attributes.link || ''}
         />

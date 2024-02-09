@@ -41,12 +41,12 @@ export function ClassInformation({
                   <div className="text-sm text-gray-500 dark:text-gray-400">Instructor</div>
                 </div>
               </div>
-              {/* <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
                   <ClockIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                  <div>30 hours</div>
+                  <div>{duration}</div>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div className="mt-4">
               <img

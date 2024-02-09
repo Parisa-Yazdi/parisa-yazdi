@@ -25,6 +25,7 @@ export default async function Books() {
                   key={id || i}
                   image={bookCover.data.attributes.url}
                   title={title}
+                  author={author}
                   description={description}
                   bookLink={`/book/${slug}`}
                   price={'$99'}
@@ -45,6 +46,7 @@ export default async function Books() {
                   key={i}
                   image={bookCover.data.attributes.url}
                   title={title}
+                  author={author}
                   description={description}
                   bookLink={`/book/${slug}`}
                   price={'$99'}

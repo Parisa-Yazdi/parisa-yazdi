@@ -34,7 +34,7 @@ export default async function SubCategory({ params }: any) {
   });
 
   const articles = await fetchArticlesBySubcategory(subCategory.attributes.name);
-
+  console.log(articles.data);
   return (
     <>
       <main className="mx-auto h-full w-full  overflow-hidden bg-[#000000e5] pb-24">

@@ -58,7 +58,7 @@ export default function VideoCard({
             <div className=" flex justify-end   md:justify-end">
               <Link href={videoLink}>
                 <Button className=" bg-black text-base text-white hover:border hover:border-black hover:bg-white hover:text-black">
-                  Read More
+                  Watch Video
                 </Button>
               </Link>
             </div>

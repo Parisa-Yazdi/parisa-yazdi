@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 type ArticleProps = {
   title: string;
@@ -31,8 +32,10 @@ const SingleArticle = ({ title, date, author, content, featuredImage }: ArticleP
             priority
             className="mb-8 aspect-video overflow-hidden rounded-lg object-cover"
           />
-          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
-          <ReactMarkdown className={'markdown'}>{content}</ReactMarkdown>
+
+          <ReactMarkdown remarkPlugins={[remarkGfm]} className={'markdown'}>
+            {content}
+          </ReactMarkdown>
         </article>
       </main>
     </>

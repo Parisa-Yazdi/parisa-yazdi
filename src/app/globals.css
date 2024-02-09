@@ -14,6 +14,18 @@
   all: revert;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #dddddd; /* Specify your desired border color */
+  padding: 8px;
+  text-align: left;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
