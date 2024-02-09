@@ -61,7 +61,7 @@ export default async function SubCategory({ params }: any) {
                     image={thumbnail.data.attributes.url}
                     title={title}
                     summary={summary}
-                    articleLink={`/article/${slug}`}
+                    slug={`/article/${slug}`}
                     date={date}
                     author={author}
                   />
