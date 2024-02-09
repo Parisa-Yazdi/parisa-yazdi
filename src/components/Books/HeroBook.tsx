@@ -31,9 +31,9 @@ export default function ({ image, title, description, bookLink, author }: HeroBo
           </div>
 
           <div className="mt-5 hidden w-full text-base font-normal text-neutral-400 md:block">
-            {description.length > 650 ? (
+            {description.length > 570 ? (
               <>
-                {description.slice(0, 650)}...{' '}
+                {description.slice(0, 570)}...{' '}
                 <Link href={bookLink} className="text-blue-500 hover:underline">
                   read more
                 </Link>

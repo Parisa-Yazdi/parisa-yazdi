@@ -211,6 +211,22 @@ export async function fetchClasses() {
   return response;
 }
 
+export async function fetchReadings() {
+  const reqOptions = {
+    next: { revalidate: 60 },
+    headers: {
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
+    }
+  };
+
+  const request = await fetch(`${config.api}/api/readings?populate=*`, reqOptions);
+  const response = await request.json();
+
+  return response;
+}
+
 export async function fetchClassBySlug(slug: string) {
   const reqOptions = {
     next: { revalidate: 60 },
@@ -258,6 +274,25 @@ export async function fetchCourseBySlug(slug: string) {
 
   const request = await fetch(
     `${config.api}/api/courses?filters[slug][$eq]=${slug}&populate=*`,
+    reqOptions
+  );
+  const response = await request.json();
+
+  return response;
+}
+
+export async function fetchReadingBySlug(slug: string) {
+  const reqOptions = {
+    next: { revalidate: 60 },
+    headers: {
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
+    }
+  };
+
+  const request = await fetch(
+    `${config.api}/api/readings?filters[slug][$eq]=${slug}&populate=*`,
     reqOptions
   );
   const response = await request.json();

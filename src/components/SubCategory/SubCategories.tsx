@@ -8,7 +8,7 @@ const SubCategories = ({ subCategoryName, slug, thumbnail }: any) => {
         <div className="w-full md:w-[240px]">
           <Image
             src={thumbnail}
-            alt="Picture of the author"
+            alt="Sub-Category thumbnail"
             width={240}
             height={200}
             className="h-[150px] w-full rounded-t-md  object-cover md:h-[230px]"

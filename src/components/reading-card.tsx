@@ -14,7 +14,7 @@ interface ClassCardProps {
   thumbnail?: string;
 }
 
-export function ClassCard({ name, description, link, slug, thumbnail }: ClassCardProps) {
+export function ReadingCard({ name, description, link, slug, thumbnail }: ClassCardProps) {
   return (
     <Card className="flex flex-col gap-4 p-4 md:flex-row">
       <div className="w-full md:w-1/3">
@@ -39,7 +39,7 @@ export function ClassCard({ name, description, link, slug, thumbnail }: ClassCar
           </CardDescription>
           {/* <p className="mt-2 text-sm">Instructor: {instructor}</p> */}
         </div>
-        <Link href={`/classes-and-courses/class/${slug}`} className="mt-4 self-end md:self-end">
+        <Link href={`/classes-and-courses/reading/${slug}`} className="mt-4 self-end md:self-end">
           <Button variant="link">Learn more</Button>
         </Link>
       </div>

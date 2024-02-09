@@ -19,15 +19,14 @@ async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryP
         <div className="flex flex-wrap">
           {subCategories.map((subCategory: any, index: number) => {
             const { name, thumbnail } = subCategory.attributes;
+            console.log('thumbnaiasdasdl', thumbnail.data.attributes.url);
 
             return (
               <div key={index} className="mb-5 w-6/12 gap-5 p-1 md:mx-2 md:w-auto">
                 <Link href={`/articles/${parseUrl(categoryName)}/${parseUrl(name)}`}>
                   <SubCategories
                     subCategoryName={name}
-                    thumbnail={
-                      (thumbnail.data && thumbnail.data.attributes.formats.large.url) || ''
-                    }
+                    thumbnail={thumbnail.data && thumbnail.data.attributes.url}
                   />
                 </Link>
               </div>

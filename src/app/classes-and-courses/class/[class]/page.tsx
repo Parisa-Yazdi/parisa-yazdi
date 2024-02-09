@@ -20,7 +20,7 @@ export default async function Class({ params }: any) {
           name={classData.data[0].attributes.name}
           instructor={classData.data[0].attributes.instructor}
           description={classData.data[0].attributes.description}
-          duration=""
+          duration={classData.data[0].attributes.duration}
           image={classData.data[0].attributes.featuredImage.data.attributes.url}
           link={classData.data[0].attributes.link || ''}
         />

@@ -34,9 +34,8 @@ export function CourseCard({ name, description, link, slug, thumbnail }: CourseC
       <div className="flex w-full flex-col justify-between md:w-2/3">
         <div>
           <CardTitle className="text-xl font-bold">{name}</CardTitle>
-          <CardDescription className="mt-5 text-sm text-gray-500 dark:text-gray-400 ">
-            {/* TODO: SET A MAX LENGTH */}
-            {description}
+          <CardDescription className="text-sm text-gray-500 dark:text-gray-400 ">
+            {description.length > 620 ? `${description.slice(0, 620)}...` : description}
           </CardDescription>
           {/* <p className="mt-2 text-sm">Instructor: {instructor}</p> */}
         </div>

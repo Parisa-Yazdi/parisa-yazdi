@@ -40,10 +40,10 @@ export default function VideoCard({
         <Image
           alt="Video Cover"
           className=" aspect-square h-[200px] w-full rounded-l-lg object-cover md:h-[300px] md:w-5/12  lg:w-8/12"
-          height={100} // Adjusted height to make the card smaller
+          height={156} // Adjusted height to make the card smaller
           // src="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png"
           src={`${image}`}
-          width={100}
+          width={356}
         />
 
         <CardContent className=" w-full space-y-1 p-3">

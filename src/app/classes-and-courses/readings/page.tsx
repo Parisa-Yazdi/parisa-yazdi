@@ -1,5 +1,5 @@
-import { ClassCard } from '@/components/class-card';
-import { fetchClasses } from '@/lib/utils';
+import { ReadingCard } from '@/components/reading-card';
+import { fetchReadings } from '@/lib/utils';
 
 interface ClassProps {
   attributes: {
@@ -7,7 +7,7 @@ interface ClassProps {
     description: string;
     link: string;
     slug: string;
-    featuredImage: {
+    thumbnail: {
       data: {
         id: number;
         attributes: {
@@ -18,8 +18,8 @@ interface ClassProps {
   };
 }
 
-export default async function Courses() {
-  const classes = await fetchClasses();
+export default async function Readings() {
+  const readings = await fetchReadings();
 
   return (
     <>
@@ -29,17 +29,17 @@ export default async function Courses() {
           <h2 className="mt-10 text-4xl font-semibold tracking-tighter sm:text-5xl">READINGS</h2>
         </div>
         <div className="mx-auto mt-10 flex w-full flex-col flex-wrap  items-center justify-center gap-8 ">
-          {classes.data.map((singleClass: ClassProps, i: number) => {
-            const { name, description, slug, link, featuredImage } = singleClass.attributes;
+          {readings.data.map((reading: ClassProps, i: number) => {
+            const { name, description, slug, link, thumbnail } = reading.attributes;
 
             return (
-              <ClassCard
+              <ReadingCard
                 key={i}
                 name={name}
                 description={description}
                 link={link}
                 slug={slug}
-                thumbnail={featuredImage.data.attributes.url}
+                thumbnail={thumbnail.data.attributes.url}
               />
             );
           })}

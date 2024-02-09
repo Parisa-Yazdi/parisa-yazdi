@@ -76,11 +76,11 @@ export function ClassInformation({
                     <div className="font-medium">Course Name</div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">{name}</div>
                   </div>
-                  {/* <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2">
                     <ClockIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                     <div className="font-medium">Duration</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">30 hours</div>
-                  </div> */}
+                    <div className="text-sm text-gray-500 dark:text-gray-400">{duration}</div>
+                  </div>
                   <div className="flex items-center space-x-2">
                     <UserIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                     <div className="font-medium">Instructor</div>

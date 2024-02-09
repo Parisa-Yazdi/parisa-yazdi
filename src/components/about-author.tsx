@@ -53,9 +53,7 @@ export async function AboutAuthor() {
                 <Link href={`/articles/personal-journals/${parseUrl(name)}`}>
                   <SubCategories
                     subCategoryName={name}
-                    thumbnail={
-                      (thumbnail.data && thumbnail.data.attributes.formats.large.url) || ''
-                    }
+                    thumbnail={thumbnail.data && thumbnail.data.attributes.url}
                   />
                 </Link>
               </div>

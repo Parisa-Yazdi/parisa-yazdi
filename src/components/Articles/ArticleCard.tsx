@@ -30,13 +30,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       <Image
         alt="Article Cover"
         className=" aspect-[6/12] h-[300px] w-full rounded-t-lg  object-cover"
-        height={100}
+        height={156}
         src={`${image}`}
-        width={100}
+        width={336}
       />
       <CardContent className=" w-full  space-y-1 p-3">
         {' '}
-        <CardTitle className="line-clamp-2 text-lg font-semibold">{title}</CardTitle>{' '}
+        <CardTitle className="line-clamp-1 text-lg font-semibold">{title}</CardTitle>{' '}
         <div className="mt-2 flex flex-col justify-start md:flex-row md:items-center md:justify-between">
           <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{author}</p>{' '}
           <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{date.toString()}</p>{' '}

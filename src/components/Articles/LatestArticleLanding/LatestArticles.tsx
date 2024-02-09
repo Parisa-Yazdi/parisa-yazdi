@@ -51,6 +51,7 @@ const LatestArticles = async () => {
         <div className="mx-4 mt-10 grid grid-cols-1 gap-6 md:mx-auto md:w-full md:grid-cols-1">
           {latestArticles.map((article: Article, i: number) => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
+            // console.log(article.attributes.thumbnail.data.attributes);
             return (
               <>
                 <ArticleCardLanding
@@ -58,6 +59,8 @@ const LatestArticles = async () => {
                   title={title}
                   image={thumbnail.data.attributes.url}
                   summary={summary}
+                  actualHeight={156}
+                  actualWidth={336}
                   slug={`article/${slug + ''}`}
                   author={author}
                   date={date}

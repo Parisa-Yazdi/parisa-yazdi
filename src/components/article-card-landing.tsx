@@ -14,6 +14,8 @@ interface ArticleCardProps {
   slug: string;
   author: string;
   date: Date;
+  actualHeight?: number;
+  actualWidth?: number;
 }
 
 export async function ArticleCardLanding({
@@ -22,24 +24,23 @@ export async function ArticleCardLanding({
   summary,
   slug,
   author,
-  date
+  date,
+  actualHeight,
+  actualWidth
 }: ArticleCardProps) {
   return (
     <Card className="mx-auto  w-full overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA]">
-      <div className="flex h-full flex-col md:flex-row">
+      <div className="flex h-full flex-col  md:flex-row">
         <Image
           alt="Video Cover"
-          className=" aspect-square h-[200px] w-full object-cover md:h-[300px] md:w-5/12 md:rounded-l-lg  lg:w-8/12"
-          height={100}
+          className="aspect-square  border-black object-cover md:rounded-l-lg"
+          height={actualHeight}
           src={`${image}`}
-          width={100}
+          width={actualWidth}
         />
 
-        <CardContent className=" w-full space-y-1 p-3">
+        <CardContent className="w-full space-y-1  border-black  p-3">
           <CardTitle className="line-clamp-2 text-lg font-semibold">{title}</CardTitle>{' '}
-          {/* <div className="mt-2 flex  justify-between md:flex-row md:items-center"> */}
-          {/* <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{date.toString()}</p> */}
-          {/* </div> */}
           <div className="flex h-5/6 flex-col justify-between ">
             <CardDescription className=" h-[111px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[199px]">
               {summary}
