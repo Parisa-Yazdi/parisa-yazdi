@@ -26,7 +26,7 @@ export default async function SingleBook({ image, title, author, summary, link }
             width={348}
           />
         </div>
-        <div className="relative mt-20  h-fit  border p-8 shadow-md">
+        <div className="relative h-fit  w-full border p-8 shadow-md md:mt-20 md:w-auto">
           <div className="text-xl font-semibold uppercase tracking-wide text-gray-500">{title}</div>
           <p className="mt-1 block text-base font-medium leading-tight text-black hover:underline">
             {author}
