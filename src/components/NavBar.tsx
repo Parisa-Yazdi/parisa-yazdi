@@ -12,7 +12,7 @@ export default function NavBar() {
             <MobileMenu />
           </div>
           {/* <div className="flex w-full flex-col justify-between gap-5 md:absolute md:bottom-0 "> */}
-          <div className="mx-auto mr-14 flex w-full justify-end">
+          <div className="mx-auto mr-14 flex w-full justify-center md:justify-end">
             <Link href="/">
               <h1 className="min-w-fit font-heebo text-3xl font-extrabold text-white">
                 PARISA YAZDI

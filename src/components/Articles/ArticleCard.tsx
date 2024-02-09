@@ -9,19 +9,14 @@ interface ArticleCardProps {
   image: any;
   title: string;
   summary: string;
-  articleLink: string;
+  slug: string;
   date: Date;
   author: string;
+  actualWidth?: number;
+  actualHeight?: number;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({
-  image,
-  title,
-  summary,
-  articleLink,
-  date,
-  author
-}) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ image, title, summary, slug, date, author }) => {
   //  overflow-hidden overflow-ellipsis -- title
 
   // overflow-hidden  -- above summary div
@@ -48,7 +43,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         <div className=" flex justify-end space-x-1 ">
           <Link
             className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow hover:border hover:border-black hover:bg-white hover:text-black"
-            href={articleLink}
+            href={slug}
           >
             Read More
           </Link>
