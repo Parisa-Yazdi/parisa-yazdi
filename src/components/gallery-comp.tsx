@@ -21,7 +21,7 @@ export function GalleryComp({ images }: any) {
                   width={image.attributes.art.data[0].attributes.formats.large.width}
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity group-hover:opacity-100">
-                  <p className="text-lg text-white">Random name add name field</p>
+                  <p className="text-lg text-white">{image.attributes.name}</p>
                 </div>
               </div>
             );
