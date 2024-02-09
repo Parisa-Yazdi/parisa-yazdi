@@ -117,6 +117,7 @@ export default function MobileMenu() {
                                   {menuItem.subPages &&
                                     Object.keys(menuItem.subPages).map((subPageKey, i) => (
                                       <Link
+                                        scroll={false}
                                         key={subPageKey}
                                         className="group grid h-auto w-full justify-start gap-1"
                                         href={

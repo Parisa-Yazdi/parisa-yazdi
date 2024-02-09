@@ -1,9 +1,14 @@
 import { fetchAuthorSubCategories, parseUrl } from '@/lib/utils';
 import SubCategories from '@/components/SubCategory/SubCategories';
 import Link from 'next/link';
+import { fetchAuthor } from '@/lib/utils';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export async function AboutAuthor() {
   const subCategories = await fetchAuthorSubCategories();
+  const author = await fetchAuthor();
+  console.log('author', author.data[0].attributes.photo.data.attributes.url);
   return (
     <main className="mx-auto sm:px-6 md:max-w-7xl md:px-4 md:py-6 lg:px-8">
       <section className="flex flex-col items-start gap-6 md:flex-row md:gap-12">
@@ -11,32 +16,17 @@ export async function AboutAuthor() {
           alt="Author's Image"
           className="aspect-[4/5] w-full overflow-hidden rounded-lg border border-gray-200 object-cover dark:border-gray-800"
           height={500}
-          src="https://www.womenshistory.org/sites/default/files/styles/main_image/public/images/2021-04/Toni-Morrison-Square.png"
+          src={author.data[0].attributes.photo.data.attributes.url}
           width={400}
         />
         <div className="flex flex-col gap-4">
-          <div className="space-y-2">
+          <div className="space-y-1">
             <h1 className="text-4xl font-bold">Parisa Yazdi</h1>
             <p className="text-lg text-gray-500 dark:text-gray-400">Author and Writer</p>
           </div>
-          <p className="text-lg leading-relaxed">
-            John Doe is a renowned author and writer known for his captivating storytelling and
-            unique writing style. His works have been published in numerous journals and magazines
-            and have been translated into multiple languages. John's passion for writing is evident
-            in his engaging narratives and compelling characters.
-          </p>
-          <p className="text-lg leading-relaxed">
-            John Doe is a renowned author and writer known for his captivating storytelling and
-            unique writing style. His works have been published in numerous journals and magazines
-            and have been translated into multiple languages. John's passion for writing is evident
-            in his engaging narratives and compelling characters.
-          </p>
-          <p className="text-lg leading-relaxed">
-            John Doe is a renowned author and writer known for his captivating storytelling and
-            unique writing style. His works have been published in numerous journals and magazines
-            and have been translated into multiple languages. John's passion for writing is evident
-            in his engaging narratives and compelling characters.
-          </p>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} className={'markdown'}>
+            {author.data[0].attributes.about}
+          </ReactMarkdown>
         </div>
       </section>
 

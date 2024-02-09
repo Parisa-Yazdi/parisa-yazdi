@@ -30,6 +30,46 @@ export function ClassInformation({
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-3">
           <div className="space-y-6 lg:col-span-2">
             <h1 className="text-4xl font-bold">{name}</h1>
+            <div className="space-y-6 md:mt-32 md:hidden">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Course Details</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-2">
+                      <BookIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                      <div className="font-medium">Course Name</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">{name}</div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <ClockIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                      <div className="font-medium">Duration</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">{duration}</div>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <UserIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                      <div className="font-medium">Instructor</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">{instructor}</div>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <ClipboardIcon className="mt-1 h-5 w-5 text-gray-500 dark:text-gray-400" />
+                      <div className="font-medium">Description</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">
+                        {description.slice(0, 200) + '...'}
+                      </div>
+                    </div>
+                    <div className="mt-8 flex w-full items-center justify-center">
+                      <Link href={link || ''}>
+                        <Button className="w-full rounded-lg bg-black px-4 py-2 text-white">
+                          Enroll Now
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
             <div className="flex justify-between ">
               <div className="flex items-center space-x-2">
                 <Avatar>
@@ -64,7 +104,7 @@ export function ClassInformation({
 
             <p className="text-lg text-gray-500 dark:text-gray-400">{description}</p>
           </div>
-          <div className="mt-32 space-y-6">
+          <div className="space-y-6  xl:mt-32">
             <Card>
               <CardHeader>
                 <CardTitle>Course Details</CardTitle>

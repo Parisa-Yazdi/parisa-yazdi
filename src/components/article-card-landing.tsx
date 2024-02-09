@@ -33,14 +33,16 @@ export async function ArticleCardLanding({
       <div className="flex h-full flex-col  md:flex-row">
         <Image
           alt="Video Cover"
-          className="aspect-square  border-black object-cover md:rounded-l-lg"
+          className="aspect-square w-full border-black  object-cover md:w-auto md:rounded-l-lg"
           height={actualHeight}
           src={`${image}`}
           width={actualWidth}
         />
 
         <CardContent className="w-full space-y-1  border-black  p-3">
-          <CardTitle className="line-clamp-2 text-lg font-semibold">{title}</CardTitle>{' '}
+          <CardTitle className="line-clamp-1 text-lg font-semibold md:line-clamp-2">
+            {title}
+          </CardTitle>{' '}
           <div className="flex h-5/6 flex-col justify-between ">
             <CardDescription className=" h-[111px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[199px]">
               {summary}

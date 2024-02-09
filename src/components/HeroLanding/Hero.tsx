@@ -17,7 +17,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="h-1/12 mx-auto  w-7/12 rounded-md md:hidden">
+        <div className="mx-auto h-1/2  w-7/12 rounded-md md:hidden">
           <Image
             src={'https://i.imgur.com/J0JJK6r.jpeg'}
             // src={
@@ -27,7 +27,7 @@ const Hero = () => {
             width={400}
             height={400}
             priority
-            className="mb-10 w-full rounded-md  md:mr-10"
+            className="mb-5 w-full rounded-md  md:mr-10"
           />
         </div>
         <HeroNewsLetter />

@@ -17,6 +17,22 @@ export function parseUrl(url: string) {
     .replace(/,/g, '');
 }
 
+export async function fetchAuthor() {
+  const reqOptions = {
+    next: { revalidate: 60 },
+    headers: {
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
+    }
+  };
+
+  const request = await fetch(`${config.api}/api/authors?populate=*`, reqOptions);
+  const response = await request.json();
+
+  return response;
+}
+
 export async function fetchArticles() {
   const reqOptions = {
     next: { revalidate: 60 },
@@ -44,6 +60,24 @@ export async function fetchArticleBySlug(slug: string) {
   };
   const request = await fetch(
     `${config.api}/api/articles?populate=*&filters[slug][$eq]=${slug}`,
+    reqOptions
+  );
+  const response = await request.json();
+
+  return response;
+}
+
+export async function fetchBookBySlug(slug: string) {
+  const reqOptions = {
+    next: { revalidate: 60 },
+    headers: {
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
+    }
+  };
+  const request = await fetch(
+    `${config.api}/api/books?populate=*&filters[slug][$eq]=${slug}`,
     reqOptions
   );
   const response = await request.json();

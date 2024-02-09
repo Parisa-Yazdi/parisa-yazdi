@@ -1,8 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { fetchAuthor } from '@/lib/utils';
 
-const AboutAuthor = () => {
+interface AboutAuthorProps {
+  image: string;
+  about: string;
+}
+
+export default async function AboutAuthor() {
+  const author = await fetchAuthor();
+  console.log('author', author.data[0].attributes.photo.data.attributes.url);
+
   return (
     <section className="h-fit bg-black pb-8">
       {/* author section */}
@@ -10,10 +19,11 @@ const AboutAuthor = () => {
         <div className="flex w-11/12 flex-col items-center justify-evenly  md:flex-row md:gap-36">
           <div className="flex h-full w-fit flex-col items-center justify-center ">
             <Image
-              src="https://www.womenshistory.org/sites/default/files/styles/main_image/public/images/2021-04/Toni-Morrison-Square.png"
+              src={author.data[0].attributes.photo.data.attributes.url}
               alt="Picture of the author"
-              width={450}
-              height={450}
+              width={664}
+              height={718}
+              priority
               className="rounded-full pt-9"
             />
           </div>
@@ -25,18 +35,13 @@ const AboutAuthor = () => {
                 About Parisa
               </h2>
             </div>
-            All the Lorem Ipsum generators on the Internet tend to repeated predefined chunks as
-            necessary, making this the first true value generator on the Internet. It uses a
-            dictionary of over 200 Latin words, combined with a handful. All the Lorem Ipsum
-            generators on the Internet tend to repeated predefined chunks as necessary, making this
-            the first true value generator on the Internet.
-            <br />
-            <br />
-            It uses a dictionary of over 200 Latin words, combined with a handful. All the Lorem
-            Ipsum generators on the Internet tend to repeated predefined chunks as necessary, making
-            this the first true value generator on the Internet.
-            <br />
-            <br />
+            <div>
+              <p className="text-lg font-normal leading-[34.20px] text-neutral-400 antialiased">
+                {author.data[0].attributes.about.length > 620
+                  ? `${author.data[0].attributes.about.slice(0, 620)}...`
+                  : author.data[0].attributes.about}
+              </p>
+            </div>
             <div className="flex justify-center md:justify-end">
               <Link href="/about">
                 <Button className=" mt-10  bg-white text-base text-black hover:border hover:border-white hover:bg-black hover:text-white">
@@ -49,6 +54,4 @@ const AboutAuthor = () => {
       </div>
     </section>
   );
-};
-
-export default AboutAuthor;
+}
