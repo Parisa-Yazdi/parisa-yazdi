@@ -30,6 +30,10 @@ export function GalleryComp({ images }: any) {
     function handleKeyDown(event: any) {
       if (event.key === 'Escape') {
         closeModal();
+      } else if (event.key === 'ArrowRight') {
+        navigate('next');
+      } else if (event.key === 'ArrowLeft') {
+        navigate('prev');
       }
     }
 
@@ -38,7 +42,7 @@ export function GalleryComp({ images }: any) {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [closeModal, navigate]);
 
   return (
     <div className="mx-auto w-full max-w-7xl p-4">
