@@ -11,12 +11,12 @@ interface bookProps {
 
 export default async function SingleBook({ image, title, author, summary, link }: bookProps) {
   return (
-    <div className="m-4 mx-auto h-full max-w-5xl  overflow-hidden rounded-xl  bg-white object-contain  md:max-w-5xl">
+    <div className="m-4 mx-auto h-full w-full  overflow-hidden rounded-xl  bg-white object-contain  md:max-w-5xl">
       <div className="gap-10 md:grid md:grid-cols-2">
         <div className="md:flex-shrink-0">
           <Image
             alt="Book cover"
-            className="h-full w-full object-cover md:h-full md:w-full md:object-cover"
+            className="mx-auto h-full w-9/12 object-cover md:h-full md:w-full md:object-cover"
             height={499}
             src={image}
             style={{

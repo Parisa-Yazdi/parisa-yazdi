@@ -14,7 +14,7 @@ export default async function Book({ params }: any) {
 
   return (
     <>
-      <main className="mx-auto mb-20  w-7/12 ">
+      <main className="mx-auto mb-20  w-full ">
         <SingleBook
           image={book.data[0].attributes.bookCover.data.attributes.url}
           title={bookName}
