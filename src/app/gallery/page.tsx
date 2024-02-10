@@ -5,9 +5,10 @@ import React from 'react';
 
 export default async function page() {
   const gallery = await fetchGallery();
+  // console.log('GALLERY: ', gallery.data.attributes);
 
   return (
-    <div className="mx-auto w-11/12">
+    <div className="mx-auto w-full">
       <GalleryComp images={gallery.data} />
     </div>
   );

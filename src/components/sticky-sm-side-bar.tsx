@@ -1,66 +1,52 @@
+import React from 'react';
 import { fetchSocialMedias } from '@/lib/utils';
 import Link from 'next/link';
 
-export async function BlackSocialMediaIcons() {
+export default async function BlackSocialMediaIcons() {
   const socialMedias = await fetchSocialMedias();
-
   return (
-    <div className="flex items-center justify-center">
-      <div className="grid grid-cols-3 gap-4">
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
-            className="rounded-sm bg-[#55acee] text-white"
-            href={socialMedias.data[0].attributes.twitter}
-          >
-            <TwitterIcon className="twitter h-10 w-10  p-2" />
-            {/* <span className="text-sm font-medium">Twitter</span> */}
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
-            className="rounded-sm bg-[#dd4b39] text-white"
-            href={socialMedias.data[0].attributes.instagram}
-          >
-            <InstagramIcon className="instagram h-10 w-10 p-2" />
-            {/* <span className="text-sm font-medium">Instagram</span> */}
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
-            className="rounded-sm bg-[#55acee] text-white"
-            href={socialMedias.data[0].attributes.linkedIn}
-          >
-            <LinkedinIcon className="linkedIn h-10 w-10 p-2" />
-            {/* <span className="text-sm font-medium">LinkedIn</span> */}
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
-            className="rounded-sm bg-[#3b5998] text-white"
-            href={socialMedias.data[0].attributes.facebook}
-          >
-            <FacebookIcon className="facebook h-10 w-10 p-2" />
-            {/* <span className="text-sm font-medium">Facebook</span> */}
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
-            className="rounded-sm bg-black text-white"
-            href={socialMedias.data[0].attributes.youtube}
-          >
-            <CloudIcon className="h-10 w-10 p-2" />
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
-            className="rounded-sm bg-[#bb0000] text-white"
-            href={socialMedias.data[0].attributes.youtube}
-          >
-            <YoutubeIcon className="youtube h-10 w-10 p-2" />
-            {/* <span className="text-sm font-medium">Youtube</span> */}
-          </Link>
-        </div>
-      </div>
+    <div className="icon-bar">
+      <Link
+        className="bg-[#55acee] text-white hover:bg-white hover:text-[#55acee]"
+        href={socialMedias.data[0].attributes.twitter}
+      >
+        <TwitterIcon className="twitter h-2 w-2 md:h-4 md:w-4" />
+      </Link>
+
+      <Link
+        className="bg-[#dd4b39] text-white hover:bg-white hover:text-[#dd4b39]"
+        href={socialMedias.data[0].attributes.instagram}
+      >
+        <InstagramIcon className="instagram h-2 w-2 md:h-4 md:w-4" />
+      </Link>
+
+      <Link
+        className="bg-[#55acee] text-white hover:bg-white hover:text-[#55acee]"
+        href={socialMedias.data[0].attributes.linkedIn}
+      >
+        <LinkedinIcon className="linkedIn h-2 w-2 md:h-4 md:w-4" />
+      </Link>
+
+      <Link
+        className="bg-[#3b5998] text-white hover:bg-white hover:text-[#3b5998]"
+        href={socialMedias.data[0].attributes.facebook}
+      >
+        <FacebookIcon className="facebook h-2 w-2 md:h-4 md:w-4" />
+      </Link>
+
+      <Link
+        className="bg-black text-white hover:bg-white hover:text-black"
+        href={socialMedias.data[0].attributes.youtube}
+      >
+        <CloudIcon className="h-2 w-2 md:h-4 md:w-4" />
+      </Link>
+
+      <Link
+        className="bg-[#bb0000] text-white hover:bg-white hover:text-[#bb0000]"
+        href={socialMedias.data[0].attributes.youtube}
+      >
+        <YoutubeIcon className="youtube h-2 w-2 md:h-4 md:w-4" />
+      </Link>
     </div>
   );
 }

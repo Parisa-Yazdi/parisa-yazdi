@@ -367,3 +367,19 @@ export async function fetchAuthorSubCategories(category = 'Personal Journals') {
 
   return response;
 }
+
+export async function fetchSocialMedias() {
+  const reqOptions = {
+    next: { revalidate: 60 },
+    headers: {
+      cache: 'no-store',
+
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
+    }
+  };
+
+  const request = await fetch(`${config.api}/api/social-medias?populate=*`, reqOptions);
+  const response = await request.json();
+
+  return response;
+}

@@ -7,6 +7,7 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer/Footer';
 import { HydrationOverlay } from '@builder.io/react-hydration-overlay';
 import { Newsletter } from '@/components/newsletter';
+import StickySocialMediaBar from '@/components/sticky-sm-side-bar';
 
 const heebo = Heebo({ subsets: ['latin'] });
 
@@ -21,9 +22,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${heebo.className} w-full `}>
         <Suspense>
           <NavBar />
+
           <main>{children}</main>
           <Newsletter />
           <Footer />
+          <StickySocialMediaBar />
         </Suspense>
       </body>
     </html>

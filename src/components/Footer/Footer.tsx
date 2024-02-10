@@ -31,7 +31,7 @@ const Footer = () => {
               </div>
               <hr />
               <div className=" flex flex-col  items-center justify-start">
-                <h2 className="mb-8 items-center font-['Cardo'] text-2xl font-medium text-white">
+                <h2 className="mb-4 items-center font-['Cardo'] text-2xl font-medium text-white">
                   Find Parisa elsewhere
                 </h2>
                 <BlackSocialMediaIcons />

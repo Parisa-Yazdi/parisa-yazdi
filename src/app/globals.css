@@ -10,6 +10,28 @@
     url(../../public/fonts/Avenir\ Next.ttf) format('ttf');
 }
 
+.icon-bar {
+  position: fixed;
+  /* gap: 1rem; */
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: xx-large;
+}
+
+/* Style the social media icons with color, if you want */
+
 .markdown > * {
   all: revert;
 }

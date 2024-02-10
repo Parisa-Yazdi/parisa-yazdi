@@ -12,7 +12,7 @@ export async function RecentClasses() {
   const classes = await fetchClasses();
 
   return (
-    <section className="relative w-full   border-l border-black py-12 md:py-24 lg:py-24">
+    <section className="relative w-full  py-12 md:py-24 lg:py-24">
       {/* // <section className="w-full    py-12 md:py-24 lg:py-20"> */}
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
