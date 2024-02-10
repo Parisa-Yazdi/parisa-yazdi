@@ -32,7 +32,7 @@ export default function DropDown({ subCategories }: { subCategories: category[] 
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className=" w-3/4 justify-between text-base"
+          className=" w-3/4 justify-between font-heebo text-base"
         >
           {value || 'Find article by category...'}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
