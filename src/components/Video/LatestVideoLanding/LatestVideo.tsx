@@ -52,7 +52,7 @@ export default async function LatestVideos() {
                   summary={summary}
                   slug={slug}
                   date={date}
-                  videoLink={''}
+                  videoLink={link}
                 />
               </>
             );
