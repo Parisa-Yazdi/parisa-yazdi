@@ -54,7 +54,7 @@ export default function DropDown({ subCategories }: { subCategories: category[] 
               >
                 <>
                   <Link
-                    className="text-basae w-full"
+                    className="text-basae w-full font-heebo"
                     href={`/articles/${parseUrl(
                       category.attributes.category.data.attributes.name
                     )}/${parseUrl(category.attributes.name)}`}

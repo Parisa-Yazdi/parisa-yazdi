@@ -19,7 +19,6 @@ async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryP
         <div className="flex flex-wrap">
           {subCategories.map((subCategory: any, index: number) => {
             const { name, thumbnail } = subCategory.attributes;
-            console.log('thumbnaiasdasdl', thumbnail.data.attributes.url);
 
             return (
               <div key={index} className="mb-5 w-6/12 gap-5 p-1 md:mx-2 md:w-auto">

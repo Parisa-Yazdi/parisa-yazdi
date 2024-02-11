@@ -91,7 +91,7 @@ export default function MobileMenu() {
                   return (
                     <Collapsible className="mt-3 grid" key={i}>
                       {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 ? (
-                        <CollapsibleTrigger className="boorder-white mb-1 flex w-full items-center border px-2 py-4  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
+                        <CollapsibleTrigger className="boorder-white mb-1 flex w-full items-center border border-gray-600 px-2 py-4  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
                           {menuItem.name}
                           {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
                             <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
@@ -99,7 +99,7 @@ export default function MobileMenu() {
                         </CollapsibleTrigger>
                       ) : (
                         <Link href={menuItem.href}>
-                          <CollapsibleTrigger className="boorder-white mb-1 flex w-full items-center border px-2 py-4  text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
+                          <CollapsibleTrigger className="boorder-white mb-1 flex w-full items-center border border-gray-600  px-2  py-4 text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
                             {menuItem.name}
                             {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
                               <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />

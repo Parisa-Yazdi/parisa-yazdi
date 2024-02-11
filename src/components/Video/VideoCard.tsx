@@ -39,7 +39,7 @@ export default function VideoCard({
       <div className="flex h-full  flex-col md:flex-row">
         <Image
           alt="Video Cover"
-          className=" aspect-square h-[200px] w-full rounded-l-lg object-cover md:h-[300px] md:w-5/12  lg:w-8/12"
+          className=" aspect-square h-[200px] w-full rounded-l-lg  border-white object-cover md:h-[300px] md:w-5/12 md:border-r-8  lg:w-8/12"
           height={156} // Adjusted height to make the card smaller
           // src="https://janefriedman.com/wp-content/uploads/2015/08/Publishing-101-thumbnail2.png"
           src={`${image}`}
