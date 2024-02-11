@@ -8,7 +8,7 @@ import { CardContent, Card } from '@/components/ui/card';
 
 export function AppointmentRedirect() {
   return (
-    <div className="min-h-3/4 flex flex-col items-center justify-center border-b border-black bg-gray-100 py-32 ">
+    <div className="min-h-3/4 flex flex-col items-center justify-center bg-gray-100 py-32 ">
       <Card className="mx-auto w-full max-w-2xl overflow-hidden rounded-lg shadow-md">
         <CardContent className="p-6">
           <div className="mb-4 flex items-center justify-center">
