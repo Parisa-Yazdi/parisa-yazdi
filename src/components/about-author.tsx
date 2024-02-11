@@ -35,7 +35,7 @@ export async function AboutAuthor() {
         <h2 className=" relative mb-5 mt-7 p-5 pb-2 text-center text-4xl font-semibold tracking-tighter text-black  antialiased sm:text-5xl">
           Personal Journals
         </h2>
-        <div className="mx-auto grid w-fit  grid-cols-2 md:grid-cols-3">
+        <div className="mx-auto grid w-fit  grid-cols-2 md:grid-cols-4">
           {subCategories.data.map((subCategory: any, index: number) => {
             const { name, thumbnail } = subCategory.attributes;
 
