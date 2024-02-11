@@ -39,7 +39,7 @@ export default async function LatestVideos() {
             Latest Videos
           </h2>
         </div>
-        <div className="mx-4 mt-6 grid grid-cols-1 gap-8 md:mx-auto md:w-full">
+        <div className="mx-4 mt-6 grid w-9/12 grid-cols-1 gap-8 md:mx-auto md:w-full">
           {latestVideos.map((video: Video, i: number) => {
             const { thumbnail, title, summary, slug, link, date } = video.attributes;
             return (

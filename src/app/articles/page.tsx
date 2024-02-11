@@ -54,20 +54,3 @@ const Articles = async () => {
 };
 
 export default Articles;
-
-{
-  /* {articles.data.map((article: Article) => {
-            const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
-            return (
-              <ArticleCard
-                key={id}
-                image={thumbnail.data.attributes.url}
-                title={title}
-                summary={summary}
-                articleLink={`article/${slug}`}
-                date={date}
-                author={author}
-              />
-            );
-          })} */
-}
