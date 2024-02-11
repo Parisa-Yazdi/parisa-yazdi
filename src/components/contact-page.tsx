@@ -8,7 +8,7 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useEmailForm } from '@/lib/useEmailForm';
 
-export function ContactPage() {
+export default function ContactPage() {
   const [isSent, setIsSent] = useState(false);
   const handleSuccess = () => {
     setIsSent(true);
