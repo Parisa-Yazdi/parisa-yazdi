@@ -55,7 +55,7 @@ export default function VideoCard({
             <CardDescription className=" h-[111px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[199px]">
               {summary}
             </CardDescription>
-            <div className=" flex justify-end   md:justify-end">
+            <div className=" mt-1 flex justify-end  md:justify-end">
               <Link href={videoLink}>
                 <Button className=" bg-black text-base text-white hover:border hover:border-black hover:bg-white hover:text-black">
                   Watch Video
