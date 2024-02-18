@@ -35,7 +35,7 @@ export default async function AboutAuthor() {
               </h2>
             </div>
             <div>
-              <p className="text-lg font-normal leading-[34.20px] text-neutral-400 antialiased">
+              <p className="m-3 text-lg font-normal leading-[34.20px] text-neutral-400 antialiased">
                 {author.data[0].attributes.about.length > 620
                   ? `${author.data[0].attributes.about.slice(0, 620)}...`
                   : author.data[0].attributes.about}

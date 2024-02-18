@@ -13,20 +13,16 @@ const Footer = () => {
             <div className="mb-4 flex w-full flex-col-reverse justify-start gap-12 pb-5 lg:flex-row ">
               <div className="flex w-8/12  flex-col justify-evenly  lg:flex-row">
                 <FooterItems
-                  FooterItemName="Expolre"
-                  FooterItems={['Home', 'About', 'Articles', 'Art', 'Contact']}
+                  FooterItemName="Learn More"
+                  FooterItems={['About', 'Articles', 'Gallery', 'Contact']}
                 />
                 <FooterItems
-                  FooterItemName="Connect"
-                  FooterItems={['Home', 'About', 'Articles', 'Art', 'Contact']}
+                  FooterItemName="Products & Services"
+                  FooterItems={['Classes', 'Courses', 'Readings', 'Gallery']}
                 />
                 <FooterItems
                   FooterItemName="Free Resources"
-                  FooterItems={['Home', 'About', 'Articles', 'Art', 'Contact']}
-                />
-                <FooterItems
-                  FooterItemName="Newsletter"
-                  FooterItems={['Home', 'About', 'Articles', 'Art', 'Contact']}
+                  FooterItems={['Home', 'Articles', 'Contact']}
                 />
               </div>
               <hr />

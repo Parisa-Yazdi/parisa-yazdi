@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 interface FooterItemsProps {
   FooterItemName: string;
@@ -14,17 +14,30 @@ const FooterItems = ({ FooterItemName, FooterItems }: FooterItemsProps) => {
           {FooterItemName}
         </h2>
         <ul className="mt-2">
-          {FooterItems?.map((item, i) => (
-            <li key={i}>
-              <Link
-                href={`/${item}`}
-                className="text-slate-300 hover:text-white"
-              >
-                {item}
-              </Link>
-              <br />
-            </li>
-          ))}
+          {FooterItems?.map((item, i) => {
+            const lowerCaseItem = item.toLowerCase();
+            let url;
+            if (
+              lowerCaseItem === 'classes' ||
+              lowerCaseItem === 'courses' ||
+              lowerCaseItem === 'readings'
+            ) {
+              url = `/classes-and-courses/${lowerCaseItem}`;
+            } else if (lowerCaseItem === 'home') {
+              url = '/';
+            } else {
+              url = `/${lowerCaseItem}`;
+            }
+
+            return (
+              <li key={i}>
+                <Link href={url} className="text-slate-300 hover:text-white">
+                  {item}
+                </Link>
+                <br />
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

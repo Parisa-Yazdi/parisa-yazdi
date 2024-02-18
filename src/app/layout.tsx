@@ -19,13 +19,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${heebo.className} w-full `}>
+      <body className={`${heebo.className} flex min-h-screen w-full flex-col`}>
         <Suspense>
           <NavBar />
 
-          <main>{children}</main>
-          <Newsletter />
-          <Footer />
+          <div className="flex flex-grow flex-col">
+            <main className="flex-grow">{children}</main>
+            <Newsletter />
+            <Footer />
+          </div>
+
           <StickySocialMediaBar />
         </Suspense>
       </body>
