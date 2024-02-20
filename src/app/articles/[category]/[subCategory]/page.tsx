@@ -34,7 +34,9 @@ export default async function SubCategory({ params }: any) {
   });
 
   const articles = await fetchArticlesBySubcategory(subCategory.attributes.name);
-  console.log(articles.data);
+  const sortedArticles = articles.data.sort((a: any, b: any) => {
+    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+  });
   return (
     <>
       <main className="mx-auto h-full w-full  overflow-hidden bg-[#000000e5] pb-24">
@@ -51,7 +53,7 @@ export default async function SubCategory({ params }: any) {
             <h2 className="text-xl font-semibold text-gray-500">No articles found</h2>
           </div>
         ) : (
-          articles.data.map((article: any, index: number) => {
+          sortedArticles.map((article: any, index: number) => {
             const { thumbnail, title, summary, slug, author, date } = article.attributes;
 
             return (

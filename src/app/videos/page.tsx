@@ -4,6 +4,9 @@ import { fetchVideos } from '@/lib/utils';
 
 const Videos = async () => {
   const videos = await fetchVideos();
+  const sortedVideos = videos.data.sort((a: any, b: any) => {
+    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+  });
 
   return (
     <>
@@ -15,7 +18,7 @@ const Videos = async () => {
           </h2>
         </div>
         <div className="mx-auto mt-10 flex w-8/12   flex-col flex-wrap items-center justify-center gap-6">
-          {videos.data.map((video: any, i: number) => {
+          {sortedVideos.map((video: any, i: number) => {
             const { id, thumbnail, title, summary, slug, link } = video.attributes;
             return (
               <VideoCard

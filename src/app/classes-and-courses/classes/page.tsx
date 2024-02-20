@@ -20,6 +20,9 @@ interface ClassProps {
 
 export default async function Courses() {
   const classes = await fetchClasses();
+  const sortedClasses = classes.data.sort((a: any, b: any) => {
+    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+  });
 
   return (
     <>
@@ -29,7 +32,7 @@ export default async function Courses() {
           <h2 className="mt-10 text-4xl font-semibold tracking-tighter sm:text-5xl">CLASSES</h2>
         </div>
         <div className="mx-auto mt-10 flex w-full flex-col flex-wrap  items-center justify-center gap-8 ">
-          {classes.data.map((singleClass: ClassProps, i: number) => {
+          {sortedClasses.map((singleClass: ClassProps, i: number) => {
             const { name, description, slug, link, featuredImage } = singleClass.attributes;
 
             return (

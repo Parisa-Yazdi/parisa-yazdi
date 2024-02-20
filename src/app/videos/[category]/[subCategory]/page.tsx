@@ -34,6 +34,9 @@ export default async function SubCategory({ params }: any) {
   });
 
   const videos = await fetchVideosBySubcategory(subCategory.attributes.name);
+  const sortedVideos = videos.data.sort((a: any, b: any) => {
+    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+  });
 
   return (
     <>
@@ -51,7 +54,7 @@ export default async function SubCategory({ params }: any) {
             <h2 className="text-xl font-semibold text-gray-500">No videos found</h2>
           </div>
         ) : (
-          videos.data.map((video: any, i: number) => {
+          sortedVideos.map((video: any, i: number) => {
             const { id, thumbnail, title, summary, slug, link } = video.attributes;
 
             return (

@@ -16,7 +16,7 @@ interface CourseCardProps {
 
 export function CourseCard({ name, description, link, slug, thumbnail }: CourseCardProps) {
   return (
-    <Card className="flex flex-col gap-4 p-4 md:flex-row">
+    <Card className="flex w-full flex-col gap-4 p-4 md:flex-row">
       <div className="w-full md:w-1/3">
         <img
           alt="Class Thumbnail"

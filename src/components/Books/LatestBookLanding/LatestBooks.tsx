@@ -4,6 +4,12 @@ import { fetchBooks } from '@/lib/utils';
 
 export default async function LatestArticles() {
   const books = await fetchBooks();
+  const sortedBooks = books.data.sort((a: any, b: any) => {
+    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+  });
+
+  const recentThreeBooks = sortedBooks.slice(0, 3);
+  // console.log(recentThreeBooks, 'recentThreeCourses');
 
   return (
     <section className="relative w-full  bg-black  pb-8">
@@ -13,7 +19,7 @@ export default async function LatestArticles() {
         </h2>
 
         <div className="mt-5 flex w-fit flex-col items-center justify-between gap-8 md:w-3/5 lg:w-8/12 lg:flex-row">
-          {books.data.map((book: any, i: number) => {
+          {recentThreeBooks.map((book: any, i: number) => {
             const { id, bookCover, title, description, link, slug } = book.attributes;
             return (
               <BookCard

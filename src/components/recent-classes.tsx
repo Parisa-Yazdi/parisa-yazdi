@@ -10,6 +10,12 @@ import Class from './Classes';
 
 export async function RecentClasses() {
   const classes = await fetchClasses();
+  const sortedClasses = classes.data.sort((a: any, b: any) => {
+    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+  });
+
+  const recentThreeClasses = sortedClasses.slice(0, 3);
+  // console.log(recentThreeClasses, 'recentThreeCourses');
 
   return (
     <section className="relative w-full  py-12 md:py-24 lg:py-24">
@@ -41,7 +47,7 @@ export async function RecentClasses() {
         </div>
         <div className="mt-5 grid gap-6 py-6 lg:grid-cols-3 lg:gap-12">
           {/* <div className="grid gap-6  py-6 lg:grid-cols-1 lg:gap-6"> */}
-          {classes.data.map((oneClass: any, i: number) => {
+          {recentThreeClasses.map((oneClass: any, i: number) => {
             const { id, name, description, slug } = oneClass.attributes;
             // TODO: Add slug to Strapi
             return (
