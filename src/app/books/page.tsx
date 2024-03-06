@@ -16,7 +16,7 @@ export default async function Books() {
         <section className="flex flex-col justify-between gap-10">
           <div className="mx-auto flex w-8/12 flex-col flex-wrap items-center justify-start  gap-6 md:w-3/5 md:flex-row">
             <div className="mt-10">
-              <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">Latest Book</h2>
+              <h2 className=" text-4xl font-semibold tracking-tighter sm:text-5xl">Latest Book</h2>
             </div>
             {latestBook.map((book: any, i: number) => {
               const { id, bookCover, title, description, slug, author, date } = book.attributes;
@@ -36,7 +36,9 @@ export default async function Books() {
           <hr className="border-t-2" />
           <div className="mx-auto flex w-9/12 flex-col flex-wrap items-center  justify-start gap-6 md:w-7/12 md:flex-row">
             <div>
-              <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">More Books</h2>
+              <h2 className="mb-5 text-4xl font-semibold tracking-tighter sm:text-5xl">
+                More Books
+              </h2>
             </div>
 
             {moreBooks.map((book: any, i: number) => {

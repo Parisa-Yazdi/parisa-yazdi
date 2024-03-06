@@ -49,7 +49,7 @@ export function GalleryComp({ images }: any) {
       <div className="mx-auto mt-5 flex w-full justify-start ">
         <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">GALLERY</h2>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3">
         {images &&
           images.map((image: any, i: number) => (
             <div key={i} className="group relative cursor-pointer" onClick={() => handleClick(i)}>

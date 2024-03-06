@@ -56,6 +56,16 @@ export default function ContactPage() {
           </div>
         </form>
       </div>
+
+      <div>
+        <p className="mt-4 text-center text-gray-500 dark:text-gray-400">
+          Or email me directly at{' '}
+          <a href="mailto:parisa@parisayazdi.com" className="text-blue-500 hover:text-blue-700">
+            parisa@parisayazdi.com
+          </a>
+        </p>
+      </div>
+
       <div className="mt-8 flex space-x-4">
         <Link
           className="text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
