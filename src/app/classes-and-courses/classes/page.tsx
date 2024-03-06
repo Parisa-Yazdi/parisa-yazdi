@@ -31,7 +31,7 @@ export default async function Courses() {
         <div className="mt-5 flex w-full justify-center">
           <h2 className="mt-10 text-4xl font-semibold tracking-tighter sm:text-5xl">CLASSES</h2>
         </div>
-        <div className="mx-auto mt-10 flex w-full flex-col flex-wrap  items-center justify-center gap-8 ">
+        <div className="mx-auto mt-10 flex min-w-full flex-col flex-wrap  items-center justify-center  gap-8  ">
           {sortedClasses.map((singleClass: ClassProps, i: number) => {
             const { name, description, slug, link, featuredImage } = singleClass.attributes;
 
