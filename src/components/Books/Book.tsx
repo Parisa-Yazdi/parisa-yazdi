@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface BookProps {
   image: any;
@@ -10,13 +10,7 @@ interface BookProps {
   bookLink: string;
 }
 
-const Book: React.FC<BookProps> = ({
-  image,
-  title,
-  description,
-  bookLink,
-  price,
-}) => {
+const Book: React.FC<BookProps> = ({ image, title, description, bookLink, price }) => {
   return (
     <div className="overflow-hidden bg-white  shadow-md hover:shadow-lg lg:w-[20%] ">
       <Image
@@ -40,11 +34,8 @@ const Book: React.FC<BookProps> = ({
           <div className="h-[95px] w-full font-['Inter']  text-base font-normal text-neutral-400 ">
             {description.length > 50 ? (
               <>
-                {description.slice(0, 50)}...{" "}
-                <Link
-                  href={`/book/${title}`}
-                  className="text-blue-500 hover:underline"
-                >
+                {description.slice(0, 50)}...{' '}
+                <Link href={`/book/${title}`} className="text-blue-500 hover:underline">
                   read more
                 </Link>
               </>
@@ -58,13 +49,13 @@ const Book: React.FC<BookProps> = ({
           <Link
             href={`/book/${title
               .toLowerCase()
-              .replace(/&/g, "and")
-              .replace(/ /g, "-")
-              .replace(/'/g, "")
-              .replace(/,/g, "")}`}
+              .replace(/&/g, 'and')
+              .replace(/ /g, '-')
+              .replace(/'/g, '')
+              .replace(/,/g, '')}`}
             className=" inline-block  font-light text-blue-500 underline underline-offset-8 antialiased"
           >
-            Read more
+            Read More
           </Link>
           <Link
             href={bookLink}

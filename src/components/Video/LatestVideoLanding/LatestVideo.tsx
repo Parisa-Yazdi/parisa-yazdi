@@ -30,7 +30,7 @@ export default async function LatestVideos() {
   const sortedVideos = videos.data.sort((a: Video, b: Video) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
   });
-  const latestVideos = sortedVideos.slice(0, 2);
+  const latestVideos = sortedVideos.slice(0, 3);
   return (
     <section className="mx-auto h-fit   pb-8">
       <div className=" mx-auto flex flex-col items-center justify-center  sm:w-11/12  lg:w-8/12">

@@ -55,7 +55,7 @@ const Book: React.FC<BookProps> = ({ image, title, description, bookLink, price 
               .replace(/,/g, '')}`}
             className=" inline-block  font-light text-blue-500 underline underline-offset-8 antialiased"
           >
-            Read more
+            Read More
           </Link>
           <Link
             href="https://buy.stripe.com/test_3csaGk4aM14t3K03cc"

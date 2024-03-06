@@ -18,7 +18,7 @@ export default async function LatestArticles() {
           Recent Books
         </h2>
 
-        <div className="mt-5 flex w-fit flex-col items-center justify-between gap-8 md:w-3/5 lg:w-8/12 lg:flex-row">
+        <div className="mt-10 flex w-fit flex-col items-center justify-between gap-8 md:w-3/5 lg:w-8/12 lg:flex-row">
           {recentThreeBooks.map((book: any, i: number) => {
             const { id, bookCover, title, description, link, slug } = book.attributes;
             return (

@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export default async function SubCategory({ params }: any) {
   const categories = await fetchCategories();
+  console.log('categories: ', categories);
 
   // Function to convert 'sub-category-name' to 'Sub Category Name'
   const slugToCategoryName = (slug: string): string => {
@@ -25,6 +26,7 @@ export default async function SubCategory({ params }: any) {
     const result = formattedWords.join(' ').replace(/-/g, '').replace(/and/g, '&');
     return result;
   };
+  console.log('slugToCategoryName: ', slugToCategoryName(params.category));
 
   // Get the subcategory that matches the slug
   const singleCategory = categories.data.find((category: any) => {
@@ -32,6 +34,7 @@ export default async function SubCategory({ params }: any) {
     const slugName = slugToCategoryName(params.category.toLowerCase());
     return categoryName.includes(slugName);
   });
+  console.log('singleCategory: ', singleCategory);
 
   return (
     <>

@@ -39,21 +39,6 @@ export const menuItems: MenuItem[] = [
     }
   },
   {
-    name: 'CLASSES & COURSES',
-    href: '',
-    subPages: {
-      Classes: {
-        href: '/classes-and-courses/classes'
-      },
-      Courses: {
-        href: '/classes-and-courses/courses'
-      },
-      Readings: {
-        href: '/classes-and-courses/readings'
-      }
-    }
-  },
-  {
     name: 'VIDEOS',
     href: '/videos',
     subPages: {
@@ -81,6 +66,22 @@ export const menuItems: MenuItem[] = [
     name: 'BOOKS',
     href: '/books'
   },
+  {
+    name: 'CLASSES & COURSES',
+    href: '',
+    subPages: {
+      Classes: {
+        href: '/classes-and-courses/classes'
+      },
+      Courses: {
+        href: '/classes-and-courses/courses'
+      },
+      Readings: {
+        href: '/classes-and-courses/readings'
+      }
+    }
+  },
+
   {
     name: 'GALLERY',
     href: '/gallery'

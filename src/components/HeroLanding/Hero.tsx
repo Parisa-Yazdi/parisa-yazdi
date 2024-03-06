@@ -11,8 +11,8 @@ const Hero = () => {
           </h1>
           <div className="hidden w-full justify-start md:flex">
             <h3 className="font-heebo text-xl font-bold text-white antialiased md:w-4/5">
-              Decoding life's essence through symbolic language reveals the profound artistry of
-              existence. the profound artistry of existence.
+              A quest through the nature of self and existence, a journey of mind through symbols,
+              archetypes myths and astrology
             </h3>
           </div>
         </div>

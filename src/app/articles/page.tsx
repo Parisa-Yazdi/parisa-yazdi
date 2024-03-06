@@ -31,7 +31,7 @@ const Articles = async () => {
             ARTICLES
           </h2>
         </div>
-        <div className="mx-auto mt-8 grid w-9/12 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
+        <div className="mx-auto mt-12 grid w-9/12 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
           {/* {articles.data && */}
           {articles.data.map((article: Article, i: number) => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;

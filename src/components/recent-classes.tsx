@@ -42,7 +42,7 @@ export async function RecentClasses() {
             className=" lg:hidden"
           />
           <p className="font-['Avenir Next'] mx-auto max-w-[700px] text-black dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Explore our carefully designed courses to level up your knowledge.
+            Your Life's Narrative: Customized Readings & Exclusive One-on-Oe Classes
           </p>
         </div>
         <div className="mt-5 grid gap-6 py-6 lg:grid-cols-3 lg:gap-12">

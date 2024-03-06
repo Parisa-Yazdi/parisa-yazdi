@@ -55,7 +55,7 @@ export default function HeroNewsLetter() {
   return (
     <div className=" w-full gap-5 px-5   md:px-0">
       <h3 className="mb-3 text-base leading-tight text-gray-500 antialiased ">
-        Subscribe to the newsletter to never miss an update!
+        Subscribe for weekly exclusives & stay updated with the latest insights
       </h3>
       <form onSubmit={subscribeUser} className="flex flex-col gap-4 md:flex-row md:gap-0">
         <input

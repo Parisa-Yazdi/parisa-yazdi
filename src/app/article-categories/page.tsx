@@ -20,7 +20,7 @@ interface Article {
   };
 }
 
-const ArticleCategories = async () => {
+export default async function ArticleCategories() {
   let categories;
   try {
     // Fetch categories
@@ -65,9 +65,7 @@ const ArticleCategories = async () => {
       </main>
     </>
   );
-};
-
-export default ArticleCategories;
+}
 
 {
   /* {articles.data.map((article: Article) => {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export default async function BlackSocialMediaIcons() {
   const socialMedias = await fetchSocialMedias();
+  console.log(socialMedias);
   // console.log('socialMedias', socialMedias.data[0].attributes.twitter);
   return (
     <div className="icon-bar">

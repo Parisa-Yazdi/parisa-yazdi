@@ -63,7 +63,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
             href={articleLink}
             className=" inline-block pb-3 font-light text-blue-500 underline underline-offset-8 antialiased"
           >
-            Read more
+            Read More
           </Link>
         </div>
       </div>
