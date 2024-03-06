@@ -24,7 +24,7 @@ export default function ContactPage() {
       <div className="w-full max-w-md rounded-lg border bg-white px-8 py-6 shadow-md dark:bg-gray-800">
         <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white">Contact</h2>
         <p className="mt-1 text-center text-gray-600 dark:text-gray-400">
-          Fill out the form below and we'll get back to you.
+          Fill out the form below and Parisa will get back to you
         </p>
         <form ref={form} method="POST" onSubmit={sendEmail}>
           <div className="mt-4 space-y-4">
