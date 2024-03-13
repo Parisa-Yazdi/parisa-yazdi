@@ -5,7 +5,7 @@ export default async function Books() {
   const books = await fetchBooks();
 
   const sortedBooks = books.data.sort((a: any, b: any) => {
-    return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
+    return new Date(a.attributes.date).getTime() - new Date(b.attributes.date).getTime();
   });
   const latestBook = sortedBooks.slice(0, 1);
   const moreBooks = sortedBooks.slice(1);
