@@ -67,7 +67,7 @@ export const menuItems: MenuItem[] = [
     href: '/books'
   },
   {
-    name: 'CLASSES & COURSES',
+    name: 'COURSES',
     href: '',
     subPages: {
       Classes: {
@@ -75,13 +75,13 @@ export const menuItems: MenuItem[] = [
       },
       Courses: {
         href: '/classes-and-courses/courses'
-      },
-      Readings: {
-        href: '/classes-and-courses/readings'
       }
     }
   },
-
+  {
+    name: 'READINGS',
+    href: '/classes-and-courses/readings'
+  },
   {
     name: 'GALLERY',
     href: '/gallery'

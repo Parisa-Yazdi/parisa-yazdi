@@ -51,9 +51,18 @@ export default function VideoCard({
           {/* <div className="mt-2 flex  justify-between md:flex-row md:items-center"> */}
           {/* <p className="min-w-fit text-sm text-gray-500 dark:text-gray-400">{date.toString()}</p> */}
           {/* </div> */}
-          <div className="flex h-5/6 flex-col justify-between ">
-            <CardDescription className=" h-[111px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[199px]">
-              {summary}
+          <div className="flex h-5/6 flex-col justify-around ">
+            <CardDescription className=" h-[111px] overflow-hidden truncate text-ellipsis py-2 text-sm md:h-[130px] xl:h-[159px]">
+              {summary && summary.length > 500 ? (
+                <>
+                  {summary.slice(0, 500)}...{' '}
+                  <Link href={`/book/${slug}`} className=" text-blue-500 hover:underline">
+                    read more
+                  </Link>
+                </>
+              ) : (
+                summary
+              )}
             </CardDescription>
             <div className=" mt-1 flex justify-end  md:justify-end">
               <Link href={videoLink}>

@@ -12,9 +12,9 @@ export default function Home() {
     // cmnd+shift+f : "TODO"
     <main className="h-fit w-screen overflow-hidden">
       <Hero />
-      <RecentCourses />
-      <LatestBooks />
       <RecentClasses />
+      <LatestBooks />
+      <RecentCourses />
       <LatestArticles />
       <LatestVideos />
       <AboutAuthor />
