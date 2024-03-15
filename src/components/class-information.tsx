@@ -6,6 +6,8 @@ import { AvatarImage, AvatarFallback, Avatar } from '@/components/ui/avatar';
 import { CardTitle, CardHeader, CardContent, Card } from '@/components/ui/card';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export function ClassInformation({
   name,
@@ -102,7 +104,10 @@ export function ClassInformation({
               />
             </div>
 
-            <p className="text-lg text-gray-500 dark:text-gray-400">{description}</p>
+            {/* <p className="text-lg text-gray-500 dark:text-gray-400">{description}</p> */}
+            <ReactMarkdown remarkPlugins={[remarkGfm]} className={'markdown'}>
+              {description}
+            </ReactMarkdown>
           </div>
           <div className="hidden space-y-6 md:block  xl:mt-32">
             <Card>
