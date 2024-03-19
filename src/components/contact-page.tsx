@@ -20,7 +20,7 @@ export default function ContactPage() {
 
   const { form, sendEmail } = useEmailForm(handleSuccess);
   return (
-    <div className="flex min-h-full flex-col items-center justify-center   dark:bg-gray-900">
+    <div className="relative flex min-h-full flex-col items-center justify-center   dark:bg-gray-900">
       <div className="w-full max-w-md rounded-lg border bg-white px-8 py-6 shadow-md dark:bg-gray-800">
         <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white">Contact</h2>
         <p className="mt-1 text-center text-gray-600 dark:text-gray-400">

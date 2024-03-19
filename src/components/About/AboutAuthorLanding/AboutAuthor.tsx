@@ -12,18 +12,17 @@ export default async function AboutAuthor() {
   const author = await fetchAuthor();
 
   return (
-    <section className="h-fit bg-black pb-8">
-      {/* author section */}
+    <section className="relative h-fit bg-black pb-8">
       <div className="flex  flex-col items-center justify-center ">
-        <div className="flex w-11/12 flex-col items-center justify-evenly  md:flex-row md:gap-36">
+        <div className="flex w-11/12 flex-col items-center justify-evenly  md:flex-row md:gap-16">
           <div className="flex h-full w-fit flex-col items-center justify-center ">
             <Image
               src={author.data[0].attributes.photo.data.attributes.url}
               alt="Picture of the author"
-              width={664}
-              height={718}
+              width={432}
+              height={459}
               priority
-              className="h-2/5 rounded-full pt-9"
+              className="h-2/5 rounded-full pt-3"
             />
           </div>
 
@@ -51,6 +50,12 @@ export default async function AboutAuthor() {
           </div>
         </div>
       </div>
+      <div
+        className="absolute bottom-0 h-[20px] w-full border-0"
+        style={{
+          background: 'linear-gradient(to top, #f3f4f6, #ffffff, #f3f4f6, #333333, #000000)'
+        }}
+      ></div>
     </section>
   );
 }

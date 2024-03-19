@@ -25,7 +25,7 @@ const Articles = async () => {
 
   return (
     <>
-      <main className="mx-auto h-full  w-full overflow-hidden  bg-[#000000e5] pb-24">
+      <main className="relative mx-auto h-full  w-full overflow-hidden  bg-[#000000e5] pb-24">
         <div className="mx-auto mt-5 flex w-9/12 justify-start ">
           <h2 className="text-4xl font-semibold tracking-tighter text-white sm:text-5xl">
             ARTICLES
@@ -48,6 +48,12 @@ const Articles = async () => {
             );
           })}
         </div>
+        <div
+          className="absolute bottom-0 h-[60px] w-full border-0"
+          style={{
+            background: 'linear-gradient(to top, #f3f4f6, #ffffff, #333333, #1a1a1a)'
+          }}
+        ></div>
       </main>
     </>
   );
