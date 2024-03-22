@@ -34,9 +34,13 @@ export function ClassCard({ name, description, link, slug, thumbnail }: ClassCar
       <div className="flex w-full flex-col justify-between md:w-2/3">
         <div>
           <CardTitle className="text-xl font-bold">{name}</CardTitle>
-          <CardDescription className="text-sm text-gray-500 dark:text-gray-400 ">
-            {description.length > 620 ? `${description.slice(0, 620)}...` : description}
-          </CardDescription>
+
+          {description && (
+            <CardDescription className="text-sm text-gray-500 dark:text-gray-400 ">
+              {description.length > 620 ? `${description.slice(0, 620)}...` : description}
+            </CardDescription>
+          )}
+
           {/* <p className="mt-2 text-sm">Instructor: {instructor}</p> */}
         </div>
         <Link href={`/classes-and-courses/class/${slug}`} className="mt-4 self-end md:self-end">
