@@ -47,20 +47,34 @@ export default async function ArticleCategories() {
     console.error('Error fetching categories:', error);
   }
 
+  const categoryOrder = [
+    'Existential & Metaphysics',
+    'Astrology & Archetypes',
+    'Self-Knowledge',
+    'Personal Journals'
+  ];
+
+  // console.log('Sorted categories:', sortedCategories);
+
   return (
     <>
       <main className="h-fit  overflow-hidden bg-[#c7cdd584] pb-24">
         <div className="mt-10 flex w-full justify-center">
           <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">CATEGORIES</h2>
         </div>
-        <div className="mx-auto mt-8 flex w-11/12 flex-wrap justify-center gap-6">
-          {categories.data.map((category: any, i: number) => {
-            const { id, name } = category.attributes;
-            const subCategories = category.attributes.sub_categories.data;
-            return (
-              <ArticleCategory key={id || i} categoryName={name} subCategories={subCategories} />
-            );
-          })}
+        <div className="mx-auto mt-8 flex w-8/12 flex-wrap justify-center gap-6 ">
+          {categories.data
+            .sort(
+              (a: any, b: any) =>
+                categoryOrder.indexOf(a.attributes.name) - categoryOrder.indexOf(b.attributes.name)
+            )
+            .map((category: any, i: number) => {
+              const { id, name } = category.attributes;
+              const subCategories = category.attributes.sub_categories.data;
+              return (
+                <ArticleCategory key={id || i} categoryName={name} subCategories={subCategories} />
+              );
+            })}
         </div>
       </main>
     </>

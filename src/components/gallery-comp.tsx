@@ -45,9 +45,9 @@ export function GalleryComp({ images }: any) {
   }, [closeModal, navigate]);
 
   return (
-    <div className="mx-auto w-full max-w-7xl p-4">
+    <div className="mx-auto w-full  max-w-7xl bg-black p-4">
       <div className="mx-auto mt-5 flex w-full justify-start ">
-        <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">GALLERY</h2>
+        <h2 className="text-4xl font-semibold tracking-tighter text-white sm:text-5xl">GALLERY</h2>
       </div>
       <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3">
         {images &&
@@ -89,7 +89,7 @@ export function GalleryComp({ images }: any) {
               <div className="relative flex h-full w-auto flex-col items-center justify-center py-3">
                 <Image
                   alt={`Art Piece ${selectedImage + 1}`}
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-contain "
                   src={images[selectedImage].attributes.art.data[0].attributes.formats.medium.url}
                   width={
                     images[selectedImage].attributes.art.data[0].attributes.formats.medium.width
@@ -113,9 +113,9 @@ export function GalleryComp({ images }: any) {
         )}
       </div>
 
-      <div className="mt-4 w-full">
+      <div className="mt-10 w-full">
         <Link
-          className="flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+          className="borde flex h-10 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-black shadow transition-colors hover:border-2 hover:border-white hover:bg-black hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
           href="/"
         >
           Back to Home

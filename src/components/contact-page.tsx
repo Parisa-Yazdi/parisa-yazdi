@@ -7,6 +7,7 @@ import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useEmailForm } from '@/lib/useEmailForm';
+import { fetchSocialMedias } from '@/lib/utils';
 
 export default function ContactPage() {
   const [isSent, setIsSent] = useState(false);
@@ -17,6 +18,7 @@ export default function ContactPage() {
       setIsSent(false);
     }, 3000);
   };
+  // const socialMedias = await fetchSocialMedias();
 
   const { form, sendEmail } = useEmailForm(handleSuccess);
   return (
@@ -57,6 +59,35 @@ export default function ContactPage() {
         </form>
       </div>
 
+      <div className="mt-5 flex gap-3">
+        <div className="flex flex-col items-center justify-center space-y-2">
+          <Link
+            className="rounded-sm bg-[#bb0000] text-white"
+            href={'https://www.youtube.com/@ParisaYazdi'}
+          >
+            <YoutubeIcon className="youtube h-10 w-10 p-2" />
+            {/* <span className="text-sm font-medium">Youtube</span> */}
+          </Link>
+        </div>
+        <div className="flex flex-col items-center justify-center space-y-2">
+          <Link
+            className="rounded-sm bg-[#dd4b39] text-white"
+            href={'https://www.instagram.com/parisayazdi_/'}
+          >
+            <InstagramIcon className="instagram h-10 w-10 p-2" />
+            {/* <span className="text-sm font-medium">Instagram</span> */}
+          </Link>
+        </div>
+        <div className="flex flex-col items-center justify-center space-y-2">
+          <Link
+            className="rounded-sm bg-[#3b5998] text-white"
+            href={'https://m.facebook.com/parisayazdi/'}
+          >
+            <FacebookIcon className="facebook h-10 w-10 p-2" />
+            {/* <span className="text-sm font-medium">Facebook</span> */}
+          </Link>
+        </div>
+      </div>
       <div>
         <p className="mt-4 text-center text-gray-500 dark:text-gray-400">
           Or email me directly at{' '}
@@ -65,53 +96,7 @@ export default function ContactPage() {
           </a>
         </p>
       </div>
-
-      <div className="mt-8 flex space-x-4">
-        <Link
-          className="text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
-          href="#"
-        >
-          <FacebookIcon className="h-6 w-6" />
-        </Link>
-        <Link
-          className="text-gray-700 hover:text-blue-400 dark:text-gray-200 dark:hover:text-blue-300"
-          href="#"
-        >
-          <TwitterIcon className="h-6 w-6" />
-        </Link>
-        <Link
-          className="text-gray-700 hover:text-pink-600 dark:text-gray-200 dark:hover:text-pink-400"
-          href="#"
-        >
-          <InstagramIcon className="h-6 w-6" />
-        </Link>
-        <Link
-          className="text-gray-700 hover:text-blue-700 dark:text-gray-200 dark:hover:text-blue-500"
-          href="#"
-        >
-          <LinkedinIcon className="h-6 w-6" />
-        </Link>
-      </div>
     </div>
-  );
-}
-
-function FacebookIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
   );
 }
 
@@ -172,6 +157,64 @@ function LinkedinIcon(props: any) {
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect width="4" height="12" x="2" y="9" />
       <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
+function FacebookIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+function CloudIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+    </svg>
+  );
+}
+
+function YoutubeIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+      <path d="m10 15 5-3-5-3z" />
     </svg>
   );
 }

@@ -9,11 +9,11 @@ export async function BlackSocialMediaIcons() {
       <div className="grid grid-cols-3 gap-4">
         <div className="flex flex-col items-center justify-center space-y-2">
           <Link
-            className="rounded-sm bg-[#55acee] text-white"
-            href={socialMedias.data[0].attributes.twitter}
+            className="rounded-sm bg-[#bb0000] text-white"
+            href={socialMedias.data[0].attributes.youtube}
           >
-            <TwitterIcon className="twitter h-10 w-10  p-2" />
-            {/* <span className="text-sm font-medium">Twitter</span> */}
+            <YoutubeIcon className="youtube h-10 w-10 p-2" />
+            {/* <span className="text-sm font-medium">Youtube</span> */}
           </Link>
         </div>
         <div className="flex flex-col items-center justify-center space-y-2">
@@ -27,15 +27,6 @@ export async function BlackSocialMediaIcons() {
         </div>
         <div className="flex flex-col items-center justify-center space-y-2">
           <Link
-            className="rounded-sm bg-[#55acee] text-white"
-            href={socialMedias.data[0].attributes.linkedIn}
-          >
-            <LinkedinIcon className="linkedIn h-10 w-10 p-2" />
-            {/* <span className="text-sm font-medium">LinkedIn</span> */}
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
             className="rounded-sm bg-[#3b5998] text-white"
             href={socialMedias.data[0].attributes.facebook}
           >
@@ -45,19 +36,30 @@ export async function BlackSocialMediaIcons() {
         </div>
         <div className="flex flex-col items-center justify-center space-y-2">
           <Link
+            className="rounded-sm bg-[#55acee] text-white"
+            href={socialMedias.data[0].attributes.twitter}
+          >
+            <TwitterIcon className="twitter h-10 w-10  p-2" />
+            {/* <span className="text-sm font-medium">Twitter</span> */}
+          </Link>
+        </div>
+
+        <div className="flex flex-col items-center justify-center space-y-2">
+          <Link
+            className="rounded-sm bg-[#55acee] text-white"
+            href={socialMedias.data[0].attributes.linkedIn}
+          >
+            <LinkedinIcon className="linkedIn h-10 w-10 p-2" />
+            {/* <span className="text-sm font-medium">LinkedIn</span> */}
+          </Link>
+        </div>
+
+        <div className="flex flex-col items-center justify-center space-y-2">
+          <Link
             className="rounded-sm bg-black text-white"
             href={socialMedias.data[0].attributes.youtube}
           >
             <CloudIcon className="h-10 w-10 p-2" />
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <Link
-            className="rounded-sm bg-[#bb0000] text-white"
-            href={socialMedias.data[0].attributes.youtube}
-          >
-            <YoutubeIcon className="youtube h-10 w-10 p-2" />
-            {/* <span className="text-sm font-medium">Youtube</span> */}
           </Link>
         </div>
       </div>

@@ -9,17 +9,28 @@ export default async function BlackSocialMediaIcons() {
   return (
     <div className="icon-bar">
       <Link
-        className="bg-[#55acee] text-white hover:bg-white hover:text-[#55acee]"
-        href={socialMedias.data[0].attributes.twitter}
+        className="bg-[#bb0000] text-white hover:bg-white hover:text-[#bb0000]"
+        href={socialMedias.data[0].attributes.youtube}
       >
-        <TwitterIcon className="twitter h-2 w-2 md:h-4 md:w-4" />
+        <YoutubeIcon className="youtube h-2 w-2 md:h-4 md:w-4" />
       </Link>
-
       <Link
         className="bg-[#dd4b39] text-white hover:bg-white hover:text-[#dd4b39]"
         href={socialMedias.data[0].attributes.instagram}
       >
         <InstagramIcon className="instagram h-2 w-2 md:h-4 md:w-4" />
+      </Link>
+      <Link
+        className="bg-[#3b5998] text-white hover:bg-white hover:text-[#3b5998]"
+        href={socialMedias.data[0].attributes.facebook}
+      >
+        <FacebookIcon className="facebook h-2 w-2 md:h-4 md:w-4" />
+      </Link>
+      <Link
+        className="bg-[#55acee] text-white hover:bg-white hover:text-[#55acee]"
+        href={socialMedias.data[0].attributes.twitter}
+      >
+        <TwitterIcon className="twitter h-2 w-2 md:h-4 md:w-4" />
       </Link>
 
       <Link
@@ -30,24 +41,10 @@ export default async function BlackSocialMediaIcons() {
       </Link>
 
       <Link
-        className="bg-[#3b5998] text-white hover:bg-white hover:text-[#3b5998]"
-        href={socialMedias.data[0].attributes.facebook}
-      >
-        <FacebookIcon className="facebook h-2 w-2 md:h-4 md:w-4" />
-      </Link>
-
-      <Link
         className="bg-black text-white hover:bg-white hover:text-black"
         href={socialMedias.data[0].attributes.youtube}
       >
         <CloudIcon className="h-2 w-2 md:h-4 md:w-4" />
-      </Link>
-
-      <Link
-        className="bg-[#bb0000] text-white hover:bg-white hover:text-[#bb0000]"
-        href={socialMedias.data[0].attributes.youtube}
-      >
-        <YoutubeIcon className="youtube h-2 w-2 md:h-4 md:w-4" />
       </Link>
     </div>
   );
