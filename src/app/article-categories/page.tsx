@@ -50,7 +50,7 @@ export default async function ArticleCategories() {
   const categoryOrder = [
     'Existential & Metaphysics',
     'Astrology & Archetypes',
-    'Self-Knowledge',
+    'Self Knowledge',
     'Personal Journals'
   ];
 

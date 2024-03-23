@@ -5,6 +5,7 @@ import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
 import { Button } from '@/components/ui/button';
 import VideoCard from '../VideoCard';
 import Link from 'next/link';
+import { fetchSubCategory } from '@/lib/utils';
 
 interface Video {
   id: number;
@@ -26,6 +27,7 @@ interface Video {
 
 export default async function LatestVideos() {
   const videos = await fetchVideos();
+  const subCategories = await fetchSubCategory();
 
   const sortedVideos = videos.data.sort((a: Video, b: Video) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
@@ -59,6 +61,7 @@ export default async function LatestVideos() {
           })}
         </div>
         <div className=" flex w-full justify-center">
+          <DropDown subCategories={subCategories.data} />
           <Button className=" mt-10  bg-black text-base  text-white hover:border hover:border-black hover:bg-white hover:text-black md:w-2/12">
             <Link href="/videos">View all Videos</Link>
           </Button>
