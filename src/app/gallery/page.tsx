@@ -5,6 +5,7 @@ import React from 'react';
 
 export default async function page() {
   const gallery = await fetchGallery();
+
   // console.log('GALLERY: ', gallery.data.attributes);
 
   return (

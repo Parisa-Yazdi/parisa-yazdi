@@ -11,7 +11,7 @@ async function ArticleCategory({ categoryName, subCategories }: ArticleCategoryP
   const sortedSubCategories = subCategories.sort((a: any, b: any) => a.id - b.id);
   return (
     <>
-      <div className="ml-16 flex w-full flex-col  md:w-10/12">
+      <div className="flex w-full flex-col md:w-8/12">
         <div className="mt-10">
           <h2 className="mb-3 flex justify-start p-5  pb-2 pl-1 pt-0 text-center   text-3xl  font-semibold  leading-[55px] tracking-tighter sm:text-5xl md:text-4xl ">
             {categoryName}

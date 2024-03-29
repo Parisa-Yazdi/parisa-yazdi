@@ -46,7 +46,7 @@ export default async function VideoCategories() {
         <div className="mt-10 flex w-full justify-center">
           <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl">CATEGORIES</h2>
         </div>
-        <div className="mx-auto mt-8 flex w-8/12 flex-wrap justify-center gap-6 ">
+        <div className="mx-auto mt-8 flex w-11/12 flex-wrap justify-center gap-6">
           {categories.data
             .sort(
               (a: any, b: any) =>
