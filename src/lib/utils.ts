@@ -280,12 +280,11 @@ export async function fetchClassBySlug(slug: string) {
   return response;
 }
 
-export async function fetchCourses() {
+export const fetchCourses = cache(async () => {
   const reqOptions = {
-    next: { revalidate: 60 },
+    next: { revalidate: 60 }, // Ensures SSR data refreshes every 60s
     headers: {
-      cache: 'no-store',
-
+      cache: 'no-store', // Prevents stale browser cache
       Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`
     }
   };
@@ -293,8 +292,13 @@ export async function fetchCourses() {
   const request = await fetch(`${config.api}/api/courses?populate=*`, reqOptions);
   const response = await request.json();
 
-  return response;
-}
+  // Ensure sorting happens here to avoid hydration mismatches
+  const sortedCourses = [...response.data].sort((a, b) => {
+    return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
+  });
+
+  return { ...response, data: sortedCourses };
+});
 
 export async function fetchCourseBySlug(slug: string) {
   const reqOptions = {
@@ -333,7 +337,6 @@ export async function fetchReadingBySlug(slug: string) {
 
   return response;
 }
-
 export async function fetchGallery() {
   const reqOptions = {
     next: { revalidate: 60 },

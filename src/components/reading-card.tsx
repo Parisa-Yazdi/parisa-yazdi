@@ -35,11 +35,11 @@ export function ReadingCard({ name, description, link, slug, thumbnail }: ClassC
         <div>
           <CardTitle className="text-xl font-bold">{name}</CardTitle>
           <CardDescription className="text-sm text-gray-500 dark:text-gray-400 ">
-            {description && (
-              <CardDescription className="text-sm text-gray-500 dark:text-gray-400 ">
-                {description.length > 620 ? `${description.slice(0, 620)}...` : description}
-              </CardDescription>
-            )}
+            {description
+              ? description.length > 620
+                ? `${description.slice(0, 620)}...`
+                : description
+              : 'No description available'}
           </CardDescription>
           {/* <p className="mt-2 text-sm">Instructor: {instructor}</p> */}
         </div>
