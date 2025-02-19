@@ -25,10 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <NavBar />
 
           <div className="flex flex-grow flex-col">
-            <main className="flex-grow">
-              {children}
-              <Analytics />
-            </main>
+            <main className="flex-grow">{children}</main>
             <Newsletter />
             <Footer />
           </div>
