@@ -56,7 +56,7 @@ export default function VideoCard({
               {summary && summary.length > 500 ? (
                 <>
                   {summary.slice(0, 500)}...{' '}
-                  <Link href={`/video/${slug}`} className=" text-blue-500 hover:underline">
+                  <Link href={`/book/${slug}`} className=" text-blue-500 hover:underline">
                     read more
                   </Link>
                 </>

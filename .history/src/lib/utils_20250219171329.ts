@@ -95,10 +95,7 @@ export async function fetchVideos() {
     }
   };
 
-  const request = await fetch(
-    `${config.api}/api/videos?populate=*&pagination[pageSize]=100`,
-    reqOptions
-  );
+  const request = await fetch(`${config.api}/api/video?populate=*`, reqOptions);
   const response = await request.json();
   response.data.forEach((video: any) => {
     console.log('🚀 ~ video:', video);

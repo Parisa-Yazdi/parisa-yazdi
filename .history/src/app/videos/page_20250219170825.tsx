@@ -4,14 +4,14 @@ import { fetchVideos } from '@/lib/utils';
 
 const Videos = async () => {
   const videos = await fetchVideos();
-  // console.log('🚀 ~ videos ~ videos:', videos);
-  videos.data.forEach((video: any) => {
-    // console.log('🚀 ~ video:', video);
+  console.log('🚀 ~ videos ~ videos:', videos);
+  videos.map((video: any) => {
+    console.log('🚀 ~ video ~ video:', video);
   });
   const sortedVideos = videos.data.sort((a: any, b: any) => {
     return new Date(b.attributes.createdAt).getTime() - new Date(a.attributes.createdAt).getTime();
   });
-  // console.log('🚀 ~ sortedVideos ~ sortedVideos:', sortedVideos);
+  console.log('🚀 ~ sortedVideos ~ sortedVideos:', sortedVideos);
 
   return (
     <>
