@@ -98,7 +98,7 @@ export default function MobileMenu() {
                           )}
                         </CollapsibleTrigger>
                       ) : (
-                        <Link scroll={false} href={menuItem.href || '#'}>
+                        <Link scroll={false} href={menuItem.href}>
                           <CollapsibleTrigger className="boorder-white mb-1 flex w-full items-center border border-gray-600  px-2  py-4 text-lg font-semibold text-white [&[data-state=open]>svg]:rotate-90">
                             {menuItem.name}
                             {menuItem.subPages && Object.keys(menuItem.subPages).length > 0 && (
