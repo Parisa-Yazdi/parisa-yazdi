@@ -192,7 +192,7 @@ export async function fetchSubCategory() {
   };
 
   const request = await fetch(
-    `${config.api}/api/sub-categories?populate[0]=articles&populate[1]=category&populate[2]=videos`,
+    `${config.api}/api/sub-categories?populate[0]=articles&populate[1]=category`,
     reqOptions
   );
   const response = await request.json();

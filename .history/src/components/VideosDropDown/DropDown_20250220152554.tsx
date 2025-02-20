@@ -22,6 +22,8 @@ interface category {
 }
 
 export default function DropDown({ subCategories }: { subCategories: category[] }) {
+  console.log('🚀 ~ DropDown ~ subCategories:', subCategories);
+
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
 

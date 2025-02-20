@@ -1,7 +1,7 @@
 // import ArticleCard from './Card';
 // import Button from '@/components/Button/Button';
 import { fetchArticles, fetchCategories, fetchVideos } from '@/lib/utils';
-import DropDown from '@/components/VideosDropDown/DropDown';
+import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
 import { Button } from '@/components/ui/button';
 import VideoCard from '../VideoCard';
 import Link from 'next/link';
@@ -28,10 +28,6 @@ interface Video {
 export default async function LatestVideos() {
   const videos = await fetchVideos();
   const subCategories = await fetchSubCategory();
-  console.log('🚀 ~ LatestVideos ~ subCategories:', subCategories);
-  subCategories.data.forEach((subCategory: any) => {
-    console.log('🚀 ~ subCategory:', subCategory);
-  });
 
   const sortedVideos = videos.data.sort((a: Video, b: Video) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();
@@ -64,13 +60,11 @@ export default async function LatestVideos() {
             );
           })}
         </div>
-        <div className="mt-10 flex w-10/12 flex-col items-center justify-center md:w-1/2">
+        <div className=" flex w-full justify-center">
           <DropDown subCategories={subCategories.data} />
-          <Link href="/videos">
-            <Button className=" mt-10  bg-black text-base text-white hover:border hover:border-black hover:bg-white hover:text-black">
-              View all Videos
-            </Button>
-          </Link>
+          <Button className=" mt-10  bg-black text-base  text-white hover:border hover:border-black hover:bg-white hover:text-black md:w-2/12">
+            <Link href="/videos">View all Videos</Link>
+          </Button>
         </div>
       </div>
     </section>

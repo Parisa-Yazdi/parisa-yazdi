@@ -1,7 +1,7 @@
 // import ArticleCard from './Card';
 // import Button from '@/components/Button/Button';
 import { fetchArticles, fetchCategories, fetchVideos } from '@/lib/utils';
-import DropDown from '@/components/VideosDropDown/DropDown';
+import DropDown from '@/components/Articles/ArticlesDropDown/DropDown';
 import { Button } from '@/components/ui/button';
 import VideoCard from '../VideoCard';
 import Link from 'next/link';
@@ -28,10 +28,6 @@ interface Video {
 export default async function LatestVideos() {
   const videos = await fetchVideos();
   const subCategories = await fetchSubCategory();
-  console.log('🚀 ~ LatestVideos ~ subCategories:', subCategories);
-  subCategories.data.forEach((subCategory: any) => {
-    console.log('🚀 ~ subCategory:', subCategory);
-  });
 
   const sortedVideos = videos.data.sort((a: Video, b: Video) => {
     return new Date(b.attributes.date).getTime() - new Date(a.attributes.date).getTime();

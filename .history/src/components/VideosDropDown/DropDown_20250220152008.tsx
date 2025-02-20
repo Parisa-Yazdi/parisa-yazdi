@@ -34,7 +34,7 @@ export default function DropDown({ subCategories }: { subCategories: category[] 
           aria-expanded={open}
           className=" w-3/4 justify-between font-heebo text-base"
         >
-          {value || 'Find video by category...'}
+          {value || 'Find article by category...'}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -55,12 +55,12 @@ export default function DropDown({ subCategories }: { subCategories: category[] 
                 <>
                   <Link
                     className="text-basae w-full font-heebo"
-                    href={`/videos/${parseUrl(
+                    href={`/articles/${parseUrl(
                       category.attributes.category.data.attributes.name
                     )}/${parseUrl(category.attributes.name)}`}
                   >
                     <div>
-                      {category.attributes.name + `  (${category.attributes.videos.data.length})`}
+                      {category.attributes.name + `  (${category.attributes.articles.data.length})`}
                     </div>
                   </Link>
                 </>
