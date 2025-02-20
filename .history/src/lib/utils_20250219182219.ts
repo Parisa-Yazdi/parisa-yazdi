@@ -304,10 +304,7 @@ export const fetchCourses = cache(async () => {
     }
   };
 
-  const request = await fetch(
-    `${config.api}/api/courses?populate=*&sort=createdAt:desc`,
-    reqOptions
-  );
+  const request = await fetch(`${config.api}/api/courses?populate=*`, reqOptions);
   const response = await request.json();
 
   // Ensure sorting happens here to avoid hydration mismatches

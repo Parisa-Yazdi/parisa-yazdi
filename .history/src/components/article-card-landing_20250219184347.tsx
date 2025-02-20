@@ -29,7 +29,7 @@ export async function ArticleCardLanding({
   actualWidth
 }: ArticleCardProps) {
   return (
-    <Card className="mx-auto  w-full overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA]">
+    <Card className="mx-auto  w-8/12 overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA]">
       <div className="flex h-full flex-col  md:flex-row">
         <Image
           alt="Article Cover"

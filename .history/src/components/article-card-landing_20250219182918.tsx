@@ -32,11 +32,11 @@ export async function ArticleCardLanding({
     <Card className="mx-auto  w-full overflow-hidden overflow-ellipsis border-0 bg-[#F5F7FA]">
       <div className="flex h-full flex-col  md:flex-row">
         <Image
-          alt="Article Cover"
-          className="aspect-[16/9] w-full object-cover md:aspect-[4/3] md:w-[400px] md:rounded-l-lg"
-          height={500}
+          alt="Video Cover"
+          className="h-[250px] w-full object-cover md:h-[250px] md:w-[600px] md:rounded-l-lg"
+          height={actualHeight}
           src={`${image}`}
-          width={500}
+          width={actualWidth}
         />
 
         <CardContent className="w-full space-y-1   border-black p-3">

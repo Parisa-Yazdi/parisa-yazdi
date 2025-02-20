@@ -33,7 +33,7 @@ export async function ArticleCardLanding({
       <div className="flex h-full flex-col  md:flex-row">
         <Image
           alt="Article Cover"
-          className="aspect-[16/9] w-full object-cover md:aspect-[4/3] md:w-[400px] md:rounded-l-lg"
+          className="aspect-square w-full object-cover  md:w-auto md:rounded-l-lg "
           height={500}
           src={`${image}`}
           width={500}

@@ -39,7 +39,7 @@ export async function ArticleCardLanding({
           width={500}
         />
 
-        <CardContent className="w-full space-y-1   border-black p-3">
+        <CardContent className="w-full space-y-3   border-black p-3">
           <CardTitle className="line-clamp-1 text-lg font-semibold md:line-clamp-2">
             {title}
           </CardTitle>{' '}

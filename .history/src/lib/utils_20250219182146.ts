@@ -99,7 +99,7 @@ export async function fetchVideos() {
   };
 
   const request = await fetch(
-    `${config.api}/api/videos?populate=*&pagination[pageSize]=100&sort=createdAt:desc`,
+    `${config.api}/api/videos?populate=*&pagination[pageSize]=100`,
     reqOptions
   );
   const response = await request.json();
@@ -232,7 +232,7 @@ export async function fetchBooks() {
     }
   };
 
-  const request = await fetch(`${config.api}/api/books?populate=*&sort=createdAt:desc`, reqOptions);
+  const request = await fetch(`${config.api}/api/books?populate=*`, reqOptions);
   const response = await request.json();
 
   return response;
@@ -248,10 +248,7 @@ export async function fetchClasses() {
     }
   };
 
-  const request = await fetch(
-    `${config.api}/api/classes?populate=*&sort=createdAt:desc`,
-    reqOptions
-  );
+  const request = await fetch(`${config.api}/api/classes?populate=*`, reqOptions);
   const response = await request.json();
 
   return response;
@@ -267,10 +264,7 @@ export async function fetchReadings() {
     }
   };
 
-  const request = await fetch(
-    `${config.api}/api/readings?populate=*&sort=createdAt:desc`,
-    reqOptions
-  );
+  const request = await fetch(`${config.api}/api/readings?populate=*`, reqOptions);
   const response = await request.json();
 
   return response;
@@ -304,10 +298,7 @@ export const fetchCourses = cache(async () => {
     }
   };
 
-  const request = await fetch(
-    `${config.api}/api/courses?populate=*&sort=createdAt:desc`,
-    reqOptions
-  );
+  const request = await fetch(`${config.api}/api/courses?populate=*`, reqOptions);
   const response = await request.json();
 
   // Ensure sorting happens here to avoid hydration mismatches

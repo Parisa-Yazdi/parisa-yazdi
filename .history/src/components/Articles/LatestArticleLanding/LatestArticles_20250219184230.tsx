@@ -48,7 +48,7 @@ const LatestArticles = async () => {
             Latest Articles
           </h2>
         </div>
-        <div className="border-red-5030 mx-4 mt-12 grid w-[40%] grid-cols-1 gap-6 border-2 md:mx-auto md:w-full md:grid-cols-1">
+        <div className="mx-4 mt-12 grid w-6/12 grid-cols-1 gap-6 md:mx-auto md:w-full md:grid-cols-1">
           {latestArticles.map((article: Article, i: number) => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
             // console.log(article.attributes.thumbnail.data.attributes);

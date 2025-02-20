@@ -36,7 +36,7 @@ const LatestArticles = async () => {
   return (
     <section className="relative mx-auto h-fit bg-black pb-8 ">
       <div
-        className="absolute top-0 h-[10px] w-full"
+        className="absolute top-0 h-[10px] w-9/12"
         style={{
           background:
             'linear-gradient(to top, black, #666 20%,#999  40%,  #ccc 60%, #eee 80%, white)'
@@ -48,7 +48,7 @@ const LatestArticles = async () => {
             Latest Articles
           </h2>
         </div>
-        <div className="border-red-5030 mx-4 mt-12 grid w-[40%] grid-cols-1 gap-6 border-2 md:mx-auto md:w-full md:grid-cols-1">
+        <div className="mx-4 mt-12 grid w-9/12 grid-cols-1 gap-6 border-2 border-red-500 md:mx-auto md:w-full md:grid-cols-1">
           {latestArticles.map((article: Article, i: number) => {
             const { id, thumbnail, title, summary, slug, author, date } = article.attributes;
             // console.log(article.attributes.thumbnail.data.attributes);
